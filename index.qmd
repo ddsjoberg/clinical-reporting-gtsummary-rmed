@@ -11,7 +11,7 @@ subtitle: "R/Medicine 2022 Workshop"
 
 🏨 Virtual
 
-💥 FREE with [conference registration](https://events.linuxfoundation.org/r-medicine/register/) (between $10 and $50) 
+💥 **FREE** with [conference registration](https://events.linuxfoundation.org/r-medicine/register/) (between $10 and $50) 
 
 ------------------------------------------------------------------------
 
