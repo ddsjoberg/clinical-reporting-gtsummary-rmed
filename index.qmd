@@ -7,20 +7,17 @@ subtitle: "R/Medicine 2022 Workshop"
 
 ------------------------------------------------------------------------
 
-🗓️ August 23, 2022 | 11:00am - 2:00pm EDT
+🗓️ August 23, 2022 \| 11:00am - 2:00pm EDT
 
 🏨 Virtual
 
-💥 **FREE** with [conference registration](https://events.linuxfoundation.org/r-medicine/register/) (between $10 and $50) 
+💥 **FREE** with [conference registration](https://events.linuxfoundation.org/r-medicine/register/) (between \$10 and \$50)
 
 ------------------------------------------------------------------------
 
 # Overview
 
-The **gtsummary** package provides an elegant and flexible way to create publication-ready summary tables in R.
-A critical part of the work of statisticians, data scientists, and analysts is summarizing data sets and regression models in R and publishing or sharing polished summary tables.
-The **gtsummary** package was created to streamline these everyday analysis tasks by allowing users to easily create reproducible summaries of data sets, regression models, survey data, and survival data with a simple interface and very little code.
-The package follows a tidy framework, making it easy to integrate with standard data workflows, and offers many table customization features through function arguments, helper functions, and custom themes.
+The **gtsummary** package provides an elegant and flexible way to create publication-ready summary tables in R. A critical part of the work of statisticians, data scientists, and analysts is summarizing data sets and regression models in R and publishing or sharing polished summary tables. The **gtsummary** package was created to streamline these everyday analysis tasks by allowing users to easily create reproducible summaries of data sets, regression models, survey data, and survival data with a simple interface and very little code. The package follows a tidy framework, making it easy to integrate with standard data workflows, and offers many table customization features through function arguments, helper functions, and custom themes.
 
 ## Learning objectives
 
@@ -28,30 +25,26 @@ Build, customize, and report tables often found in medical journals and other re
 
 ## Is this course for me?
 
-If your answer to any of the following questions is “yes”, then this is the right workshop for you.
+If your answer to any of the following questions is "yes", then this is the right workshop for you.
 
-- Do you make summary tables in R (data, survey data, regression models, time-to-event data, adverse event reports)?
+-   Do you make summary tables in R (data, survey data, regression models, time-to-event data, adverse event reports)?
 
-- Do you want your workflow to be reproducible?
+-   Do you want your workflow to be reproducible?
 
-- Are you often frustrated with the immense amount of code required to create great-looking tables in R? 
+-   Are you often frustrated with the immense amount of code required to create great-looking tables in R?
 
-The workshop is designed for those with some experience in R.
-It will be expected that you can perform basic data manipulation.
-Experience with the {tidyverse} and the `%>%` operator is a plus, but not required.
+The workshop is designed for those with some experience in R. It will be expected that you can perform basic data manipulation. Experience with the {tidyverse} and the `%>%` operator is a plus, but not required.
 
 ## Prework
 
 Before attending the workshop please have the following installed and configured on your machine.
 
-- Install recent versions of R and RStudio
+-   Install recent versions of R and RStudio
 
-- Install the most recent release of the {gtsummary} package.
+-   Install the most recent release of the {gtsummary} package.
 
 # Instructor
 
 ![](images/dan-circle.png){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Daniel D. Sjoberg" width="200"}
 
-[**Daniel D. Sjoberg**](https://www.danieldsjoberg.com/) (he/him) is a Senior Biostatistician at Memorial Sloan Kettering Cancer Center in New York City and a DrPH candidate in Biostatistics at Columbia University.
-His research interests include adaptive methods in clinical trials, precision medicine, and predictive modeling.
-He also enjoys R package development, creating many packages available on CRAN, R-Universe, and internally at MSKCC.
+[**Daniel D. Sjoberg**](https://www.danieldsjoberg.com/) (he/him) is a Senior Biostatistician at Memorial Sloan Kettering Cancer Center in New York City and a DrPH candidate in Biostatistics at Columbia University. His research interests include adaptive methods in clinical trials, precision medicine, and predictive modeling. He also enjoys R package development, creating many packages available on [CRAN](https://cran.r-project.org/web/packages/), [R-Universe](https://ddsjoberg.r-universe.dev/ui#packages), [GitHub](https://github.com/ddsjoberg), and internally at MSKCC. Daniel is the the winner of the 2021 American Statistical Association (ASA) Innovation in Statistical Programming and Analytics award.
