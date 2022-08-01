@@ -3,17 +3,17 @@ project:
 
 website:
   page-navigation: true
-  title: "Designing the Data Science Classroom"
-  description: "Homepage for rstudio::conf(2022) workshop"
-  site-url: "https://rstudio-conf-2022.github.io/teach-ds/"
+  title: "Clinical Reporting with {gtsummary}"
+  description: "Homepage for the R/Medicine 2022 Workshop"
+  site-url: "https://www.danieldsjoberg.com/R-Med-gtsummary-workshop/"
   
   repo-url: https://github.com/ddsjoberg/R-Med-gtsummary-workshop
   repo-actions: [edit, issue]
 
   opengraph: true
   twitter-card:
-    creator: "@minebocek"
-    image: "/images/twitter-card.png"
+    creator: "@statistishdan"
+    # image: "/images/twitter-card.png"
 
   page-footer:
     left: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
