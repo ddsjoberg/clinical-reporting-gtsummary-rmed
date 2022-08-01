@@ -3,10 +3,10 @@ on:
     branches: [main, master]
     tags: ['*']
 
-name: Deploy
+name: deploy
 
 jobs:
-  Deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: peaceiris/actions-gh-pages@v3
