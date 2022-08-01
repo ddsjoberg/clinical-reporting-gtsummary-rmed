@@ -26,54 +26,5 @@
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Prework",
     "text": "Prework\nBefore attending the workshop please have the following installed and configured on your machine.\n\nRecent versions of R and RStudio\nMost recent release of the gtsummary package."
-  },
-  {
-    "objectID": "index.html#rstudio-cloud",
-    "href": "index.html#rstudio-cloud",
-    "title": "Simply Reproducible: Clinical Reporting with {gtsummary}",
-    "section": "RStudio Cloud",
-    "text": "RStudio Cloud\nYou can join the RStudio Cloud workspace for this workshop at rstd.io/teach-ds-conf22-cloud."
-  },
-  {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "License",
-    "section": "",
-    "text": "This work is licensed under a Creative Commons Attribution 4.0 International License."
-  },
-  {
-    "objectID": "workshop/index.html",
-    "href": "workshop/index.html",
-    "title": "Reproducible Reporting with {gtsummary}",
-    "section": "",
-    "text": "knitr::opts_chunk$set(echo = TRUE, results = 'asis')\nlibrary(gtsummary)\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──\n\n\n✔ ggplot2 3.3.6     ✔ purrr   0.3.4\n✔ tibble  3.1.7     ✔ dplyr   1.0.9\n✔ tidyr   1.2.0     ✔ stringr 1.4.0\n✔ readr   2.1.2     ✔ forcats 0.5.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\nknit_print.gtsummary <- function(x, ...) {\n  gtsummary::as_gt(x) |> gt::as_raw_html()\n}\n\nregisterS3method(\"knit_print\", \"gtsummary\", knit_print.gtsummary)"
-  },
-  {
-    "objectID": "workshop/index.html#daniel-sjoberg",
-    "href": "workshop/index.html#daniel-sjoberg",
-    "title": "Reproducible Reporting with {gtsummary}",
-    "section": "Daniel Sjoberg",
-    "text": "Daniel Sjoberg\n danieldsjoberg.com\n @statistishdan\n linkedin.com/in/ddsjoberg/\n github.com/ddsjoberg"
-  },
-  {
-    "objectID": "workshop/index.html#acknowledgements",
-    "href": "workshop/index.html#acknowledgements",
-    "title": "Reproducible Reporting with {gtsummary}",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\n ADD SOMETHING ABOUT CONFERENCE SPONSERS?  This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA4.0)."
-  },
-  {
-    "objectID": "workshop/index.html#checklist",
-    "href": "workshop/index.html#checklist",
-    "title": "Reproducible Reporting with {gtsummary}",
-    "section": "Checklist",
-    "text": "Checklist\n\n R installed? Pretty recent?\nCurrent version 4.2.1\n RStudio installed?\nI am on version 2022.02.3+492 \n Have these packages?\n{gtsummary} {tidyverse}\ninstall.packages(c(\"gtsummary\", \"tidyverse\"))"
-  },
-  {
-    "objectID": "workshop/index.html#show-a-tbl",
-    "href": "workshop/index.html#show-a-tbl",
-    "title": "Reproducible Reporting with {gtsummary}",
-    "section": "Show a tbl",
-    "text": "Show a tbl\n\ntrial |> \n  tbl_summary(\n    by = trt, \n    include = c(age, grade)\n  )\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\n\n\n\n\nAge\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nUnknown\n\n\n7\n\n\n4\n\n\n\n\nGrade\n\n\n\n\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\n\n\n1 Median (IQR); n (%)"
   }
 ]
