@@ -34,7 +34,7 @@ If your answer to any of the following questions is “yes”, then this is the 
 
 - Do you want your workflow to be reproducible?
 
-- Are you often frustrated with the abundant amount of code required to create great-looking tables in R? 
+- Are you often frustrated with the immense amount of code required to create great-looking tables in R? 
 
 The workshop is designed for those with some experience in R.
 It will be expected that you can perform basic data manipulation.
