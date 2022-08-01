@@ -8,9 +8,7 @@ name: Deploy
 jobs:
   Deploy:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: peaceiris/actions-gh-pages@v3
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: "./_site"
