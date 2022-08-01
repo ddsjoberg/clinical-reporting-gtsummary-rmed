@@ -24,9 +24,29 @@ The package follows a tidy framework, making it easy to integrate with standard 
 
 ## Learning objectives
 
+Build, customize, and report tables often found in medical journals and other research-related publications.
+
 ## Is this course for me?
 
+If your answer to any of the following questions is “yes”, then this is the right workshop for you.
+
+- Do you make summary tables in R (data, survey data, regression models, time-to-event data, adverse event reports)?
+
+- Do you want your workflow to be reproducible?
+
+- Are you often frustrated with the abundant amount of code required to create great-looking tables in R? 
+
+The workshop is designed for those with some experience in R.
+It will be expected that you can perform basic data manipulation.
+Experience with the {tidyverse} and the `%>%` operator is a plus, but not required.
+
 ## Prework
+
+Before attending the workshop please have the following installed and configured on your machine.
+
+- Install recent versions of R and RStudio
+
+- Install the most recent release of the {gtsummary} package.
 
 # Instructor
 
