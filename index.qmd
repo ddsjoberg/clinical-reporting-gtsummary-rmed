@@ -1,80 +1,37 @@
 ---
-title: "Reproducible Reporting with {gtsummary}"
-author: "Daniel D. Sjoberg"
-footer:  "[Reproducible Reporting with {gtsummary}](https://www.danieldsjoberg.com/gtsummary/)"
-logo: "img/gtsummary-logo.png"
-format: 
-  revealjs: 
-    theme: [night, slides.scss]
-    highlight-style: a11y
-    transition: fade
-    slide-number: true
-    chalkboard: true
-execute:
-  freeze: auto
+title: "Clinical Reporting with {gtsummary}"
+subtitle: "R/Medicine 2022 Workshop"
 ---
 
-```{r}
-knitr::opts_chunk$set(echo = TRUE, results = 'asis')
-library(gtsummary)
-library(tidyverse)
+<!-- https://github.com/rstudio-conf-2022/teach-ds -->
 
-knit_print.gtsummary <- function(x, ...) {
-  gtsummary::as_gt(x) |> gt::as_raw_html()
-}
+------------------------------------------------------------------------
 
-registerS3method("knit_print", "gtsummary", knit_print.gtsummary)
-```
+🗓️ August 23, 2022 11:00am - 2:00pm EDT
 
-```{r font-awesome-color}
-# fill for font awesome icons
-fa_fill <- "#C7B41D"
-```
+🏨 Virtual
 
-# Introduction
+💥 FREE with [conference registration](https://events.linuxfoundation.org/r-medicine/register/) (between $10 and $50) 
 
-## Daniel Sjoberg
+------------------------------------------------------------------------
 
-`r fontawesome::fa("link", fill = fa_fill)` [danieldsjoberg.com](https://www.danieldsjoberg.com/)
+# Overview
 
-`r fontawesome::fa("twitter", fill = fa_fill)` [\@statistishdan](https://twitter.com/statistishdan)
+The **gtsummary** package provides an elegant and flexible way to create publication-ready summary tables in R.
+A critical part of the work of statisticians, data scientists, and analysts is summarizing data sets and regression models in R and publishing or sharing polished summary tables.
+The **gtsummary** package was created to streamline these everyday analysis tasks by allowing users to easily create reproducible summaries of data sets, regression models, survey data, and survival data with a simple interface and very little code.
+The package follows a tidy framework, making it easy to integrate with standard data workflows, and offers many table customization features through function arguments, helper functions, and custom themes.
 
-`r fontawesome::fa("linkedin", fill = fa_fill)` [linkedin.com/in/ddsjoberg/](https://www.linkedin.com/in/ddsjoberg/)
+## Learning objectives
 
-`r fontawesome::fa("github", fill = fa_fill)` [github.com/ddsjoberg](https://github.com/ddsjoberg/)
+## Is this course for me?
 
-## Acknowledgements
+## Prework
 
-<br> ADD SOMETHING ABOUT CONFERENCE SPONSERS? <br><br> This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA4.0).
+# Instructor
 
-## Checklist
+![](images/dan.jpg){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Daniel D. Sjoberg" width="200"}
 
-<br>
-
-`r fontawesome::fa("check", fill = fa_fill)` R installed? Pretty recent?
-
-    Current version `r stringr::word(R.version.string, 3, 3)`
-
-`r fontawesome::fa("check", fill = fa_fill)` RStudio installed?
-
-    I am on version 2022.02.3+492 
-
-`r fontawesome::fa("check", fill = fa_fill)` Have these packages?
-
-    {gtsummary} {tidyverse}
-
-```r
-install.packages(c("gtsummary", "tidyverse"))
-```
-
-## Show a tbl
-
-```{r}
-#| output-location: "column-fragment"
-trial |> 
-  tbl_summary(
-    by = trt, 
-    include = c(age, grade)
-  )
-```
-
+[**Daniel D. Sjoberg**](https://www.danieldsjoberg.com/) (he/him) is a Senior Biostatistician at Memorial Sloan Kettering Cancer Center in New York City and a DrPH candidate in Biostatistics at Columbia University.
+His research interests include adaptive methods in clinical trials, precision medicine, and predictive modeling.
+He also enjoys R package development, creating many packages available on CRAN, R-Universe, and internally at MSKCC.
