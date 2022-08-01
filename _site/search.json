@@ -26,5 +26,12 @@
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Prework",
     "text": "Prework\nBefore attending the workshop please have the following installed and configured on your machine.\n\nRecent versions of R and RStudio\nMost recent release of the gtsummary package."
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "License",
+    "section": "",
+    "text": "This work is licensed under a Creative Commons Attribution 4.0 International License."
   }
 ]
