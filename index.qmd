@@ -50,7 +50,7 @@ Before attending the workshop please have the following installed and configured
 
 # Instructor
 
-![](images/dan.jpg){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Daniel D. Sjoberg" width="200"}
+![](images/dan-circle.png){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Daniel D. Sjoberg" width="200"}
 
 [**Daniel D. Sjoberg**](https://www.danieldsjoberg.com/) (he/him) is a Senior Biostatistician at Memorial Sloan Kettering Cancer Center in New York City and a DrPH candidate in Biostatistics at Columbia University.
 His research interests include adaptive methods in clinical trials, precision medicine, and predictive modeling.
