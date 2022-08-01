@@ -1,1 +1,1 @@
-Sitemap: https://www.danieldsjoberg.com/R-Med-gtsummary-workshop/sitemap.xml
+Sitemap: https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/sitemap.xml
