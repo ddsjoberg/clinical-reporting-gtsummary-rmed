@@ -6,6 +6,7 @@ website:
   title: "Clinical Reporting with {gtsummary}"
   description: "Homepage for the R/Medicine 2022 Workshop"
   site-url: "https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/"
+  favicon: images/gtsummary-logo.png
   
   repo-url: https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed
   repo-actions: [edit, issue]
