@@ -6,8 +6,8 @@ by Daniel D. Sjoberg
 
 ------------------------------------------------------------------------
 
-:spiral_calendar: J August 23, 2022 | 11:00am - 2:00pm EDT\
-:hotel: Virtual 3\
+:spiral_calendar: August 23, 2022 | 11:00am - 2:00pm EDT\
+:hotel: Virtual \
 :sassy_man: **FREE** with [conference registration](https://events.linuxfoundation.org/r-medicine/register/) (between $10 and $50)
 
 ------------------------------------------------------------------------
