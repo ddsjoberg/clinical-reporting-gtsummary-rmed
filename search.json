@@ -18,7 +18,7 @@
     "href": "index.html#is-this-course-for-me",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Is this course for me?",
-    "text": "Is this course for me?\nIf your answer to any of the following questions is “yes”, then this is the right workshop for you.\n\nDo you make summary tables in R (data, survey data, regression models, time-to-event data, adverse event reports)?\nDo you want your workflow to be reproducible?\nAre you often frustrated with the abundant amount of code required to create great-looking tables in R?\n\nThe workshop is designed for those with some experience in R. It will be expected that you can perform basic data manipulation. Experience with the {tidyverse} and the %>% operator is a plus, but not required."
+    "text": "Is this course for me?\nIf your answer to any of the following questions is “yes”, then this is the right workshop for you.\n\nDo you make summary tables in R (data, survey data, regression models, time-to-event data, adverse event reports)?\nDo you want your workflow to be reproducible?\nAre you often frustrated with the immense amount of code required to create great-looking tables in R?\n\nThe workshop is designed for those with some experience in R. It will be expected that you can perform basic data manipulation. Experience with the {tidyverse} and the %>% operator is a plus, but not required."
   },
   {
     "objectID": "index.html#prework",
