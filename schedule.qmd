@@ -1,5 +1,6 @@
 ---
-title: "Schedule"
+title: "Course Material"
+editor: source
 ---
 
 ![](images/coming-soon.gif)

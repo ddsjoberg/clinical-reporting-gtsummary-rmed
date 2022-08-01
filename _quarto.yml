@@ -22,7 +22,7 @@ website:
     background: "#2e3846"
 
   sidebar:
-    background: "#2e3846"
+    background: "#708090"
     logo: "images/trans - gt.png"
     pinned: true
     align: center

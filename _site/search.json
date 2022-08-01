@@ -25,7 +25,7 @@
     "href": "index.html#prework",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Prework",
-    "text": "Prework\nBefore attending the workshop please have the following installed and configured on your machine.\n\nInstall recent versions of R and RStudio\nInstall the most recent release of the {gtsummary} package."
+    "text": "Prework\nBefore attending the workshop please have the following installed and configured on your machine.\n\nRecent versions of R and RStudio\nMost recent release of the gtsummary package."
   },
   {
     "objectID": "index.html#rstudio-cloud",

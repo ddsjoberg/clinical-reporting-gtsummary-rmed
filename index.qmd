@@ -1,6 +1,7 @@
 ---
 title: "Clinical Reporting with {gtsummary}"
 subtitle: "R/Medicine 2022 Workshop"
+editor: source
 ---
 
 <!-- https://github.com/rstudio-conf-2022/teach-ds -->
@@ -17,7 +18,10 @@ subtitle: "R/Medicine 2022 Workshop"
 
 # Overview
 
-The **gtsummary** package provides an elegant and flexible way to create publication-ready summary tables in R. A critical part of the work of statisticians, data scientists, and analysts is summarizing data sets and regression models in R and publishing or sharing polished summary tables. The **gtsummary** package was created to streamline these everyday analysis tasks by allowing users to easily create reproducible summaries of data sets, regression models, survey data, and survival data with a simple interface and very little code. The package follows a tidy framework, making it easy to integrate with standard data workflows, and offers many table customization features through function arguments, helper functions, and custom themes.
+The **gtsummary** package provides an elegant and flexible way to create publication-ready summary tables in **R**. 
+A critical part of the work of statisticians, data scientists, and analysts is summarizing data sets and regression models in R and publishing or sharing polished summary tables.
+The **gtsummary** package was created to streamline these everyday analysis tasks by allowing users to easily create reproducible summaries of data sets, regression models, survey data, and survival data with a simple interface and very little code.
+The package follows a tidy framework, making it easy to integrate with standard data workflows, and offers many table customization features through function arguments, helper functions, and custom themes.
 
 ## Learning objectives
 
@@ -33,15 +37,17 @@ If your answer to any of the following questions is "yes", then this is the righ
 
 -   Are you often frustrated with the immense amount of code required to create great-looking tables in R?
 
-The workshop is designed for those with some experience in R. It will be expected that you can perform basic data manipulation. Experience with the {tidyverse} and the `%>%` operator is a plus, but not required.
+The workshop is designed for those with some experience in R. 
+It will be expected that you can perform basic data manipulation.
+Experience with the {tidyverse} and the `%>%` operator is a plus, but not required.
 
 ## Prework
 
 Before attending the workshop please have the following installed and configured on your machine.
 
--   Install recent versions of R and RStudio
+-   Recent versions of **R** and **RStudio**
 
--   Install the most recent release of the {gtsummary} package.
+-   Most recent release of the **gtsummary** package.
 
 # Instructor
 
