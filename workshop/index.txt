@@ -63,7 +63,7 @@ fa_fill <- "#C7B41D"
 
     {gtsummary} {tidyverse}
 
-```r
+``` r
 install.packages(c("gtsummary", "tidyverse"))
 ```
 
@@ -77,4 +77,3 @@ trial |>
     include = c(age, grade)
   )
 ```
-

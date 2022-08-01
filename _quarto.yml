@@ -5,15 +5,15 @@ website:
   page-navigation: true
   title: "Clinical Reporting with {gtsummary}"
   description: "Homepage for the R/Medicine 2022 Workshop"
-  site-url: "https://www.danieldsjoberg.com/R-Med-gtsummary-workshop/"
+  site-url: "https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/"
   
-  repo-url: https://github.com/ddsjoberg/R-Med-gtsummary-workshop
+  repo-url: https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed
   repo-actions: [edit, issue]
 
   opengraph: true
   twitter-card:
     creator: "@statistishdan"
-    # image: "/images/twitter-card.png"
+    image: "/images/gtsummary-logo.jpg"
 
   page-footer:
     left: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
@@ -27,7 +27,7 @@ website:
     align: center
     tools:
       - icon: github
-        href: https://github.com/ddsjoberg/R-Med-gtsummary-workshop
+        href: https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed
         text: GitHub
     style: docked
     contents:
