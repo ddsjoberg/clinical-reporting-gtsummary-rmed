@@ -12,7 +12,7 @@ by Daniel D. Sjoberg
 
 ------------------------------------------------------------------------
 
-This repository contains materials for the "Designing the Data Science Classroom" workshop at rstudio::conf(2022). See [https://rstd.io/teach-ds-conf22](rstd.io/teach-ds-conf22) for rendered workshop materials.
+This repository contains materials for the "Clinical Reporting with {gtsummary}" workshop at R/Medicine 2022. See [https://www.danieldsjoberg.com/R-Med-gtsummary-workshop/](https://www.danieldsjoberg.com/R-Med-gtsummary-workshop/) for rendered workshop materials.
 
 ------------------------------------------------------------------------
 
