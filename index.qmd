@@ -12,7 +12,9 @@ editor: source
 
 🏨 Virtual
 
-💥 **FREE** with [conference registration](https://events.linuxfoundation.org/r-medicine/register/) (between \$10 and \$50)
+💥 **FREE** with [conference registration](https://events.linuxfoundation.org/r-medicine/register/) (\$10 to \$50)
+
+📝 Register for workshop **and** conference
 
 ------------------------------------------------------------------------
 
