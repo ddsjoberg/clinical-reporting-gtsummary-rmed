@@ -25,7 +25,7 @@
     "href": "index.html#prework",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Prework",
-    "text": "Prework\nBefore attending the workshop please have the following installed and configured on your machine.\n\nRecent version of R\nRecent version of RStudio\nMost recent release of the gtsummary and other packages used in workshop.\ninstall.packages(c(\"gtsummary\", \"tidyverse\", \"labelled\"))"
+    "text": "Prework\nBefore attending the workshop please have the following installed and configured on your machine.\n\nRecent version of R\nRecent version of RStudio\nMost recent release of the gtsummary and other packages used in workshop.\ninstall.packages(c(\"gtsummary\", \"tidyverse\", \"labelled\", \"causaldata\", \"skimr\"))"
   },
   {
     "objectID": "license.html",
@@ -35,57 +35,29 @@
     "text": "This work is licensed under a Creative Commons Attribution 4.0 International License."
   },
   {
-    "objectID": "slides/index.html#daniel-sjoberg",
-    "href": "slides/index.html#daniel-sjoberg",
-    "title": "Reproducible Reporting with {gtsummary}",
-    "section": "Daniel Sjoberg",
-    "text": "Daniel Sjoberg\n danieldsjoberg.com\n @statistishdan\n linkedin.com/in/ddsjoberg/\n github.com/ddsjoberg"
-  },
-  {
-    "objectID": "slides/index.html#acknowledgements",
-    "href": "slides/index.html#acknowledgements",
-    "title": "Reproducible Reporting with {gtsummary}",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\n ADD SOMETHING ABOUT CONFERENCE SPONSERS?  This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA4.0)."
-  },
-  {
-    "objectID": "slides/index.html#checklist",
-    "href": "slides/index.html#checklist",
-    "title": "Reproducible Reporting with {gtsummary}",
-    "section": "Checklist",
-    "text": "Checklist\n\n R installed? Pretty recent?\nCurrent version 4.2.1\n RStudio installed?\nI am on version 2022.02.3+492 \n Have these packages?\n{gtsummary} {tidyverse}\ninstall.packages(c(\"gtsummary\", \"tidyverse\"))"
-  },
-  {
-    "objectID": "slides/index.html#show-a-tbl",
-    "href": "slides/index.html#show-a-tbl",
-    "title": "Reproducible Reporting with {gtsummary}",
-    "section": "Show a tbl",
-    "text": "Show a tbl\n\n\ntrial |> \n  tbl_summary(\n    by = trt, \n    include = c(age, grade)\n  )\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\n\n\n\n\nAge\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nUnknown\n\n\n7\n\n\n4\n\n\n\n\nGrade\n\n\n\n\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\n\n\n1 Median (IQR); n (%)\n\n\n\n\n\n\n\n\n\n\nReproducible Reporting with {gtsummary}"
-  },
-  {
-    "objectID": "slides/01-slides-intro.html#daniel-sjoberg",
-    "href": "slides/01-slides-intro.html#daniel-sjoberg",
+    "objectID": "slides/slides-01-intro.html#daniel-sjoberg",
+    "href": "slides/slides-01-intro.html#daniel-sjoberg",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Daniel Sjoberg",
     "text": "Daniel Sjoberg\n\n\n danieldsjoberg.com\n @statistishdan\n linkedin.com/in/ddsjoberg/\n github.com/ddsjoberg"
   },
   {
-    "objectID": "slides/01-slides-intro.html#acknowledgements",
-    "href": "slides/01-slides-intro.html#acknowledgements",
+    "objectID": "slides/slides-01-intro.html#acknowledgements",
+    "href": "slides/slides-01-intro.html#acknowledgements",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Acknowledgements",
     "text": "Acknowledgements\n ADD SOMETHING ABOUT CONFERENCE SPONSERS?  This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA4.0)."
   },
   {
-    "objectID": "slides/01-slides-intro.html#checklist",
-    "href": "slides/01-slides-intro.html#checklist",
+    "objectID": "slides/slides-01-intro.html#checklist",
+    "href": "slides/slides-01-intro.html#checklist",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Checklist",
     "text": "Checklist\n\n R installed? Pretty recent?\nCurrent version 4.2.1\n RStudio installed?\nI am on version 2022.02.3+492 \n Have these packages?\n{gtsummary} {tidyverse}\ninstall.packages(c(\"gtsummary\", \"tidyverse\"))"
   },
   {
-    "objectID": "slides/01-slides-intro.html#show-a-tbl",
-    "href": "slides/01-slides-intro.html#show-a-tbl",
+    "objectID": "slides/slides-01-intro.html#show-a-tbl",
+    "href": "slides/slides-01-intro.html#show-a-tbl",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Show a tbl",
     "text": "Show a tbl\n\n\ntrial |> \n  tbl_summary(\n    by = trt, \n    include = c(age, grade)\n  )\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\n\n\n\n\nAge\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nUnknown\n\n\n7\n\n\n4\n\n\n\n\nGrade\n\n\n\n\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\n\n\n1 Median (IQR); n (%)\n\n\n\n\n\n\n\n\n\n\nClinical Reporting with {gtsummary}"
