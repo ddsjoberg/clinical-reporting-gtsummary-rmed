@@ -5,5 +5,21 @@ editor: source
 
 ![](images/coming-soon.gif)
 ```{r, echo=FALSE}
+# TODO: REMOVE THIS WHEN COURSE MATERIAL IS READY!
 knitr::knit_exit()
+```
+
+## Slides
+
+[View slides in full screen](../slides/index.html)
+
+```{=html}
+<iframe class="slide-deck" src="../slides/" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
+## Exercises
+
+Download exercises with 
+
+```r
+usethis::use_course("https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/raw/main/exercises/exercises.zip")
 ```
