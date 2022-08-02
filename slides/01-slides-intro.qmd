@@ -34,6 +34,9 @@ fa_fill <- "#384048"
 
 ## Daniel Sjoberg
 
+:::: {.columns}
+
+::: {.column width="60%"}
 `r fontawesome::fa("link", fill = fa_fill)` [danieldsjoberg.com](https://www.danieldsjoberg.com/)
 
 `r fontawesome::fa("twitter", fill = fa_fill)` [\@statistishdan](https://twitter.com/statistishdan)
@@ -41,6 +44,14 @@ fa_fill <- "#384048"
 `r fontawesome::fa("linkedin", fill = fa_fill)` [linkedin.com/in/ddsjoberg/](https://www.linkedin.com/in/ddsjoberg/)
 
 `r fontawesome::fa("github", fill = fa_fill)` [github.com/ddsjoberg](https://github.com/ddsjoberg/)
+:::
+
+::: {.column width="40%"}
+![](img/dan-fire-island.jpg)
+:::
+
+::::
+
 
 ## Acknowledgements
 
