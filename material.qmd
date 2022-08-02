@@ -4,3 +4,6 @@ editor: source
 ---
 
 ![](images/coming-soon.gif)
+```{r, echo=FALSE}
+knitr::knit_exit()
+```

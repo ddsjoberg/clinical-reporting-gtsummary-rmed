@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/index.html</loc>
-    <lastmod>2022-08-02T13:00:10.919Z</lastmod>
+    <lastmod>2022-08-02T13:15:48.912Z</lastmod>
   </url>
   <url>
     <loc>https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/material.html</loc>
-    <lastmod>2022-08-02T12:35:16.827Z</lastmod>
+    <lastmod>2022-08-02T13:16:17.695Z</lastmod>
   </url>
   <url>
     <loc>https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/license.html</loc>
@@ -15,5 +15,9 @@
   <url>
     <loc>https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/slides/slides-01-intro.html</loc>
     <lastmod>2022-08-02T13:00:09.232Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/slides/index.html</loc>
+    <lastmod>2022-08-02T13:10:55.660Z</lastmod>
   </url>
 </urlset>
