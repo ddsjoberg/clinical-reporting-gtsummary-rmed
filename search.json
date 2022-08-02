@@ -25,7 +25,7 @@
     "href": "index.html#prework",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Prework",
-    "text": "Prework\nBefore attending the workshop please have the following installed and configured on your machine.\n\nRecent version of R\nRecent version of RStudio\nMost recent release of the gtsummary and other packages used in workshop.\ninstall.packages(c(\"gtsummary\", \"tidyverse\", \"labelled\", \"causaldata\", \"skimr\"))"
+    "text": "Prework\nBefore attending the workshop please have the following installed and configured on your machine.\n\nRecent version of R\nRecent version of RStudio\nMost recent release of the gtsummary and other packages used in workshop.\ninstall.packages(c(\"gtsummary\", \"tidyverse\", \"labelled\", \"usethis\", \"causaldata\", \"skimr\"))"
   },
   {
     "objectID": "license.html",
@@ -74,14 +74,14 @@
     "href": "slides/index.html#acknowledgements",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Acknowledgements",
-    "text": "Acknowledgements\n ADD SOMETHING ABOUT CONFERENCE SPONSERS?  This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA4.0)."
+    "text": "Acknowledgements\n\n\n\n\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA4.0)."
   },
   {
     "objectID": "slides/index.html#checklist",
     "href": "slides/index.html#checklist",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Checklist",
-    "text": "Checklist\n\n R installed? Pretty recent?\nCurrent version 4.2.1\n RStudio installed?\nI am on version 2022.02.3+492 \n Have these packages?\n{gtsummary} {tidyverse}\ninstall.packages(c(\"gtsummary\", \"tidyverse\"))"
+    "text": "Checklist\n\n R installed? Pretty recent?\nCurrent version 4.2.1\n RStudio installed?\nI am on version 2022.07.1+554 \n Have these packages?\ninstall.packages(c(\"gtsummary\", \"tidyverse\", \"labelled\", \"usethis\", \"causaldata\", \"skimr\"))"
   },
   {
     "objectID": "slides/index.html#show-a-tbl",
@@ -96,5 +96,19 @@
     "title": "Material",
     "section": "",
     "text": "knitr::knit_exit()"
+  },
+  {
+    "objectID": "material.html#slides",
+    "href": "material.html#slides",
+    "title": "Material",
+    "section": "Slides",
+    "text": "Slides\nView slides in full screen"
+  },
+  {
+    "objectID": "material.html#exercises",
+    "href": "material.html#exercises",
+    "title": "Material",
+    "section": "Exercises",
+    "text": "Exercises\nDownload exercises with\nusethis::use_course(\"https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/raw/main/exercises/exercises.zip\")"
   }
 ]
