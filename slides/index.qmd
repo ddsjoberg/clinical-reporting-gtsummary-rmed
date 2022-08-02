@@ -1,7 +1,7 @@
 ---
 title: "Clinical Reporting with {gtsummary}"
 author: "Daniel D. Sjoberg"
-footer:  "[Clinical Reporting with {gtsummary}](https://www.danieldsjoberg.com/gtsummary/)"
+footer:  "[Clinical Reporting with {gtsummary}](https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/)"
 logo: "img/gtsummary-logo.png"
 editor: source
 format: 
@@ -13,6 +13,8 @@ format:
 execute:
   freeze: auto
 ---
+
+## Acknowledgements
 
 ```{r}
 knitr::opts_chunk$set(echo = TRUE, results = 'asis')
@@ -29,12 +31,10 @@ registerS3method("knit_print", "gtsummary", knit_print.gtsummary)
 fa_fill <- "#606060"
 ```
 
-## Acknowledgements
-
 :::: {.columns}
 
 ::: {.column width="60%"}
-<img src="img/r-med-logo-pride.png" alt="drawing" width="75%"/>
+<img src="img/r-med-logo-pride.png" alt="drawing" width="70%"/>
 :::
 
 ::: {.column width="40%"}

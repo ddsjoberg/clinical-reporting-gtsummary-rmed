@@ -17,10 +17,10 @@ website:
   opengraph: true
   twitter-card:
     creator: "@statistishdan"
-    image: "/images/gtsummary-logo.jpg"
+    image: "/images/two-hex-logo.png"
 
   page-footer:
-    left: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+    left: "This page is built with ❤️ and [Quarto](https://quarto.org/). Inspired by [@minebocek](https://twitter.com/minebocek)"
     right: "&copy; Copyright 2022, Daniel D. Sjoberg"
     background: "#708090"
 
