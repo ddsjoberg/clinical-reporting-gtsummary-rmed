@@ -47,10 +47,16 @@ Experience with the {tidyverse} and the `%>%` operator is a plus, but not requir
 
 Before attending the workshop please have the following installed and configured on your machine.
 
--   Recent versions of **R** and **RStudio**
+-   Recent version of **R** 
 
--   Most recent release of the **gtsummary** package.
+-   Recent version of **RStudio**
 
+-   Most recent release of the **gtsummary** and other packages used in workshop.
+
+    ```r
+    install.packages(c("gtsummary", "tidyverse", "labelled"))
+    ```
+  
 # Instructor
 
 ![](images/dan-circle.png){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Daniel D. Sjoberg" width="200"}
