@@ -11,8 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### The Data
 
-Using the National Health and Nutrition Examination Survey Data (`nhefs`), we will assess whether quitting smoking leads to a decrease in the risk of death.
-We'll also investigate potential confounding factors--age, sex, blood pressure, diabetes, and exercise.
+Using the National Health and Nutrition Examination Survey Data (`nhefs`), we will assess whether quitting smoking leads to a decrease in the risk of death. We'll also investigate potential confounding factors--age, sex, blood pressure, diabetes, and exercise.
 
 To begin, let's pare down the data frame and assign column labels.
 
@@ -46,7 +45,7 @@ df_nhefs <-
       fct_rev()
   ) %>%
   labelled::set_variable_labels(
-    death = "Particiapnt Passed Away",
+    death = "Participant Passed Away",
     qsmk = "Quit Smoking",
     age = "Age",
     sex = "Sex",
@@ -60,9 +59,7 @@ skimr::skim(df_nhefs)
 
 # Exercise 2
 
-Prepare a table describing the cohort by whether or not the participant quit smoking.
-Do not include death in the summary table.
-Consider using the gtsummary functions that build on a summary table.
+Prepare a table describing the cohort by whether or not the participant quit smoking. Do not include death in the summary table. Consider using the gtsummary functions that build on a summary table.
 
 ```{r cohort_desc}
 gts_patient_characteristics <-
@@ -113,8 +110,7 @@ gts_death_adjusted
 
 # Exercise 4
 
-Build a logistic regression model with death as the outcome. 
-Include smoking and the other variables as covariates.
+Build a logistic regression model with death as the outcome. Include smoking and the other variables as covariates.
 
 ```{r regression}
 mod <- glm(death ~ qsmk + age + sex + sbp + dbp + exercise, 
@@ -148,6 +144,4 @@ median_age_quit <-
 
 --
 
-The analysis assessing the relationship between quitting smoking and subsequent death within the next 20 years included `r nrow(df_nhefs)` participants.
-The median ago among those who quit was higher compared to those who did not (`r inline_text()`)
-
+The analysis assessing the relationship between quitting smoking and subsequent death within the next 20 years included `r nrow(df_nhefs)` participants. The median ago among those who quit was higher compared to those who did not (`r inline_text()`)
