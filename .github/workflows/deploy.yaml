@@ -15,19 +15,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      # - name: Install R
-      #   uses: r-lib/actions/setup-r@v2
-      #   with:
-      #     use-public-rspm: true
-          
-      # - name: Cache packages
-      #   uses: actions/cache@v1
-      #   with:
-      #     path: ${{ env.RENV_PATHS_ROOT }}
-      #     key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-renv-  
       
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -51,18 +38,3 @@ jobs:
         with:
           target: gh-pages
    
-   
-   
-
-
-
-          
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v3
-#       - uses: peaceiris/actions-gh-pages@v3
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           publish_dir: ./_site
