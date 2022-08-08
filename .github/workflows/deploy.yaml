@@ -5,6 +5,9 @@ on:
 
 name: deploy
 
+env:
+  RENV_PATHS_ROOT: ~/.local/share/renv
+  
 jobs:
   quarto-publish:
     name: Publish with Quarto
@@ -28,7 +31,15 @@ jobs:
       
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-        
+
+      - name: Cache packages
+        uses: actions/cache@v1
+        with:
+          path: ${{ env.RENV_PATHS_ROOT }}
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
+            
       - name: Restore packages
         shell: Rscript {0}
         run: |
