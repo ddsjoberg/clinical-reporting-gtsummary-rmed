@@ -2,7 +2,7 @@ project:
   type: website
   render:
     - "*.qmd"
-    - "!exercises/"
+    - "!exercises/exercises.Rmd"
     
 website:
   page-navigation: true
