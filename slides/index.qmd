@@ -31,7 +31,7 @@ registerS3method("knit_print", "gtsummary", knit_print.gtsummary)
 fa_fill <- "#606060"
 ```
 
-:::: {.columns}
+:::: {.columns .v-center-container}
 
 ::: {.column width="60%"}
 <img src="img/r-med-logo-pride.png" alt="drawing" width="70%"/>
@@ -46,7 +46,7 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 
 ## Daniel Sjoberg
 
-:::: {.columns}
+:::: {.columns .v-center-container}
 
 ::: {.column width="60%"}
 `r fontawesome::fa("link", fill = fa_fill)` [danieldsjoberg.com](https://www.danieldsjoberg.com/)
