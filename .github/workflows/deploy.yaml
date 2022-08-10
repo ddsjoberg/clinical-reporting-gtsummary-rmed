@@ -49,6 +49,6 @@ jobs:
           git config --global user.name "GitHub Actions User"
           git add exercises/exercises.zip
           git commit -am "adding exercises.zip"
-          git push
+          git push -f
           
           
