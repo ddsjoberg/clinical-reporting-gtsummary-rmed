@@ -4,9 +4,13 @@ editor: source
 ---
 
 ![](images/coming-soon.gif)
+
+<p style="opacity: 0.5;color:#FFFFFF">
+</p>
+
 ```{r, echo=FALSE}
 # TODO: REMOVE THIS WHEN COURSE MATERIAL IS READY!
-knitr::knit_exit()
+# knitr::knit_exit()
 ```
 
 ## Slides
@@ -23,3 +27,6 @@ Download exercises with
 ```r
 usethis::use_course("https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/raw/main/exercises/exercises.zip")
 ```
+
+Solutions are available [here](../exercises/solutions.html).
+

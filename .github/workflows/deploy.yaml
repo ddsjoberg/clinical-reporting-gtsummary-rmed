@@ -37,4 +37,18 @@ jobs:
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
-   
+          
+      - name: Zip Exercises
+        shell: Rscript {0}
+        run: |
+          utils::zip(here::here("exercises/exercises"), files = c(here::here("exercises/solutions.qmd")))      
+          
+      - name: Commit files
+        run: |
+          git config --global user.email "ghau@example.com"
+          git config --global user.name "GitHub Actions User"
+          git add exercises/exercises.zip
+          git commit -am "adding exercises.zip"
+          git push
+          
+          
