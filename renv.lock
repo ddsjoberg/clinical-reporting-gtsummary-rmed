@@ -427,6 +427,12 @@
       "Hash": "e3058e4ac77f4fa686f68a1838d5b715",
       "Requirements": []
     },
+    "here": {
+      "Package": "here",
+      "Version": "1.0.1",
+      "Source": "Repository",
+      "Requirements": []
+    },
     "highr": {
       "Package": "highr",
       "Version": "0.9",
