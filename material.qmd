@@ -10,7 +10,7 @@ editor: source
 
 ```{r, echo=FALSE}
 # TODO: REMOVE THIS WHEN COURSE MATERIAL IS READY!
-# knitr::knit_exit()
+knitr::knit_exit()
 ```
 
 ## Slides
