@@ -54,7 +54,9 @@ Before attending the workshop please have the following installed and configured
 -   Most recent release of the [**gtsummary**](https://www.danieldsjoberg.com/gtsummary/) and other packages used in workshop.
 
     ```r
-    install.packages(c("gtsummary", "tidyverse", "labelled", "usethis", "causaldata", "skimr", "car"))
+    instll_pkgs <- 
+      c("gtsummary", "tidyverse", "labelled", "usethis", "causaldata", "fs", "skimr", "car")
+    install.packages(instll_pkgs)
     ```
   
 # Instructor
