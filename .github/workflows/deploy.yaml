@@ -41,7 +41,7 @@ jobs:
       - name: Zip Exercises
         shell: Rscript {0}
         run: |
-          utils::zip(here::here("exercises/exercises"), files = c(here::here("exercises/solutions.qmd")))      
+          utils::zip(here::here("exercises/exercises"), files = c(here::here("exercises/exercises.qmd"), here::here("clinical-reporting-gtsummary-rmed.Rproj")))      
           
       - name: Commit files
         run: |

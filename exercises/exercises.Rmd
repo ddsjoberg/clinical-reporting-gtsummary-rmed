@@ -1,0 +1,92 @@
+---
+title: "Clinical Reporting with gtsummary"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Solution available at https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/exercises/solutions.html
+
+# Exercise 1
+
+### The Data
+
+Using the National Health and Nutrition Examination Survey Data (`nhefs`), we will assess whether quitting smoking leads to a decrease in the risk of death. We'll also investigate potential confounding factors--age, sex, blood pressure, diabetes, and exercise.
+
+To begin, let's pare down the data frame and assign column labels.
+
+```{r data_prep}
+library(gtsummary)
+library(tidyverse)
+theme_gtsummary_compact()
+
+df_nhefs <-
+  causaldata::nhefs %>%
+  select(death, qsmk, age, sex, sbp, dbp, exercise) %>%
+  drop_na() %>%
+  mutate(
+    qsmk =
+      factor(
+        qsmk,
+        levels = 0:1,
+        labels = c("Did not Quit", "Quit")
+      ),
+    sex = 
+      case_when(
+        sex == 0 ~ "Male",
+        sex == 1 ~ "Female"
+      ),
+    exercise = 
+      factor(
+        exercise,
+        levels = 0:2,
+        labels = c("Much exercise", "Moderate exercise", "Little or no exercise")
+      ) %>%
+      fct_rev()
+  ) %>%
+  labelled::set_variable_labels(
+    #>>>> ADD VARIABLE LABELS HERE
+  )
+
+skimr::skim(df_nhefs)
+```
+
+# Exercise 2
+
+Prepare a table describing the cohort by whether or not the participant quit smoking. Do not include death in the summary table. Consider using the gtsummary functions that build on a summary table.
+
+```{r cohort_desc}
+
+```
+
+# Exercise 3
+
+Is there a difference in death rates by smoking status?
+
+Prepare an unadjusted and adjusted rate difference in the table.
+
+```{r death_rate_diff}
+
+```
+
+# Exercise 4
+
+Build a logistic regression model with death as the outcome. Include smoking and the other variables as covariates. Summarize your regression model in a table, reporting the odds ratio, its confidence interval, and p-value.
+
+```{r regression}
+
+```
+
+# Exercise 5
+
+Write a brief summary of the results above using `inline_text()` to report values from the tables directly into the markdown report.
+
+```{r inline}
+#>>>> USE inline_text() TO DEFINE A FEW STATISTICS TO REPORT IN THE TEXT BELOW
+```
+
+------------------------------------------------------------------------
+
+WRITE A SUMMARY OF THE RESULTS REPORTING STATISTICS FROM `inline_text()`.
