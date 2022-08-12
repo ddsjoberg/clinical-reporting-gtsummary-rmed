@@ -42,6 +42,20 @@
     "text": "This work is licensed under a Creative Commons Attribution 4.0 International License."
   },
   {
+    "objectID": "material.html",
+    "href": "material.html",
+    "title": "Material",
+    "section": "",
+    "text": "Download exercises with\nusethis::use_zip(\n  \"https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/raw/main/exercises/exercises.zip\",\n  destdir = fs::path_home()\n)\nSolutions available here."
+  },
+  {
+    "objectID": "material.html#slides",
+    "href": "material.html#slides",
+    "title": "Material",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
     "objectID": "slides/index.html#acknowledgements",
     "href": "slides/index.html#acknowledgements",
     "title": "Clinical Reporting with {gtsummary}",
