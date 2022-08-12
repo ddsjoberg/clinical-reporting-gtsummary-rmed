@@ -32,7 +32,7 @@
     "href": "index.html#prework",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Prework",
-    "text": "Prework\nBefore attending the workshop please have the following installed and configured on your machine.\n\nRecent version of R\nRecent version of RStudio\nMost recent release of the gtsummary and other packages used in workshop.\ninstall.packages(c(\"gtsummary\", \"tidyverse\", \"labelled\", \"usethis\", \"causaldata\", \"skimr\", \"car\"))"
+    "text": "Prework\nBefore attending the workshop please have the following installed and configured on your machine.\n\nRecent version of R\nRecent version of RStudio\nMost recent release of the gtsummary and other packages used in workshop.\ninstll_pkgs <- \n  c(\"gtsummary\", \"tidyverse\", \"labelled\", \"usethis\", \"causaldata\", \"fs\", \"skimr\", \"car\")\ninstall.packages(instll_pkgs)"
   },
   {
     "objectID": "license.html",
