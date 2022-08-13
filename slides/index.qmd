@@ -69,19 +69,22 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 
 <br>
 
-`r fontawesome::fa("check", fill = fa_fill)` R installed? Pretty recent?
+`r fontawesome::fa("check", fill = fa_fill)` Install recent R release
 
     Current version `r stringr::word(R.version.string, 3, 3)`
 
-`r fontawesome::fa("check", fill = fa_fill)` RStudio installed?
+`r fontawesome::fa("check", fill = fa_fill)` Install RStudio
 
     I am on version 2022.07.1+554 
 
-`r fontawesome::fa("check", fill = fa_fill)` Have these packages?
+`r fontawesome::fa("check", fill = fa_fill)` Install packages
 
 ``` r
 install.packages(c("gtsummary", "tidyverse", "labelled", "usethis", "causaldata", "skimr"))
 ```
+
+`r fontawesome::fa("check", fill = fa_fill)` Ensure you can knit Rmarkdown files
+
 
 ## Show a tbl
 
