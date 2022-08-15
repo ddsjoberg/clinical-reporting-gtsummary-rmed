@@ -42,6 +42,27 @@
     "text": "This work is licensed under a Creative Commons Attribution 4.0 International License."
   },
   {
+    "objectID": "material.html",
+    "href": "material.html",
+    "title": "Material",
+    "section": "",
+    "text": "View slides in full screen"
+  },
+  {
+    "objectID": "material.html#exercises",
+    "href": "material.html#exercises",
+    "title": "Material",
+    "section": "Exercises",
+    "text": "Exercises\n\nDownload zip file with exercises with this link.\nExtract the zip file locally and open in an RStudio project.\n\nSolutions available here."
+  },
+  {
+    "objectID": "slides/01-background.html",
+    "href": "slides/01-background.html",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "",
+    "text": "Quality of medical research is often low\nLow quality code in medical research part of the problem\nLow quality code is more likely to contain errors\nReproducibility is often cumbersome and time-consuming"
+  },
+  {
     "objectID": "slides/index.html#acknowledgements",
     "href": "slides/index.html#acknowledgements",
     "title": "Clinical Reporting with {gtsummary}",
@@ -49,11 +70,11 @@
     "text": "Acknowledgements\n\n\n\n\n\n\n\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA4.0)."
   },
   {
-    "objectID": "slides/index.html#daniel-sjoberg",
-    "href": "slides/index.html#daniel-sjoberg",
+    "objectID": "slides/index.html#daniel-d.-sjoberg",
+    "href": "slides/index.html#daniel-d.-sjoberg",
     "title": "Clinical Reporting with {gtsummary}",
-    "section": "Daniel Sjoberg",
-    "text": "Daniel Sjoberg\n\n\n danieldsjoberg.com\n @statistishdan\n linkedin.com/in/ddsjoberg/\n github.com/ddsjoberg"
+    "section": "Daniel D. Sjoberg",
+    "text": "Daniel D. Sjoberg\n\n\n danieldsjoberg.com\n @statistishdan\n linkedin.com/in/ddsjoberg/\n github.com/ddsjoberg"
   },
   {
     "objectID": "slides/index.html#checklist",
@@ -61,6 +82,13 @@
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Checklist",
     "text": "Checklist\n\n Install recent R release\nCurrent version 4.2.1\n Install RStudio\nI am on version 2022.07.1+554 \n Install packages\ninstall.packages(c(\"gtsummary\", \"tidyverse\", \"labelled\", \"usethis\", \"causaldata\", \"skimr\"))\n Ensure you can knit Rmarkdown files"
+  },
+  {
+    "objectID": "slides/index.html#reproducibility-crisis",
+    "href": "slides/index.html#reproducibility-crisis",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Reproducibility Crisis",
+    "text": "Reproducibility Crisis\n\n\n\nQuality of medical research is often low\nLow quality code in medical research part of the problem\nLow quality code is more likely to contain errors\nReproducibility is often cumbersome and time-consuming"
   },
   {
     "objectID": "slides/index.html#show-a-tbl",
