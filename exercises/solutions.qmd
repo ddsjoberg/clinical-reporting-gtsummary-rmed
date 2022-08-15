@@ -158,10 +158,6 @@ adj_qsmk_or <-
               pattern = "odds ratio {estimate}; 95% CI {ci}")
 ```
 
-```{r}
-knitr::knit_exit()
-```
-
 ------------------------------------------------------------------------
 
 The analysis assessing the relationship between quitting smoking and subsequent death within the next 20 years included `r nrow(df_nhefs)` participants. The median age among those who quit was higher compared to those who did not (`r median_age_quit` vs `r median_age_no_quit`; `r pvalue_age`).
