@@ -150,10 +150,10 @@ unadj_difference <-
   inline_text(gts_death_unadjusted,
               variable = death,
               pattern = "difference {estimate}; 95% CI {ci}; {p.value}")
-# adj_difference <-
-#   inline_text(gts_death_adjusted, 
-#               variable = death,
-#               pattern = "difference {estimate}; 95% CI {ci}; {p.value}")
+adj_difference <-
+  inline_text(gts_death_adjusted,
+              variable = death,
+              pattern = "difference {estimate}; 95% CI {ci}; {p.value}")
 # adj_qsmk_or <-
 #   inline_text(gts_mod,
 #               variable = qsmk,
