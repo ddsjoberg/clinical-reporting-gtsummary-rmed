@@ -9,7 +9,7 @@ editor: source
 
 1. Extract the zip file locally and open in an RStudio project.
 
-Solutions available [here](../exercises/solutions.html).
+Solutions available [here](/exercises/solutions.html).
 
 ## Slides
 
