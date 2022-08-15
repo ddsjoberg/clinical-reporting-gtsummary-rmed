@@ -5,7 +5,9 @@ editor: source
 
 ## Exercises
 
-Download exercises with 
+1. Download zip file with exercises with [this link](https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/raw/main/exercises/exercises.zip).
+
+1. Extract the zip file locally and open in an RStudio project.
 
 ```r
 usethis::use_zip(

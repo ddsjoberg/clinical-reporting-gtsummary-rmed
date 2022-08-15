@@ -59,7 +59,7 @@ Before attending the workshop please have the following installed and configured
     install.packages(instll_pkgs)
     ```
 -   Ensure you can knit R markdown documents
-    - Open RStudio, and create a new Rmarkdown document
+    - Open RStudio and create a new Rmarkdown document
     - Save the document and check you are able to knit it.
 
  

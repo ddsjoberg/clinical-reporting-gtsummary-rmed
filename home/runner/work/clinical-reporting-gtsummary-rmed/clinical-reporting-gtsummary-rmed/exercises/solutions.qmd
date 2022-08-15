@@ -151,11 +151,15 @@ unadj_difference <-
   inline_text(gts_death_unadjusted, 
               variable = death,
               pattern = "difference {estimate}; 95% CI {ci}; {p.value}")
+
+adj_difference <-
+  inline_text(gts_death_adjusted, 
+              variable = death,
+              pattern = "difference {estimate}; 95% CI {ci}; {p.value}")
 ```
 
-----
+------------------------------------------------------------------------
 
 The analysis assessing the relationship between quitting smoking and subsequent death within the next 20 years included `r nrow(df_nhefs)` participants. The median age among those who quit was higher compared to those who did not (`r median_age_quit` vs `r median_age_no_quit`; `r pvalue_age`).
 
-On univariate analysis, participants who did not quit smoking had higher rates of death (`r unadj_difference`).
-However
+On univariate analysis, participants who did not quit smoking had higher rates of death (`r unadj_difference`). However, on multivariable analysis, the relationshop was not longer significant (`r adj_difference`)
