@@ -49,5 +49,5 @@ format:
     mainfont: "Atkinson Hyperlegible"
     highlight-style: a11y
 
-editor: visual
+editor: source
 

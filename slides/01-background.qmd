@@ -1,3 +1,5 @@
+# Motivation
+
 ## Reproducibility Crisis
 
 :::: {.columns .v-center-container}
@@ -14,6 +16,34 @@
 
 ::: {.column width="40%"}
 ![](images/reproducibility-graphic-online1.jpeg)
+:::
+
+::::
+
+::: aside
+https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970
+:::
+
+## {gtsummary} overview
+
+:::: {.columns .v-center-container}
+
+::: {.column width="50%"}
+* Create **tabular summaries** with sensible defaults but highly customizable
+* Types of summaries:
+  - "Table 1"-types
+  - Cross-tabulation
+  - Regression models
+  - Survival data
+  - Survey data
+  - Custom tables
+:::
+
+::: {.column width="50%"}
+* Report statistics from {gtsummary} tables **inline** in R Markdown
+* Stack and/or merge any table type
+* Use **themes** to standardize across tables
+* Choose from different **print engines**
 :::
 
 ::::

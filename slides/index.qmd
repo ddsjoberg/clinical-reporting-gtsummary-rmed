@@ -2,7 +2,7 @@
 title: "Clinical Reporting with {gtsummary}"
 author: "Daniel D. Sjoberg"
 footer:  "[Clinical Reporting with {gtsummary}](https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/)"
-logo: "imgages/gtsummary-logo.png"
+logo: "images/gtsummary-logo.png"
 editor: source
 format: 
   revealjs: 
@@ -14,89 +14,19 @@ execute:
   freeze: auto
 ---
 
-## Acknowledgements
 
-```{r}
-knitr::opts_chunk$set(echo = TRUE, results = 'asis')
-library(gtsummary)
-library(tidyverse)
-
-knit_print.gtsummary <- function(x, ...) {
-  gtsummary::as_gt(x) |> gt::as_raw_html()
-}
-
-registerS3method("knit_print", "gtsummary", knit_print.gtsummary)
-
-# fill for font awesome icons
-fa_fill <- "#606060"
+```{r child='00-setup.qmd'}
 ```
 
-:::: {.columns .v-center-container}
-
-::: {.column width="60%"}
-<img src="imgages/r-med-logo-pride.png" alt="drawing" width="70%"/>
-:::
-
-::: {.column width="40%"}
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA4.0).
-:::
-
-::::
-
-
-## Daniel D. Sjoberg
-
-:::: {.columns .v-center-container}
-
-::: {.column width="60%"}
-`r fontawesome::fa("link", fill = fa_fill)` [danieldsjoberg.com](https://www.danieldsjoberg.com/)
-
-`r fontawesome::fa("twitter", fill = fa_fill)` [\@statistishdan](https://twitter.com/statistishdan)
-
-`r fontawesome::fa("linkedin", fill = fa_fill)` [linkedin.com/in/ddsjoberg/](https://www.linkedin.com/in/ddsjoberg/)
-
-`r fontawesome::fa("github", fill = fa_fill)` [github.com/ddsjoberg](https://github.com/ddsjoberg/)
-:::
-
-::: {.column width="40%"}
-![](imgages/dan-fire-island.jpg)
-:::
-
-::::
-
-
-## Checklist
-
-<br>
-
-`r fontawesome::fa("check", fill = fa_fill)` Install recent R release
-
-    Current version `r stringr::word(R.version.string, 3, 3)`
-
-`r fontawesome::fa("check", fill = fa_fill)` Install RStudio
-
-    I am on version 2022.07.1+554 
-
-`r fontawesome::fa("check", fill = fa_fill)` Install packages
-
-``` r
-install.packages(c("gtsummary", "tidyverse", "labelled", "usethis", "causaldata", "skimr"))
-```
-
-`r fontawesome::fa("check", fill = fa_fill)` Ensure you can knit Rmarkdown files
-
-# Motivation
 
 ```{r child='01-background.qmd'}
 ```
 
-## Show a tbl
 
-```{r}
-#| output-location: "column-fragment"
-trial |> 
-  tbl_summary(
-    by = trt, 
-    include = c(age, grade)
-  )
+```{r child='02-trial.qmd'}
 ```
+
+
+```{r child='03-tbl_summary.qmd'}
+```
+
