@@ -1,0 +1,19 @@
+## Reproducibility Crisis
+
+:::: {.columns .v-center-container}
+
+::: {.column width="60%"}
+- Quality of medical research is often low
+
+- **Low quality code** in medical research part of the problem
+
+- Low quality code is more likely to **contain errors**
+
+- Reproducibility is often **cumbersome** and **time-consuming**
+:::
+
+::: {.column width="40%"}
+![](images/reproducibility-graphic-online1.jpeg)
+:::
+
+::::

@@ -2,7 +2,7 @@
 title: "Clinical Reporting with {gtsummary}"
 author: "Daniel D. Sjoberg"
 footer:  "[Clinical Reporting with {gtsummary}](https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/)"
-logo: "img/gtsummary-logo.png"
+logo: "imgages/gtsummary-logo.png"
 editor: source
 format: 
   revealjs: 
@@ -34,7 +34,7 @@ fa_fill <- "#606060"
 :::: {.columns .v-center-container}
 
 ::: {.column width="60%"}
-<img src="img/r-med-logo-pride.png" alt="drawing" width="70%"/>
+<img src="imgages/r-med-logo-pride.png" alt="drawing" width="70%"/>
 :::
 
 ::: {.column width="40%"}
@@ -44,7 +44,7 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 ::::
 
 
-## Daniel Sjoberg
+## Daniel D. Sjoberg
 
 :::: {.columns .v-center-container}
 
@@ -59,7 +59,7 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 :::
 
 ::: {.column width="40%"}
-![](img/dan-fire-island.jpg)
+![](imgages/dan-fire-island.jpg)
 :::
 
 ::::
@@ -85,6 +85,10 @@ install.packages(c("gtsummary", "tidyverse", "labelled", "usethis", "causaldata"
 
 `r fontawesome::fa("check", fill = fa_fill)` Ensure you can knit Rmarkdown files
 
+# Motivation
+
+```{r child='01-background.qmd'}
+```
 
 ## Show a tbl
 
