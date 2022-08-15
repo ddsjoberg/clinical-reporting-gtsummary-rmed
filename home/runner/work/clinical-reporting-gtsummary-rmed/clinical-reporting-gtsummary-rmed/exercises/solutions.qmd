@@ -1,0 +1,161 @@
+---
+title: "Clinical Reporting with gtsummary: Solutions"
+format: html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Exercise 1
+
+### The Data
+
+Using the National Health and Nutrition Examination Survey Data (`nhefs`), we will assess whether quitting smoking leads to a decrease in the risk of death. We'll also investigate potential confounding factors--age, sex, blood pressure, diabetes, and exercise.
+
+To begin, let's pare down the data frame and assign column labels.
+
+```{r data_prep}
+library(gtsummary)
+library(tidyverse)
+theme_gtsummary_compact()
+
+df_nhefs <-
+  causaldata::nhefs %>%
+  select(death, qsmk, age, sex, sbp, dbp, exercise) %>%
+  drop_na() %>%
+  mutate(
+    qsmk =
+      factor(
+        qsmk,
+        levels = 0:1,
+        labels = c("Did not Quit", "Quit")
+      ),
+    sex = 
+      case_when(
+        sex == 0 ~ "Male",
+        sex == 1 ~ "Female"
+      ),
+    exercise = 
+      factor(
+        exercise,
+        levels = 0:2,
+        labels = c("Much exercise", "Moderate exercise", "Little or no exercise")
+      ) %>%
+      fct_rev()
+  ) %>%
+  labelled::set_variable_labels(
+    death = "Participant Passed Away",
+    qsmk = "Quit Smoking",
+    age = "Age",
+    sex = "Sex",
+    sbp = "Systolic BP",
+    dbp = "Diastolic BP",
+    exercise = "Exercise Level"
+  )
+
+skimr::skim(df_nhefs)
+```
+
+# Exercise 2
+
+Prepare a table describing the cohort by whether or not the participant quit smoking. Do not include death in the summary table. Consider using the gtsummary functions that build on a summary table.
+
+```{r cohort_desc}
+gts_patient_characteristics <-
+  df_nhefs %>%
+  tbl_summary(
+    by = qsmk,
+    include = -death
+  ) %>%
+  add_p() %>%
+  add_stat_label() %>%
+  modify_spanning_header(
+    all_stat_cols() ~ "**Smoking Status**"
+  )
+gts_patient_characteristics
+```
+
+# Exercise 3
+
+Is there a difference in death rates by smoking status?
+
+Prepare an unadjusted and adjusted rate difference in the table.
+
+```{r death_rate_diff}
+gts_death_unadjusted <-
+  df_nhefs %>%
+  tbl_summary(
+    by = qsmk, 
+    include = death,
+    statistic = all_categorical() ~ "{p}%"
+  ) %>%
+  add_difference() %>%
+  add_stat_label() 
+gts_death_unadjusted
+
+gts_death_adjusted <-
+  df_nhefs %>%
+  tbl_summary(
+    by = qsmk, 
+    include = death,
+    statistic = all_categorical() ~ "{p}%"
+  ) %>%
+  add_difference(
+    test = all_categorical() ~ "emmeans",
+    adj.vars = c(age, sex, sbp, dbp, exercise)
+  ) %>%
+  add_stat_label() 
+gts_death_adjusted
+```
+
+# Exercise 4
+
+Build a logistic regression model with death as the outcome. Include smoking and the other variables as covariates. Summarize your regression model in a table, reporting the odds ratio, its confidence interval, and p-value.
+
+```{r regression}
+mod <- glm(death ~ qsmk + age + sex + sbp + dbp + exercise, 
+           data = df_nhefs, family = binomial)
+
+gts_mod <-
+  tbl_regression(mod, exponentiate = TRUE) %>%
+  add_global_p() %>%
+  bold_p() %>%
+  italicize_levels() %>%
+  modify_caption("**Logistic regression model predicting death**") %>%
+  modify_header(label = "**Variable** (N = {N})")
+gts_mod
+```
+
+# Exercise 5
+
+Write a brief summary of the results above using `inline_text()` to report values from the tables directly into the markdown report.
+
+```{r inline}
+median_age_quit <-
+  inline_text(gts_patient_characteristics, 
+              variable = age, 
+              column = "Quit", 
+              pattern = "{median}")
+median_age_no_quit <-
+  inline_text(gts_patient_characteristics, 
+              variable = age, 
+              column = "Did not Quit", 
+              pattern = "{median}")
+pvalue_age <- 
+  inline_text(gts_patient_characteristics, 
+              variable = age,
+              column = p.value)
+
+unadj_difference <-
+  inline_text(gts_death_unadjusted, 
+              variable = death,
+              pattern = "difference {estimate}; 95% CI {ci}; {p.value}")
+```
+
+----
+
+The analysis assessing the relationship between quitting smoking and subsequent death within the next 20 years included `r nrow(df_nhefs)` participants. The median age among those who quit was higher compared to those who did not (`r median_age_quit` vs `r median_age_no_quit`; `r pvalue_age`).
+
+On univariate analysis, participants who did not quit smoking had higher rates of death (`r unadj_difference`).
+However
