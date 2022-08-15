@@ -42,20 +42,6 @@
     "text": "This work is licensed under a Creative Commons Attribution 4.0 International License."
   },
   {
-    "objectID": "material.html",
-    "href": "material.html",
-    "title": "Material",
-    "section": "",
-    "text": "Download zip file with exercises with this link.\nExtract the zip file locally and open in an RStudio project.\n\nSolutions available here."
-  },
-  {
-    "objectID": "material.html#slides",
-    "href": "material.html#slides",
-    "title": "Material",
-    "section": "Slides",
-    "text": "Slides"
-  },
-  {
     "objectID": "slides/index.html#acknowledgements",
     "href": "slides/index.html#acknowledgements",
     "title": "Clinical Reporting with {gtsummary}",
