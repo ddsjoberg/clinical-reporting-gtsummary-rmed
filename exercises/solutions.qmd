@@ -146,10 +146,10 @@ pvalue_age <-
   inline_text(gts_patient_characteristics, 
               variable = age,
               column = p.value)
-# unadj_difference <-
-#   inline_text(gts_death_unadjusted, 
-#               variable = death,
-#               pattern = "difference {estimate}; 95% CI {ci}; {p.value}")
+unadj_difference <-
+  inline_text(gts_death_unadjusted,
+              variable = death,
+              pattern = "difference {estimate}; 95% CI {ci}; {p.value}")
 # adj_difference <-
 #   inline_text(gts_death_adjusted, 
 #               variable = death,
