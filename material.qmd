@@ -8,7 +8,7 @@ editor: source
 [View slides in full screen](/slides/index.html)
 
 ```{=html}
-<iframe class="slide-deck" src="../slides/" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+<iframe class="slide-deck" src="/slides/" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
 ```
 
 ## Exercises
