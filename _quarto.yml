@@ -3,6 +3,7 @@ project:
   render:
     - "*.qmd"
     - "!exercises/exercises.Rmd"
+    - "!slides/[0-9]*.qmd"
     
 website:
   page-navigation: true

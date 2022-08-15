@@ -20,8 +20,7 @@ registerS3method("knit_print", "gt_tbl", knit_print.gt_tbl)
 fa_fill <- "#606060"
 ```
 
-:::: {.columns .v-center-container}
-
+::: {.columns .v-center-container}
 ::: {.column width="60%"}
 <img src="images/r-med-logo-pride.png" alt="drawing" width="70%"/>
 :::
@@ -29,14 +28,11 @@ fa_fill <- "#606060"
 ::: {.column width="40%"}
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA4.0).
 :::
-
-::::
-
+:::
 
 ## Daniel D. Sjoberg
 
-:::: {.columns .v-center-container}
-
+::: {.columns .v-center-container}
 ::: {.column width="60%"}
 `r fontawesome::fa("link", fill = fa_fill)` [danieldsjoberg.com](https://www.danieldsjoberg.com/)
 
@@ -50,8 +46,7 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 ::: {.column width="40%"}
 ![](images/dan-fire-island.jpg)
 :::
-
-::::
+:::
 
 ## Checklist
 

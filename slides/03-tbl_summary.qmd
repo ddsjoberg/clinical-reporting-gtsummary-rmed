@@ -2,10 +2,8 @@
 
 ## Basic tbl_summary()
 
-:::: {.columns .v-center-container}
-
+::: {.columns .v-center-container}
 ::: {.column width="50%"}
-
 ```{r}
 sm_trial |> 
   select(-trt) |>  
@@ -14,18 +12,17 @@ sm_trial |>
 :::
 
 ::: {.column width="50%"}
-- Four types of summaries: `continuous`, `continuous2`, `categorical`, and `dichotomous`
+-   Four types of summaries: `continuous`, `continuous2`, `categorical`, and `dichotomous`
 
-- Statistics are `median (IQR)` for continuous, `n (%)` for categorical/dichotomous
+-   Statistics are `median (IQR)` for continuous, `n (%)` for categorical/dichotomous
 
-- Variables coded `0/1`, `TRUE/FALSE`, `Yes/No` treated as dichotomous
+-   Variables coded `0/1`, `TRUE/FALSE`, `Yes/No` treated as dichotomous
 
-- Lists `NA` values under "Unknown"
+-   Lists `NA` values under "Unknown"
 
-- Label attributes are printed automatically
+-   Label attributes are printed automatically
 :::
-
-::::
+:::
 
 ## Customize tbl_summary() output
 
@@ -48,30 +45,31 @@ tbl_summary(
 )
 ```
 
-::: {.small}
-:::: {.columns}
-
+::: small
+::: columns
 ::: {.column width="50%"}
-- `by`: specifies a column variable for cross-tabulation
+-   `by`: specifies a column variable for cross-tabulation
 
-- `type`: specifies the summary type 
+-   `type`: specifies the summary type
 
-- `statistic`: customize the reported statistics
+-   `statistic`: customize the reported statistics
 :::
 
 ::: {.column width="50%"}
+-   `label`: change or customize variable labels
 
-- `label`: change or customize variable labels
-
-- `digits`: specify the number of decimal places for rounding
+-   `digits`: specify the number of decimal places for rounding
 :::
-
-::::
+:::
 :::
 
 ## {gtsummary} + formulas
 
-<p align="center"><img src="https://raw.githubusercontent.com/ddsjoberg/gtsummary-weill-cornell-presentation/5887c81b58f4ed0c76f6ae458243e9c2a2fbbcd2/Images/Dan-SummaryTables-5.png" width=95%></p>
+<p align="center">
+
+<img src="https://raw.githubusercontent.com/ddsjoberg/gtsummary-weill-cornell-presentation/5887c81b58f4ed0c76f6ae458243e9c2a2fbbcd2/Images/Dan-SummaryTables-5.png" width="95%"/>
+
+</p>
 
 **Named list are OK too!** `label = list(age = "Patient Age")`
 
@@ -79,13 +77,13 @@ tbl_summary(
 
 `tbl_summary()` objects can also be updated using related functions.
 
-- `add_*()` add additional column of statistics or information, e.g. p-values, q-values, overall statistics, treatment differences, N obs., and more
+-   `add_*()` add additional column of statistics or information, e.g. p-values, q-values, overall statistics, treatment differences, N obs., and more
 
-- `modify_*()` modify table headers, spanning headers, footnotes, and more
+-   `modify_*()` modify table headers, spanning headers, footnotes, and more
 
-- `bold_*()/italicize_*()` style labels, variable levels, significant p-values
+-   `bold_*()/italicize_*()` style labels, variable levels, significant p-values
 
-## Update tbl\_summary() with add\_\*()
+## Update tbl_summary() with add\_\*()
 
 ```{r}
 #| output-location: "column"
@@ -98,11 +96,11 @@ sm_trial %>%
   add_q(method = "fdr")
 ```
 
-* `add_p()`: adds a column of p-values
+-   `add_p()`: adds a column of p-values
 
-* `add_q()`: adds a column of p-values adjusted for multiple comparisons through a call to `p.adjust()`
+-   `add_q()`: adds a column of p-values adjusted for multiple comparisons through a call to `p.adjust()`
 
-## Update tbl\_summary() with add\_\*()
+## Update tbl_summary() with add\_\*()
 
 ```{r}
 #| code-line-numbers: "12"
@@ -117,9 +115,9 @@ trial %>%
   add_difference()
 ```
 
-* `add_difference()`: mean and rate differences between two groups. Can also be adjusted differences
+-   `add_difference()`: mean and rate differences between two groups. Can also be adjusted differences
 
-## Update tbl\_summary() with add\_\*()
+## Update tbl_summary() with add\_\*()
 
 ```{r}
 #| output-location: "column"
@@ -136,16 +134,14 @@ sm_trial %>%
   ) 
 ```
 
-* `add_overall()`: adds a column of overall statistics
-* `add_n()`: adds a column with the sample size 
-* `add_stat_label()`: adds a description of the reported statistic
+-   `add_overall()`: adds a column of overall statistics
+-   `add_n()`: adds a column with the sample size
+-   `add_stat_label()`: adds a description of the reported statistic
 
-## Update tbl\_summary() with add\_\*()
+## Update tbl_summary() with add\_\*()
 
-:::: {.columns  .v-center-container}
-
+::: {.columns .v-center-container}
 ::: {.column width="50%"}
-
 ```{r eval=FALSE}
 #| code-line-numbers: "6"
 sm_trial %>%
@@ -155,18 +151,16 @@ sm_trial %>%
   ) %>% 
   add_stat(...)
 ```
-
 :::
 
 ::: {.column width="50%"}
-- Customize statistics presented with `add_stat()`
+-   Customize statistics presented with `add_stat()`
 
-- Added statistics can be placed on the label or the level rows
+-   Added statistics can be placed on the label or the level rows
 
-- Added statistics may be a single column or multiple
+-   Added statistics may be a single column or multiple
 :::
-
-::::
+:::
 
 ## Update with bold\_\*()/italicize\_\*()
 
@@ -183,12 +177,11 @@ sm_trial %>%
   bold_p(t = 0.8)
 ```
 
+-   `bold_labels()`: bold the variable labels
+-   `italicize_levels()`: italicize the variable levels
+-   `bold_p()`: bold p-values according a specified threshold
 
-* `bold_labels()`: bold the variable labels
-* `italicize_levels()`: italicize the variable levels
-* `bold_p()`: bold p-values according a specified threshold
-
-## Update tbl\_summary() with modify\_\*()
+## Update tbl_summary() with modify\_\*()
 
 ```{r}
 #| output-location: "column"
@@ -209,16 +202,15 @@ sm_trial %>%
   )
 ```
 
-* Use `show_header_names()` to see the internal header names available for use in `modify_header()`
+-   Use `show_header_names()` to see the internal header names available for use in `modify_header()`
 
 ## Add-on functions in {gtsummary}
 
-And many more! 
+And many more!
 
 See the documentation at http://www.danieldsjoberg.com/gtsummary/reference/index.html
 
 And a detailed `tbl_summary()` vignette at http://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html
-
 
 ## Cross-tabulation with tbl_cross()
 
@@ -250,7 +242,6 @@ sm_trial %>%
   )
 ```
 
-
 ## Survey data with tbl_svysummary()
 
 ```{r}
@@ -279,5 +270,3 @@ tbl_survfit(
 ) %>%
   add_p()
 ```
-
-

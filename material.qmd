@@ -5,13 +5,6 @@ editor: source
 
 ## Slides
 
-![](images/coming-soon.gif)
-
-```{r, echo=FALSE}
-# TODO: REMOVE THIS WHEN COURSE MATERIAL IS READY!
-# knitr::knit_exit()
-```
-
 [View slides in full screen](../slides/index.html)
 
 ```{=html}
