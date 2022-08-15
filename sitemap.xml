@@ -2,22 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/exercises/solutions.html</loc>
-    <lastmod>2022-08-13T12:25:35.885Z</lastmod>
+    <lastmod>2022-08-15T14:00:39.415Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/home/runner/work/clinical-reporting-gtsummary-rmed/clinical-reporting-gtsummary-rmed/exercises/solutions.html</loc>
+    <lastmod>2022-08-15T14:00:57.416Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/index.html</loc>
-    <lastmod>2022-08-13T12:25:36.921Z</lastmod>
+    <lastmod>2022-08-15T14:00:58.000Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/license.html</loc>
-    <lastmod>2022-08-13T12:25:37.301Z</lastmod>
+    <lastmod>2022-08-15T14:00:58.308Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/material.html</loc>
-    <lastmod>2022-08-13T12:25:40.141Z</lastmod>
+    <lastmod>2022-08-15T14:01:00.728Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/slides/index.html</loc>
-    <lastmod>2022-08-13T12:25:47.881Z</lastmod>
+    <lastmod>2022-08-15T14:01:01.404Z</lastmod>
   </url>
 </urlset>
