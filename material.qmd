@@ -3,14 +3,6 @@ title: "Material"
 editor: source
 ---
 
-## Exercises
-
-1. Download zip file with exercises with [this link](https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/raw/main/exercises/exercises.zip).
-
-1. Extract the zip file locally and open in an RStudio project.
-
-Solutions available [here](/exercises/solutions.html).
-
 ## Slides
 
 ![](images/coming-soon.gif)
@@ -26,3 +18,10 @@ knitr::knit_exit()
 <iframe class="slide-deck" src="../slides/" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
 ```
 
+## Exercises
+
+1. Download zip file with exercises with [this link](https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/raw/main/exercises/exercises.zip).
+
+1. Extract the zip file locally and open in an RStudio project.
+
+Solutions available [here](/exercises/solutions.html).
