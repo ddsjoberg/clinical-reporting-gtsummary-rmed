@@ -9,13 +9,6 @@ editor: source
 
 1. Extract the zip file locally and open in an RStudio project.
 
-```r
-usethis::use_zip(
-  "https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/raw/main/exercises/exercises.zip",
-  destdir = fs::path_home()
-)
-```
-
 Solutions available [here](../exercises/solutions.html).
 
 ## Slides
