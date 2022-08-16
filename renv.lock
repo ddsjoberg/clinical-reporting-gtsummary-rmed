@@ -419,6 +419,12 @@
       "Hash": "ac5c6baf7822ce8732b343f14c072c4d",
       "Requirements": []
     },
+    "gtreg": {
+      "Package": "gtreg",
+      "Version": "0.1.0",
+      "Source": "Repository",
+      "Requirements": []
+    },
     "gtsummary": {
       "Package": "gtsummary",
       "Version": "1.6.1",
