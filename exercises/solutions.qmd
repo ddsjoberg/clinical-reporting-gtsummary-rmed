@@ -3,10 +3,6 @@ title: "Clinical Reporting with gtsummary: Solutions"
 format: html
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 # Exercise 1
 
 ### The Data
