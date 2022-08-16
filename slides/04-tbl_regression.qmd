@@ -6,7 +6,9 @@
 ::: columns
 ::: {.column width="50%"}
 
-```{r results='hide'}
+```{r}
+#| output: true
+#| label: trad-model-summary
 m1 <- 
   glm(
     response ~ age + stage,
@@ -17,7 +19,9 @@ m1 <-
 :::
 
 ::: {.column width="50%"}
-![](images/raw-output-logistic-regression.png)
+```{r trad-model-summary}
+#| echo: false
+```
 :::
 :::
 

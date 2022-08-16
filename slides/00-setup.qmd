@@ -1,7 +1,6 @@
 ## Acknowledgements
 
 ```{r}
-knitr::opts_chunk$set(echo = TRUE, results = 'asis')
 library(gtsummary)
 library(tidyverse)
 

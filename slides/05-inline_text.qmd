@@ -12,7 +12,8 @@
 
 ## {gtsummary} reporting with inline_text()
 
-```{r echo=FALSE}
+```{r}
+#| echo: false
 tbl_uvreg
 ```
 

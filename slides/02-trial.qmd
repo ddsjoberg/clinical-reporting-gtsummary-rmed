@@ -11,7 +11,8 @@
 :::
 
 ::: {.column width="60%"}
-```{r message = FALSE}
+```{r}
+#| message: false
 library(gtsummary)
 library(tidyverse)
 head(trial) |> gt::gt()
@@ -36,7 +37,8 @@ sm_trial <-
 :::
 
 ::: {.column width="40%"}
-```{r echo = FALSE}
+```{r}
+#| echo: false
 tibble(
   Variable = names(sm_trial),
   Label = map_chr(Variable, ~attr(trial[[.x]], "label"))

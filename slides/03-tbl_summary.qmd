@@ -142,7 +142,8 @@ sm_trial %>%
 
 ::: {.columns .v-center-container}
 ::: {.column width="50%"}
-```{r eval=FALSE}
+```{r}
+#| eval: false
 #| code-line-numbers: "6"
 sm_trial %>%
   tbl_summary(
