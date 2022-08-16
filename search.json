@@ -95,28 +95,28 @@
     "href": "slides/index.html#example-dataset",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Example Dataset",
-    "text": "Example Dataset\n\n\n\nThe trial data set is included with {gtsummary}\nSimulated data set of baseline characteristics for 200 patients who receive Drug A or Drug B\nVariables were assigned labels using the labelled package\n\n\nlibrary(gtsummary)\nlibrary(tidyverse)\nhead(trial) |> gt::gt()\n\n\n\n\n\ntrt\n\n\nage\n\n\nmarker\n\n\nstage\n\n\ngrade\n\n\nresponse\n\n\ndeath\n\n\nttdeath\n\n\n\n\n\n\nDrug A\n\n\n23\n\n\n0.160\n\n\nT1\n\n\nII\n\n\n0\n\n\n0\n\n\n24.00\n\n\n\n\nDrug B\n\n\n9\n\n\n1.107\n\n\nT2\n\n\nI\n\n\n1\n\n\n0\n\n\n24.00\n\n\n\n\nDrug A\n\n\n31\n\n\n0.277\n\n\nT1\n\n\nII\n\n\n0\n\n\n0\n\n\n24.00\n\n\n\n\nDrug A\n\n\nNA\n\n\n2.067\n\n\nT3\n\n\nIII\n\n\n1\n\n\n1\n\n\n17.64\n\n\n\n\nDrug A\n\n\n51\n\n\n2.767\n\n\nT4\n\n\nIII\n\n\n1\n\n\n1\n\n\n16.43\n\n\n\n\nDrug B\n\n\n39\n\n\n0.613\n\n\nT4\n\n\nI\n\n\n0\n\n\n1\n\n\n15.64"
+    "text": "Example Dataset\n\n\n\nThe trial data set is included with {gtsummary}\nSimulated data set of baseline characteristics for 200 patients who receive Drug A or Drug B\nVariables were assigned labels using the labelled package\n\n\n\nlibrary(gtsummary)\nlibrary(tidyverse)\nhead(trial) |> gt::gt()\n\n\n\n\n\ntrt\n\n\nage\n\n\nmarker\n\n\nstage\n\n\ngrade\n\n\nresponse\n\n\ndeath\n\n\nttdeath\n\n\n\n\n\n\nDrug A\n\n\n23\n\n\n0.160\n\n\nT1\n\n\nII\n\n\n0\n\n\n0\n\n\n24.00\n\n\n\n\nDrug B\n\n\n9\n\n\n1.107\n\n\nT2\n\n\nI\n\n\n1\n\n\n0\n\n\n24.00\n\n\n\n\nDrug A\n\n\n31\n\n\n0.277\n\n\nT1\n\n\nII\n\n\n0\n\n\n0\n\n\n24.00\n\n\n\n\nDrug A\n\n\nNA\n\n\n2.067\n\n\nT3\n\n\nIII\n\n\n1\n\n\n1\n\n\n17.64\n\n\n\n\nDrug A\n\n\n51\n\n\n2.767\n\n\nT4\n\n\nIII\n\n\n1\n\n\n1\n\n\n16.43\n\n\n\n\nDrug B\n\n\n39\n\n\n0.613\n\n\nT4\n\n\nI\n\n\n0\n\n\n1\n\n\n15.64"
   },
   {
     "objectID": "slides/index.html#example-dataset-1",
     "href": "slides/index.html#example-dataset-1",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Example Dataset",
-    "text": "Example Dataset\n\n\nThis presentation will use a subset of the variables.\nsm_trial <-\n  trial %>% \n  select(trt, age, grade, response)\n\n\n\n\n\n\nVariable\n\n\nLabel\n\n\n\n\n\n\ntrt\n\n\nChemotherapy Treatment\n\n\n\n\nage\n\n\nAge\n\n\n\n\ngrade\n\n\nGrade\n\n\n\n\nresponse\n\n\nTumor Response"
+    "text": "Example Dataset\n\n\nThis presentation will use a subset of the variables.\n\nsm_trial <-\n  trial |> \n  select(trt, age, grade, response)\n\n\n\n\n\n\n\n\nVariable\n\n\nLabel\n\n\n\n\n\n\ntrt\n\n\nChemotherapy Treatment\n\n\n\n\nage\n\n\nAge\n\n\n\n\ngrade\n\n\nGrade\n\n\n\n\nresponse\n\n\nTumor Response"
   },
   {
     "objectID": "slides/index.html#basic-tbl_summary",
     "href": "slides/index.html#basic-tbl_summary",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Basic tbl_summary()",
-    "text": "Basic tbl_summary()\n\n\nsm_trial |> \n  select(-trt) |>  \n  tbl_summary()\n\n\n\n\n\nCharacteristic\n\n\nN = 2001\n\n\n\n\n\n\nAge\n\n\n47 (38, 57)\n\n\n\n\nUnknown\n\n\n11\n\n\n\n\nGrade\n\n\n\n\n\n\nI\n\n\n68 (34%)\n\n\n\n\nII\n\n\n68 (34%)\n\n\n\n\nIII\n\n\n64 (32%)\n\n\n\n\nTumor Response\n\n\n61 (32%)\n\n\n\n\nUnknown\n\n\n7\n\n\n\n\n\n\n1 Median (IQR); n (%)\n\n\n\n\n\n\n\nFour types of summaries: continuous, continuous2, categorical, and dichotomous\nStatistics are median (IQR) for continuous, n (%) for categorical/dichotomous\nVariables coded 0/1, TRUE/FALSE, Yes/No treated as dichotomous\nLists NA values under “Unknown”\nLabel attributes are printed automatically"
+    "text": "Basic tbl_summary()\n\n\n\nsm_trial |> \n  select(-trt) |>  \n  tbl_summary()\n\n\n\n\n\n  \n  \n    \n      Characteristic\n      N = 2001\n    \n  \n  \n    Age\n47 (38, 57)\n    Unknown\n11\n    Grade\n\n    I\n68 (34%)\n    II\n68 (34%)\n    III\n64 (32%)\n    Tumor Response\n61 (32%)\n    Unknown\n7\n  \n  \n  \n    \n      1 Median (IQR); n (%)\n    \n  \n\n\n\n\n\n\nFour types of summaries: continuous, continuous2, categorical, and dichotomous\nStatistics are median (IQR) for continuous, n (%) for categorical/dichotomous\nVariables coded 0/1, TRUE/FALSE, Yes/No treated as dichotomous\nLists NA values under “Unknown”\nLabel attributes are printed automatically"
   },
   {
     "objectID": "slides/index.html#customize-tbl_summary-output",
     "href": "slides/index.html#customize-tbl_summary-output",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Customize tbl_summary() output",
-    "text": "Customize tbl_summary() output\n\n\ntbl_summary(\n  sm_trial,\n  by = trt,\n  type = age ~ \"continuous2\",\n  statistic = \n    list(\n      age ~ c(\"{mean} ({sd})\", \n              \"{min}, {max}\"), \n      response ~ \"{n} / {N} ({p}%)\"\n    ),\n  label = \n    grade ~ \"Pathologic tumor grade\",\n  digits = age ~ 1\n)\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\n\n\n\n\nAge\n\n\n\n\n\n\n\n\nMean (SD)\n\n\n47.0 (14.7)\n\n\n47.4 (14.0)\n\n\n\n\nRange\n\n\n6.0, 78.0\n\n\n9.0, 83.0\n\n\n\n\nUnknown\n\n\n7\n\n\n4\n\n\n\n\nPathologic tumor grade\n\n\n\n\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response\n\n\n28 / 95 (29%)\n\n\n33 / 98 (34%)\n\n\n\n\nUnknown\n\n\n3\n\n\n4\n\n\n\n\n\n\n1 n (%); n / N (%)\n\n\n\n\n\n\n\n\n\n\n\nby: specifies a column variable for cross-tabulation\ntype: specifies the summary type\nstatistic: customize the reported statistics\n\n\n\nlabel: change or customize variable labels\ndigits: specify the number of decimal places for rounding"
+    "text": "Customize tbl_summary() output\n\n\ntbl_summary(\n  sm_trial,\n  by = trt,\n  type = age ~ \"continuous2\",\n  statistic = \n    list(\n      age ~ c(\"{mean} ({sd})\", \n              \"{min}, {max}\"), \n      response ~ \"{n} / {N} ({p}%)\"\n    ),\n  label = \n    grade ~ \"Pathologic tumor grade\",\n  digits = age ~ 1\n)\n\n\n\n\n\n\n  \n  \n    \n      Characteristic\n      Drug A, N = 981\n      Drug B, N = 1021\n    \n  \n  \n    Age\n\n\n    Mean (SD)\n47.0 (14.7)\n47.4 (14.0)\n    Range\n6.0, 78.0\n9.0, 83.0\n    Unknown\n7\n4\n    Pathologic tumor grade\n\n\n    I\n35 (36%)\n33 (32%)\n    II\n32 (33%)\n36 (35%)\n    III\n31 (32%)\n33 (32%)\n    Tumor Response\n28 / 95 (29%)\n33 / 98 (34%)\n    Unknown\n3\n4\n  \n  \n  \n    \n      1 n (%); n / N (%)\n    \n  \n\n\n\n\n\n\n\n\n\nby: specifies a column variable for cross-tabulation\ntype: specifies the summary type\nstatistic: customize the reported statistics\n\n\n\nlabel: change or customize variable labels\ndigits: specify the number of decimal places for rounding"
   },
   {
     "objectID": "slides/index.html#gtsummary-formulas",
@@ -137,42 +137,42 @@
     "href": "slides/index.html#update-tbl_summary-with-add_",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Update tbl_summary() with add_*()",
-    "text": "Update tbl_summary() with add_*()\n\n\nsm_trial %>%\n  tbl_summary(\n    by = trt\n  ) %>% \n  add_p() %>% \n  add_q(method = \"fdr\")\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\np-value2\n\n\nq-value3\n\n\n\n\n\n\nAge\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n0.7\n\n\n0.9\n\n\n\n\nUnknown\n\n\n7\n\n\n4\n\n\n\n\n\n\n\n\nGrade\n\n\n\n\n\n\n0.9\n\n\n0.9\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\n\n\n\n\nTumor Response\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n0.5\n\n\n0.9\n\n\n\n\nUnknown\n\n\n3\n\n\n4\n\n\n\n\n\n\n\n\n\n\n1 Median (IQR); n (%)\n\n\n\n\n2 Wilcoxon rank sum test; Pearson’s Chi-squared test\n\n\n\n\n3 False discovery rate correction for multiple testing\n\n\n\n\n\n\n\n\nadd_p(): adds a column of p-values\nadd_q(): adds a column of p-values adjusted for multiple comparisons through a call to p.adjust()"
+    "text": "Update tbl_summary() with add_*()\n\n\nsm_trial |>\n  tbl_summary(\n    by = trt\n  ) |> \n  add_p() |> \n  add_q(method = \"fdr\")\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\np-value2\n\n\nq-value3\n\n\n\n\n\n\nAge\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n0.7\n\n\n0.9\n\n\n\n\nUnknown\n\n\n7\n\n\n4\n\n\n\n\n\n\n\n\nGrade\n\n\n\n\n\n\n0.9\n\n\n0.9\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\n\n\n\n\nTumor Response\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n0.5\n\n\n0.9\n\n\n\n\nUnknown\n\n\n3\n\n\n4\n\n\n\n\n\n\n\n\n\n\n1 Median (IQR); n (%)\n\n\n\n\n2 Wilcoxon rank sum test; Pearson’s Chi-squared test\n\n\n\n\n3 False discovery rate correction for multiple testing\n\n\n\n\n\n\n\n\nadd_p(): adds a column of p-values\nadd_q(): adds a column of p-values adjusted for multiple comparisons through a call to p.adjust()"
   },
   {
     "objectID": "slides/index.html#update-tbl_summary-with-add_-1",
     "href": "slides/index.html#update-tbl_summary-with-add_-1",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Update tbl_summary() with add_*()",
-    "text": "Update tbl_summary() with add_*()\ntrial %>%\n  select(trt, marker, response) %>%\n  tbl_summary(\n    by = trt,\n    statistic = list(marker ~ \"{mean} ({sd})\",\n                     response ~ \"{p}%\"),\n    missing = \"no\"\n  ) %>% \n  add_difference()\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\nDifference2\n\n\n95% CI2,3\n\n\np-value2\n\n\n\n\n\n\nMarker Level (ng/mL)\n\n\n1.02 (0.89)\n\n\n0.82 (0.83)\n\n\n0.20\n\n\n-0.05, 0.44\n\n\n0.12\n\n\n\n\nTumor Response\n\n\n29%\n\n\n34%\n\n\n-4.2%\n\n\n-18%, 9.9%\n\n\n0.6\n\n\n\n\n\n\n1 Mean (SD); %\n\n\n\n\n2 Welch Two Sample t-test; Two sample test for equality of proportions\n\n\n\n\n3 CI = Confidence Interval\n\n\n\n\n\n\nadd_difference(): mean and rate differences between two groups. Can also be adjusted differences"
+    "text": "Update tbl_summary() with add_*()\n\ntrial |>\n  select(trt, marker, response) |>\n  tbl_summary(\n    by = trt,\n    statistic = list(marker ~ \"{mean} ({sd})\",\n                     response ~ \"{p}%\"),\n    missing = \"no\"\n  ) |> \n  add_difference()\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\nDifference2\n\n\n95% CI2,3\n\n\np-value2\n\n\n\n\n\n\nMarker Level (ng/mL)\n\n\n1.02 (0.89)\n\n\n0.82 (0.83)\n\n\n0.20\n\n\n-0.05, 0.44\n\n\n0.12\n\n\n\n\nTumor Response\n\n\n29%\n\n\n34%\n\n\n-4.2%\n\n\n-18%, 9.9%\n\n\n0.6\n\n\n\n\n\n\n1 Mean (SD); %\n\n\n\n\n2 Welch Two Sample t-test; Two sample test for equality of proportions\n\n\n\n\n3 CI = Confidence Interval\n\n\n\n\n\n\n\nadd_difference(): mean and rate differences between two groups. Can also be adjusted differences"
   },
   {
     "objectID": "slides/index.html#update-tbl_summary-with-add_-2",
     "href": "slides/index.html#update-tbl_summary-with-add_-2",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Update tbl_summary() with add_*()",
-    "text": "Update tbl_summary() with add_*()\n\n\nsm_trial %>%\n  tbl_summary(\n    by = trt,\n    missing = \"no\"\n  ) %>% \n  add_overall() %>% \n  add_n() %>% \n  add_stat_label(\n    label = all_categorical() ~ \"No. (%)\"\n  ) \n\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOverall, N = 200\n\n\nDrug A, N = 98\n\n\nDrug B, N = 102\n\n\n\n\n\n\nAge, Median (IQR)\n\n\n189\n\n\n47 (38, 57)\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nGrade, No. (%)\n\n\n200\n\n\n\n\n\n\n\n\n\n\nI\n\n\n\n\n68 (34%)\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n\n\n68 (34%)\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n\n\n64 (32%)\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response, No. (%)\n\n\n193\n\n\n61 (32%)\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\n\n\n\n\nadd_overall(): adds a column of overall statistics\nadd_n(): adds a column with the sample size\nadd_stat_label(): adds a description of the reported statistic"
+    "text": "Update tbl_summary() with add_*()\n\n\nsm_trial |>\n  tbl_summary(\n    by = trt,\n    missing = \"no\"\n  ) |> \n  add_overall() |> \n  add_n() |> \n  add_stat_label(\n    label = all_categorical() ~ \"No. (%)\"\n  ) \n\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOverall, N = 200\n\n\nDrug A, N = 98\n\n\nDrug B, N = 102\n\n\n\n\n\n\nAge, Median (IQR)\n\n\n189\n\n\n47 (38, 57)\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nGrade, No. (%)\n\n\n200\n\n\n\n\n\n\n\n\n\n\nI\n\n\n\n\n68 (34%)\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n\n\n68 (34%)\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n\n\n64 (32%)\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response, No. (%)\n\n\n193\n\n\n61 (32%)\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\n\n\n\n\nadd_overall(): adds a column of overall statistics\nadd_n(): adds a column with the sample size\nadd_stat_label(): adds a description of the reported statistic"
   },
   {
     "objectID": "slides/index.html#update-tbl_summary-with-add_-3",
     "href": "slides/index.html#update-tbl_summary-with-add_-3",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Update tbl_summary() with add_*()",
-    "text": "Update tbl_summary() with add_*()\n\n\nsm_trial %>%\n  tbl_summary(\n    by = trt,\n    missing = \"no\"\n  ) %>% \n  add_stat(...)\n\n\nCustomize statistics presented with add_stat()\nAdded statistics can be placed on the label or the level rows\nAdded statistics may be a single column or multiple"
+    "text": "Update tbl_summary() with add_*()\n\n\n\nsm_trial |>\n  tbl_summary(\n    by = trt,\n    missing = \"no\"\n  ) |> \n  add_stat(...)\n\n\n\nCustomize statistics presented with add_stat()\nAdded statistics can be placed on the label or the level rows\nAdded statistics may be a single column or multiple"
   },
   {
     "objectID": "slides/index.html#update-with-bold_italicize_",
     "href": "slides/index.html#update-with-bold_italicize_",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Update with bold_*()/italicize_*()",
-    "text": "Update with bold_*()/italicize_*()\n\n\nsm_trial %>%\n  tbl_summary(\n    by = trt\n  ) %>%\n  add_p() %>% \n  bold_labels() %>% \n  italicize_levels() %>% \n  bold_p(t = 0.8)\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\np-value2\n\n\n\n\n\n\nAge\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n0.7\n\n\n\n\nUnknown\n\n\n7\n\n\n4\n\n\n\n\n\n\nGrade\n\n\n\n\n\n\n0.9\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\n\n\nTumor Response\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n0.5\n\n\n\n\nUnknown\n\n\n3\n\n\n4\n\n\n\n\n\n\n\n\n1 Median (IQR); n (%)\n\n\n\n\n2 Wilcoxon rank sum test; Pearson’s Chi-squared test\n\n\n\n\n\n\n\n\nbold_labels(): bold the variable labels\nitalicize_levels(): italicize the variable levels\nbold_p(): bold p-values according a specified threshold"
+    "text": "Update with bold_*()/italicize_*()\n\n\nsm_trial |>\n  tbl_summary(\n    by = trt\n  ) |>\n  add_p() |> \n  bold_labels() |> \n  italicize_levels() |> \n  bold_p(t = 0.8)\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\np-value2\n\n\n\n\n\n\nAge\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n0.7\n\n\n\n\nUnknown\n\n\n7\n\n\n4\n\n\n\n\n\n\nGrade\n\n\n\n\n\n\n0.9\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\n\n\nTumor Response\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n0.5\n\n\n\n\nUnknown\n\n\n3\n\n\n4\n\n\n\n\n\n\n\n\n1 Median (IQR); n (%)\n\n\n\n\n2 Wilcoxon rank sum test; Pearson’s Chi-squared test\n\n\n\n\n\n\n\n\nbold_labels(): bold the variable labels\nitalicize_levels(): italicize the variable levels\nbold_p(): bold p-values according a specified threshold"
   },
   {
     "objectID": "slides/index.html#update-tbl_summary-with-modify_",
     "href": "slides/index.html#update-tbl_summary-with-modify_",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Update tbl_summary() with modify_*()",
-    "text": "Update tbl_summary() with modify_*()\n\n\nsm_trial %>% \n  tbl_summary(\n    by = trt, missing = \"no\"\n  ) %>%\n  modify_header(\n      stat_1 ~ \"**Group A**\",\n      stat_2 ~ \"**Group B**\"\n  ) %>% \n  modify_spanning_header(\n    all_stat_cols() ~ \"**Drug**\") %>% \n  modify_footnote(\n    all_stat_cols() ~ \n      paste(\"median (IQR) for continuous;\",\n            \"n (%) for categorical\")\n  )\n\n\n\n\n\n\nCharacteristic\n\n\nDrug\n\n\n\n\nGroup A1\n\n\nGroup B1\n\n\n\n\n\n\nAge\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nGrade\n\n\n\n\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\n\n\n1 median (IQR) for continuous; n (%) for categorical\n\n\n\n\n\n\n\n\nUse show_header_names() to see the internal header names available for use in modify_header()"
+    "text": "Update tbl_summary() with modify_*()\n\n\nsm_trial |> \n  tbl_summary(\n    by = trt, missing = \"no\"\n  ) |>\n  modify_header(\n      stat_1 ~ \"**Group A**\",\n      stat_2 ~ \"**Group B**\"\n  ) |> \n  modify_spanning_header(\n    all_stat_cols() ~ \"**Drug**\") |> \n  modify_footnote(\n    all_stat_cols() ~ \n      paste(\"median (IQR) for continuous;\",\n            \"n (%) for categorical\")\n  )\n\n\n\n\n\n\nCharacteristic\n\n\nDrug\n\n\n\n\nGroup A1\n\n\nGroup B1\n\n\n\n\n\n\nAge\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nGrade\n\n\n\n\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\n\n\n1 median (IQR) for continuous; n (%) for categorical\n\n\n\n\n\n\n\n\nUse show_header_names() to see the internal header names available for use in modify_header()"
   },
   {
     "objectID": "slides/index.html#add-on-functions-in-gtsummary-1",
@@ -186,49 +186,49 @@
     "href": "slides/index.html#cross-tabulation-with-tbl_cross",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Cross-tabulation with tbl_cross()",
-    "text": "Cross-tabulation with tbl_cross()\ntbl_cross() is a wrapper for tbl_summary() for n x m tables\n\n\nsm_trial %>%\n  tbl_cross(\n    row = trt, \n    col = grade,\n    percent = \"row\",\n    margin = \"row\"\n  ) %>%\n  add_p(source_note = TRUE)\n\n\n\n\n\n\n\n\nGrade\n\n\n\n\nI\n\n\nII\n\n\nIII\n\n\n\n\n\n\nChemotherapy Treatment\n\n\n\n\n\n\n\n\n\n\nDrug A\n\n\n35 (36%)\n\n\n32 (33%)\n\n\n31 (32%)\n\n\n\n\nDrug B\n\n\n33 (32%)\n\n\n36 (35%)\n\n\n33 (32%)\n\n\n\n\nTotal\n\n\n68 (34%)\n\n\n68 (34%)\n\n\n64 (32%)\n\n\n\n\n\n\nPearson’s Chi-squared test, p=0.9"
+    "text": "Cross-tabulation with tbl_cross()\ntbl_cross() is a wrapper for tbl_summary() for n x m tables\n\n\nsm_trial |>\n  tbl_cross(\n    row = trt, \n    col = grade,\n    percent = \"row\",\n    margin = \"row\"\n  ) |>\n  add_p(source_note = TRUE) |>\n  bold_labels()\n\n\n\n\n\n\n\n\nGrade\n\n\n\n\nI\n\n\nII\n\n\nIII\n\n\n\n\n\n\nChemotherapy Treatment\n\n\n\n\n\n\n\n\n\n\nDrug A\n\n\n35 (36%)\n\n\n32 (33%)\n\n\n31 (32%)\n\n\n\n\nDrug B\n\n\n33 (32%)\n\n\n36 (35%)\n\n\n33 (32%)\n\n\n\n\nTotal\n\n\n68 (34%)\n\n\n68 (34%)\n\n\n64 (32%)\n\n\n\n\n\n\nPearson’s Chi-squared test, p=0.9"
   },
   {
     "objectID": "slides/index.html#continuous-summaries-with-tbl_continuous",
     "href": "slides/index.html#continuous-summaries-with-tbl_continuous",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Continuous Summaries with tbl_continuous()",
-    "text": "Continuous Summaries with tbl_continuous()\ntbl_continuous() summarizes a continuous variable by 1, 2, or more categorical variables\n\n\nsm_trial %>%\n  tbl_continuous(\n    variable = age,\n    by = trt,\n    include = grade\n  )\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\n\n\n\n\nGrade\n\n\n\n\n\n\n\n\nI\n\n\n46 (36, 60)\n\n\n48 (42, 55)\n\n\n\n\nII\n\n\n44 (31, 54)\n\n\n50 (43, 57)\n\n\n\n\nIII\n\n\n52 (42, 60)\n\n\n45 (36, 52)\n\n\n\n\n\n\n1 Age: Median (IQR)"
+    "text": "Continuous Summaries with tbl_continuous()\ntbl_continuous() summarizes a continuous variable by 1, 2, or more categorical variables\n\n\nsm_trial |>\n  tbl_continuous(\n    variable = age,\n    by = trt,\n    include = grade\n  )\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\n\n\n\n\nGrade\n\n\n\n\n\n\n\n\nI\n\n\n46 (36, 60)\n\n\n48 (42, 55)\n\n\n\n\nII\n\n\n44 (31, 54)\n\n\n50 (43, 57)\n\n\n\n\nIII\n\n\n52 (42, 60)\n\n\n45 (36, 52)\n\n\n\n\n\n\n1 Age: Median (IQR)"
   },
   {
     "objectID": "slides/index.html#survey-data-with-tbl_svysummary",
     "href": "slides/index.html#survey-data-with-tbl_svysummary",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Survey data with tbl_svysummary()",
-    "text": "Survey data with tbl_svysummary()\n\n\nsurvey::svydesign(\n  ids = ~1, \n  data = as.data.frame(Titanic), \n  weights = ~Freq\n) %>%\n  tbl_svysummary(by = Survived) %>%\n  add_p() %>%\n  modify_spanning_header(\n    all_stat_cols() ~ \"**Survived**\")\n\n\n\n\n\n\nCharacteristic\n\n\nSurvived\n\n\np-value2\n\n\n\n\nNo, N = 1,4901\n\n\nYes, N = 7111\n\n\n\n\n\n\nClass\n\n\n\n\n\n\n0.7\n\n\n\n\n1st\n\n\n122 (8.2%)\n\n\n203 (29%)\n\n\n\n\n\n\n2nd\n\n\n167 (11%)\n\n\n118 (17%)\n\n\n\n\n\n\n3rd\n\n\n528 (35%)\n\n\n178 (25%)\n\n\n\n\n\n\nCrew\n\n\n673 (45%)\n\n\n212 (30%)\n\n\n\n\n\n\nSex\n\n\n\n\n\n\n0.048\n\n\n\n\nMale\n\n\n1,364 (92%)\n\n\n367 (52%)\n\n\n\n\n\n\nFemale\n\n\n126 (8.5%)\n\n\n344 (48%)\n\n\n\n\n\n\nAge\n\n\n\n\n\n\n0.4\n\n\n\n\nChild\n\n\n52 (3.5%)\n\n\n57 (8.0%)\n\n\n\n\n\n\nAdult\n\n\n1,438 (97%)\n\n\n654 (92%)\n\n\n\n\n\n\nFreq\n\n\n342 (140, 513)\n\n\n79 (64, 144)\n\n\n0.013\n\n\n\n\n\n\n1 n (%); Median (IQR)\n\n\n\n\n2 chi-squared test with Rao & Scott’s second-order correction; Wilcoxon rank-sum test for complex survey samples"
+    "text": "Survey data with tbl_svysummary()\n\n\nsurvey::svydesign(\n  ids = ~1, \n  data = as.data.frame(Titanic), \n  weights = ~Freq\n) |>\n  tbl_svysummary(by = Survived) |>\n  add_p() |>\n  modify_spanning_header(\n    all_stat_cols() ~ \"**Survived**\")\n\n\n\n\n\n\nCharacteristic\n\n\nSurvived\n\n\np-value2\n\n\n\n\nNo, N = 1,4901\n\n\nYes, N = 7111\n\n\n\n\n\n\nClass\n\n\n\n\n\n\n0.7\n\n\n\n\n1st\n\n\n122 (8.2%)\n\n\n203 (29%)\n\n\n\n\n\n\n2nd\n\n\n167 (11%)\n\n\n118 (17%)\n\n\n\n\n\n\n3rd\n\n\n528 (35%)\n\n\n178 (25%)\n\n\n\n\n\n\nCrew\n\n\n673 (45%)\n\n\n212 (30%)\n\n\n\n\n\n\nSex\n\n\n\n\n\n\n0.048\n\n\n\n\nMale\n\n\n1,364 (92%)\n\n\n367 (52%)\n\n\n\n\n\n\nFemale\n\n\n126 (8.5%)\n\n\n344 (48%)\n\n\n\n\n\n\nAge\n\n\n\n\n\n\n0.4\n\n\n\n\nChild\n\n\n52 (3.5%)\n\n\n57 (8.0%)\n\n\n\n\n\n\nAdult\n\n\n1,438 (97%)\n\n\n654 (92%)\n\n\n\n\n\n\nFreq\n\n\n342 (140, 513)\n\n\n79 (64, 144)\n\n\n0.013\n\n\n\n\n\n\n1 n (%); Median (IQR)\n\n\n\n\n2 chi-squared test with Rao & Scott’s second-order correction; Wilcoxon rank-sum test for complex survey samples"
   },
   {
     "objectID": "slides/index.html#survival-outcomes-with-tbl_survfit",
     "href": "slides/index.html#survival-outcomes-with-tbl_survfit",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Survival outcomes with tbl_survfit()",
-    "text": "Survival outcomes with tbl_survfit()\nlibrary(survival)\nfit <- survfit(Surv(ttdeath, death) ~ trt, trial)\n\ntbl_survfit(\n  fit, \n  times = c(12, 24),\n  label_header = \"**{time} Month**\"\n) %>%\n  add_p()\n\n\n\n\n\nCharacteristic\n\n\n12 Month\n\n\n24 Month\n\n\np-value1\n\n\n\n\n\n\nChemotherapy Treatment\n\n\n\n\n\n\n0.2\n\n\n\n\nDrug A\n\n\n91% (85%, 97%)\n\n\n47% (38%, 58%)\n\n\n\n\n\n\nDrug B\n\n\n86% (80%, 93%)\n\n\n41% (33%, 52%)\n\n\n\n\n\n\n\n\n1 Log-rank test"
+    "text": "Survival outcomes with tbl_survfit()\n\nlibrary(survival)\nfit <- survfit(Surv(ttdeath, death) ~ trt, trial)\n\ntbl_survfit(\n  fit, \n  times = c(12, 24),\n  label_header = \"**{time} Month**\"\n) |>\n  add_p()\n\n\n\n\n\nCharacteristic\n\n\n12 Month\n\n\n24 Month\n\n\np-value1\n\n\n\n\n\n\nChemotherapy Treatment\n\n\n\n\n\n\n0.2\n\n\n\n\nDrug A\n\n\n91% (85%, 97%)\n\n\n47% (38%, 58%)\n\n\n\n\n\n\nDrug B\n\n\n86% (80%, 93%)\n\n\n41% (33%, 52%)\n\n\n\n\n\n\n\n\n1 Log-rank test"
   },
   {
     "objectID": "slides/index.html#traditional-model-summary",
     "href": "slides/index.html#traditional-model-summary",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Traditional model summary()",
-    "text": "Traditional model summary()\n\n\nm1 <- \n  glm(\n    response ~ age + stage,\n    data = trial,\n    family = binomial(link = \"logit\")\n  )\n\nCall: glm(formula = response ~ age + stage, family = binomial(link = “logit”), data = trial)\nCoefficients: (Intercept) age stageT2 stageT3 stageT4\n-1.48622 0.01939 -0.54143 -0.05953 -0.23109\nDegrees of Freedom: 182 Total (i.e. Null); 178 Residual (17 observations deleted due to missingness) Null Deviance: 228.6 Residual Deviance: 223.9 AIC: 233.9\n\n\nLooks messy and it’s not easy to digest"
+    "text": "Traditional model summary()\n\n\n\nm1 <- \n  glm(\n    response ~ age + stage,\n    data = trial,\n    family = binomial(link = \"logit\")\n  )\n\n\n\n\n\nLooks messy and it’s not easy to digest"
   },
   {
     "objectID": "slides/index.html#basic-tbl_regression",
     "href": "slides/index.html#basic-tbl_regression",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Basic tbl_regression()",
-    "text": "Basic tbl_regression()\n\n\ntbl_regression(m1)\n\n\n\n\n\n\nCharacteristic\n\n\nlog(OR)1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n0.02\n\n\n0.00, 0.04\n\n\n0.091\n\n\n\n\nT Stage\n\n\n\n\n\n\n\n\n\n\nT1\n\n\n—\n\n\n—\n\n\n\n\n\n\nT2\n\n\n-0.54\n\n\n-1.4, 0.31\n\n\n0.2\n\n\n\n\nT3\n\n\n-0.06\n\n\n-1.0, 0.82\n\n\n0.9\n\n\n\n\nT4\n\n\n-0.23\n\n\n-1.1, 0.64\n\n\n0.6\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\nDisplays p-values for covariates\nShows reference levels for categorical variables"
+    "text": "Basic tbl_regression()\n\n\ntbl_regression(m1)\n\n\n\n\n\n\n  \n  \n    \n      Characteristic\n      log(OR)1\n      95% CI1\n      p-value\n    \n  \n  \n    Age\n0.02\n0.00, 0.04\n0.091\n    T Stage\n\n\n\n    T1\n—\n—\n\n    T2\n-0.54\n-1.4, 0.31\n0.2\n    T3\n-0.06\n-1.0, 0.82\n0.9\n    T4\n-0.23\n-1.1, 0.64\n0.6\n  \n  \n  \n    \n      1 OR = Odds Ratio, CI = Confidence Interval\n    \n  \n\n\n\n\n\n\nDisplays p-values for covariates\nShows reference levels for categorical variables"
   },
   {
     "objectID": "slides/index.html#customize-tbl_regression-output",
     "href": "slides/index.html#customize-tbl_regression-output",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Customize tbl_regression() output",
-    "text": "Customize tbl_regression() output\n\n\ntbl_regression(\n  m1,\n  exponentiate = TRUE\n) %>% \n  add_global_p() %>%\n  add_glance_table(\n    include = c(nobs, logLik, AIC, BIC)\n  )\n\n\n\n\n\n\nCharacteristic\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.087\n\n\n\n\nT Stage\n\n\n\n\n\n\n0.6\n\n\n\n\nT1\n\n\n—\n\n\n—\n\n\n\n\n\n\nT2\n\n\n0.58\n\n\n0.24, 1.37\n\n\n\n\n\n\nT3\n\n\n0.94\n\n\n0.39, 2.28\n\n\n\n\n\n\nT4\n\n\n0.79\n\n\n0.33, 1.90\n\n\n\n\n\n\nNo. Obs.\n\n\n183\n\n\n\n\n\n\n\n\nLog-likelihood\n\n\n-112\n\n\n\n\n\n\n\n\nAIC\n\n\n234\n\n\n\n\n\n\n\n\nBIC\n\n\n250\n\n\n\n\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\nDisplay odds ratio estimates and confidence intervals\nAdd global p-values\nAdd various model statistics"
+    "text": "Customize tbl_regression() output\n\n\ntbl_regression(\n  m1,\n  exponentiate = TRUE\n) |> \n  add_global_p() |>\n  add_glance_table(\n    include = c(nobs, logLik, AIC, BIC)\n  )\n\n\n\n\n\n\nCharacteristic\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.087\n\n\n\n\nT Stage\n\n\n\n\n\n\n0.6\n\n\n\n\nT1\n\n\n—\n\n\n—\n\n\n\n\n\n\nT2\n\n\n0.58\n\n\n0.24, 1.37\n\n\n\n\n\n\nT3\n\n\n0.94\n\n\n0.39, 2.28\n\n\n\n\n\n\nT4\n\n\n0.79\n\n\n0.33, 1.90\n\n\n\n\n\n\nNo. Obs.\n\n\n183\n\n\n\n\n\n\n\n\nLog-likelihood\n\n\n-112\n\n\n\n\n\n\n\n\nAIC\n\n\n234\n\n\n\n\n\n\n\n\nBIC\n\n\n250\n\n\n\n\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\nDisplay odds ratio estimates and confidence intervals\nAdd global p-values\nAdd various model statistics"
   },
   {
     "objectID": "slides/index.html#supported-models-in-tbl_regression",
@@ -242,7 +242,7 @@
     "href": "slides/index.html#univariate-models-with-tbl_uvregression",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Univariate models with tbl_uvregression()",
-    "text": "Univariate models with tbl_uvregression()\n\n\ntbl_uvreg <- \n  sm_trial %>% \n  tbl_uvregression(\n    method = glm,\n    y = response,\n    method.args = list(family = binomial),\n    exponentiate = TRUE\n  )\ntbl_uvreg\n\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nChemotherapy Treatment\n\n\n193\n\n\n\n\n\n\n\n\n\n\nDrug A\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nDrug B\n\n\n\n\n1.21\n\n\n0.66, 2.24\n\n\n0.5\n\n\n\n\nAge\n\n\n183\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.10\n\n\n\n\nGrade\n\n\n193\n\n\n\n\n\n\n\n\n\n\nI\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nII\n\n\n\n\n0.95\n\n\n0.45, 2.00\n\n\n0.9\n\n\n\n\nIII\n\n\n\n\n1.10\n\n\n0.52, 2.29\n\n\n0.8\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\nSpecify model method, method.args, and the response variable\nArguments and helper functions like exponentiate, bold_*(), add_global_p() can also be used with tbl_uvregression()"
+    "text": "Univariate models with tbl_uvregression()\n\n\ntbl_uvreg <- \n  sm_trial |> \n  tbl_uvregression(\n    method = glm,\n    y = response,\n    method.args = list(family = binomial),\n    exponentiate = TRUE\n  )\ntbl_uvreg\n\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nChemotherapy Treatment\n\n\n193\n\n\n\n\n\n\n\n\n\n\nDrug A\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nDrug B\n\n\n\n\n1.21\n\n\n0.66, 2.24\n\n\n0.5\n\n\n\n\nAge\n\n\n183\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.10\n\n\n\n\nGrade\n\n\n193\n\n\n\n\n\n\n\n\n\n\nI\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nII\n\n\n\n\n0.95\n\n\n0.45, 2.00\n\n\n0.9\n\n\n\n\nIII\n\n\n\n\n1.10\n\n\n0.52, 2.29\n\n\n0.8\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\nSpecify model method, method.args, and the response variable\nArguments and helper functions like exponentiate, bold_*(), add_global_p() can also be used with tbl_uvregression()"
   },
   {
     "objectID": "slides/index.html#gtsummary-reporting-with-inline_text",
@@ -256,42 +256,42 @@
     "href": "slides/index.html#gtsummary-reporting-with-inline_text-1",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "{gtsummary} reporting with inline_text()",
-    "text": "{gtsummary} reporting with inline_text()\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nChemotherapy Treatment\n\n\n193\n\n\n\n\n\n\n\n\n\n\nDrug A\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nDrug B\n\n\n\n\n1.21\n\n\n0.66, 2.24\n\n\n0.5\n\n\n\n\nAge\n\n\n183\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.10\n\n\n\n\nGrade\n\n\n193\n\n\n\n\n\n\n\n\n\n\nI\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nII\n\n\n\n\n0.95\n\n\n0.45, 2.00\n\n\n0.9\n\n\n\n\nIII\n\n\n\n\n1.10\n\n\n0.52, 2.29\n\n\n0.8\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\nIn Code: The odds ratio for age is `r inline_text(tbl_uvreg, variable = age)`\nIn Report: The odds ratio for age is 1.02 (95% CI 1.00, 1.04; p=0.10)"
+    "text": "{gtsummary} reporting with inline_text()\n\n\n\n\n\n\n  \n  \n    \n      Characteristic\n      N\n      OR1\n      95% CI1\n      p-value\n    \n  \n  \n    Chemotherapy Treatment\n193\n\n\n\n    Drug A\n\n—\n—\n\n    Drug B\n\n1.21\n0.66, 2.24\n0.5\n    Age\n183\n1.02\n1.00, 1.04\n0.10\n    Grade\n193\n\n\n\n    I\n\n—\n—\n\n    II\n\n0.95\n0.45, 2.00\n0.9\n    III\n\n1.10\n0.52, 2.29\n0.8\n  \n  \n  \n    \n      1 OR = Odds Ratio, CI = Confidence Interval\n    \n  \n\n\n\n\nIn Code: The odds ratio for age is `r inline_text(tbl_uvreg, variable = age)`\nIn Report: The odds ratio for age is 1.02 (95% CI 1.00, 1.04; p=0.10)"
   },
   {
     "objectID": "slides/index.html#tbl_merge-for-side-by-side-tables",
     "href": "slides/index.html#tbl_merge-for-side-by-side-tables",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "tbl_merge() for side-by-side tables",
-    "text": "tbl_merge() for side-by-side tables\n\n\nA univariable table:\ntbl_uvsurv <- \n  trial %>% \n  select(age, grade, death, ttdeath) %>% \n  tbl_uvregression(\n    method = coxph,\n    y = Surv(ttdeath, death),\n    exponentiate = TRUE\n  ) %>% \n  add_global_p()\ntbl_uvsurv\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n189\n\n\n1.01\n\n\n0.99, 1.02\n\n\n0.3\n\n\n\n\nGrade\n\n\n200\n\n\n\n\n\n\n0.075\n\n\n\n\nI\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nII\n\n\n\n\n1.28\n\n\n0.80, 2.05\n\n\n\n\n\n\nIII\n\n\n\n\n1.69\n\n\n1.07, 2.66\n\n\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval\n\n\n\n\n\n\nA multivariable table:\ntbl_mvsurv <- \n  coxph(\n    Surv(ttdeath, death) ~ age + grade, \n    data = trial\n  ) %>% \n  tbl_regression(\n    exponentiate = TRUE\n  ) %>% \n  add_global_p() \ntbl_mvsurv\n\n\n\n\n\nCharacteristic\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n1.01\n\n\n0.99, 1.02\n\n\n0.3\n\n\n\n\nGrade\n\n\n\n\n\n\n0.041\n\n\n\n\nI\n\n\n—\n\n\n—\n\n\n\n\n\n\nII\n\n\n1.20\n\n\n0.73, 1.97\n\n\n\n\n\n\nIII\n\n\n1.80\n\n\n1.13, 2.87\n\n\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval"
+    "text": "tbl_merge() for side-by-side tables\n\n\nA univariable table:\n\ntbl_uvsurv <- \n  trial |> \n  select(age, grade, death, ttdeath) |> \n  tbl_uvregression(\n    method = coxph,\n    y = Surv(ttdeath, death),\n    exponentiate = TRUE\n  ) |> \n  add_global_p()\ntbl_uvsurv\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n189\n\n\n1.01\n\n\n0.99, 1.02\n\n\n0.3\n\n\n\n\nGrade\n\n\n200\n\n\n\n\n\n\n0.075\n\n\n\n\nI\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nII\n\n\n\n\n1.28\n\n\n0.80, 2.05\n\n\n\n\n\n\nIII\n\n\n\n\n1.69\n\n\n1.07, 2.66\n\n\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\nA multivariable table:\n\ntbl_mvsurv <- \n  coxph(\n    Surv(ttdeath, death) ~ age + grade, \n    data = trial\n  ) |> \n  tbl_regression(\n    exponentiate = TRUE\n  ) |> \n  add_global_p() \ntbl_mvsurv\n\n\n\n\n\nCharacteristic\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n1.01\n\n\n0.99, 1.02\n\n\n0.3\n\n\n\n\nGrade\n\n\n\n\n\n\n0.041\n\n\n\n\nI\n\n\n—\n\n\n—\n\n\n\n\n\n\nII\n\n\n1.20\n\n\n0.73, 1.97\n\n\n\n\n\n\nIII\n\n\n1.80\n\n\n1.13, 2.87\n\n\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval"
   },
   {
     "objectID": "slides/index.html#tbl_merge-for-side-by-side-tables-1",
     "href": "slides/index.html#tbl_merge-for-side-by-side-tables-1",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "tbl_merge() for side-by-side tables",
-    "text": "tbl_merge() for side-by-side tables\ntbl_merge(\n  list(tbl_uvsurv, tbl_mvsurv),\n  tab_spanner = c(\"**Univariable**\", \"**Multivariable**\")\n)\n\n\n\n\n\nCharacteristic\n\n\nUnivariable\n\n\nMultivariable\n\n\n\n\nN\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n189\n\n\n1.01\n\n\n0.99, 1.02\n\n\n0.3\n\n\n1.01\n\n\n0.99, 1.02\n\n\n0.3\n\n\n\n\nGrade\n\n\n200\n\n\n\n\n\n\n0.075\n\n\n\n\n\n\n0.041\n\n\n\n\nI\n\n\n\n\n—\n\n\n—\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nII\n\n\n\n\n1.28\n\n\n0.80, 2.05\n\n\n\n\n1.20\n\n\n0.73, 1.97\n\n\n\n\n\n\nIII\n\n\n\n\n1.69\n\n\n1.07, 2.66\n\n\n\n\n1.80\n\n\n1.13, 2.87\n\n\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval"
+    "text": "tbl_merge() for side-by-side tables\n\ntbl_merge(\n  list(tbl_uvsurv, tbl_mvsurv),\n  tab_spanner = c(\"**Univariable**\", \"**Multivariable**\")\n)\n\n\n\n\n\n  \n  \n    \n      Characteristic\n      \n        Univariable\n      \n      \n        Multivariable\n      \n    \n    \n      N\n      HR1\n      95% CI1\n      p-value\n      HR1\n      95% CI1\n      p-value\n    \n  \n  \n    Age\n189\n1.01\n0.99, 1.02\n0.3\n1.01\n0.99, 1.02\n0.3\n    Grade\n200\n\n\n0.075\n\n\n0.041\n    I\n\n—\n—\n\n—\n—\n\n    II\n\n1.28\n0.80, 2.05\n\n1.20\n0.73, 1.97\n\n    III\n\n1.69\n1.07, 2.66\n\n1.80\n1.13, 2.87\n\n  \n  \n  \n    \n      1 HR = Hazard Ratio, CI = Confidence Interval"
   },
   {
     "objectID": "slides/index.html#tbl_stack-to-combine-vertically",
     "href": "slides/index.html#tbl_stack-to-combine-vertically",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "tbl_stack() to combine vertically",
-    "text": "tbl_stack() to combine vertically\n\n\nA univariable table:\ntbl_uvsurv2 <-\n  coxph(Surv(ttdeath, death) ~ trt, \n        data = trial) %>%\n  tbl_regression(\n    show_single_row = trt,\n    label = trt ~ \"Drug B vs A\",\n    exponentiate = TRUE\n  )\ntbl_uvsurv2\n\n\n\n\n\nCharacteristic\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nDrug B vs A\n\n\n1.25\n\n\n0.86, 1.81\n\n\n0.2\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval\n\n\n\n\n\n\nA multivariable table:\ntbl_mvsurv2 <-\n  coxph(Surv(ttdeath, death) ~ \n          trt + grade + stage + marker, \n        data = trial) %>%\n  tbl_regression(\n    show_single_row = trt,\n    label = trt ~ \"Drug B vs A\",\n    exponentiate = TRUE, \n    include = \"trt\"\n  )\ntbl_mvsurv2\n\n\n\n\n\nCharacteristic\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nDrug B vs A\n\n\n1.30\n\n\n0.88, 1.92\n\n\n0.2\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval"
+    "text": "tbl_stack() to combine vertically\n\n\nA univariable table:\n\ntbl_uvsurv2 <-\n  coxph(Surv(ttdeath, death) ~ trt, \n        data = trial) |>\n  tbl_regression(\n    show_single_row = trt,\n    label = trt ~ \"Drug B vs A\",\n    exponentiate = TRUE\n  )\ntbl_uvsurv2\n\n\n\n\n\nCharacteristic\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nDrug B vs A\n\n\n1.25\n\n\n0.86, 1.81\n\n\n0.2\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\nA multivariable table:\n\ntbl_mvsurv2 <-\n  coxph(Surv(ttdeath, death) ~ \n          trt + grade + stage + marker, \n        data = trial) |>\n  tbl_regression(\n    show_single_row = trt,\n    label = trt ~ \"Drug B vs A\",\n    exponentiate = TRUE, \n    include = \"trt\"\n  )\ntbl_mvsurv2\n\n\n\n\n\nCharacteristic\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nDrug B vs A\n\n\n1.30\n\n\n0.88, 1.92\n\n\n0.2\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval"
   },
   {
     "objectID": "slides/index.html#tbl_stack-to-combine-vertically-1",
     "href": "slides/index.html#tbl_stack-to-combine-vertically-1",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "tbl_stack() to combine vertically",
-    "text": "tbl_stack() to combine vertically\n\n\nlist(tbl_uvsurv2, tbl_mvsurv2) %>%\n  tbl_stack(\n    group_header = \n      c(\"Unadjusted\", \"Adjusted\")\n  )\n\n\n\n\n\n\nCharacteristic\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nUnadjusted\n\n\n\n\nDrug B vs A\n\n\n1.25\n\n\n0.86, 1.81\n\n\n0.2\n\n\n\n\nAdjusted\n\n\n\n\nDrug B vs A\n\n\n1.30\n\n\n0.88, 1.92\n\n\n0.2\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval"
+    "text": "tbl_stack() to combine vertically\n\n\nlist(tbl_uvsurv2, tbl_mvsurv2) |>\n  tbl_stack(\n    group_header = \n      c(\"Unadjusted\", \"Adjusted\")\n  )\n\n\n\n\n\n\nCharacteristic\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nUnadjusted\n\n\n\n\nDrug B vs A\n\n\n1.25\n\n\n0.86, 1.81\n\n\n0.2\n\n\n\n\nAdjusted\n\n\n\n\nDrug B vs A\n\n\n1.30\n\n\n0.88, 1.92\n\n\n0.2\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval"
   },
   {
     "objectID": "slides/index.html#tbl_strata-for-stratified-tables",
     "href": "slides/index.html#tbl_strata-for-stratified-tables",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "tbl_strata() for stratified tables",
-    "text": "tbl_strata() for stratified tables\nsm_trial %>%\n  mutate(grade = paste(\"Grade\", grade)) %>%\n  tbl_strata(\n    strata = grade,\n    ~tbl_summary(.x, by = trt, missing = \"no\") %>%\n      modify_header(all_stat_cols() ~ \"**{level}**\")\n  )\n\n\n\n\n\nCharacteristic\n\n\nGrade I\n\n\nGrade II\n\n\nGrade III\n\n\n\n\nDrug A1\n\n\nDrug B1\n\n\nDrug A1\n\n\nDrug B1\n\n\nDrug A1\n\n\nDrug B1\n\n\n\n\n\n\nAge\n\n\n46 (36, 60)\n\n\n48 (42, 55)\n\n\n44 (31, 54)\n\n\n50 (43, 57)\n\n\n52 (42, 60)\n\n\n45 (36, 52)\n\n\n\n\nTumor Response\n\n\n8 (23%)\n\n\n13 (41%)\n\n\n7 (23%)\n\n\n12 (36%)\n\n\n13 (43%)\n\n\n8 (24%)\n\n\n\n\n\n\n1 Median (IQR); n (%)"
+    "text": "tbl_strata() for stratified tables\n\nsm_trial |>\n  mutate(grade = paste(\"Grade\", grade)) |>\n  tbl_strata(\n    strata = grade,\n    ~tbl_summary(.x, by = trt, missing = \"no\") |>\n      modify_header(all_stat_cols() ~ \"**{level}**\")\n  )\n\n\n\n\n\nCharacteristic\n\n\nGrade I\n\n\nGrade II\n\n\nGrade III\n\n\n\n\nDrug A1\n\n\nDrug B1\n\n\nDrug A1\n\n\nDrug B1\n\n\nDrug A1\n\n\nDrug B1\n\n\n\n\n\n\nAge\n\n\n46 (36, 60)\n\n\n48 (42, 55)\n\n\n44 (31, 54)\n\n\n50 (43, 57)\n\n\n52 (42, 60)\n\n\n45 (36, 52)\n\n\n\n\nTumor Response\n\n\n8 (23%)\n\n\n13 (41%)\n\n\n7 (23%)\n\n\n12 (36%)\n\n\n13 (43%)\n\n\n8 (24%)\n\n\n\n\n\n\n1 Median (IQR); n (%)"
   },
   {
     "objectID": "slides/index.html#define-custom-function-tbl_cmh",
@@ -319,7 +319,7 @@
     "href": "slides/index.html#gtreg-for-regulatory-submissions-output",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "{gtreg} for regulatory submissions",
-    "text": "{gtreg} for regulatory submissions\n\n\n\n\n\nAdverse Event\n\n\nDrug A, N = 44\n\n\nDrug B, N = 56\n\n\n\n\nGrade 1\n\n\nGrade 2\n\n\nGrade 3\n\n\nGrade 4\n\n\nGrade 5\n\n\nGrade 1\n\n\nGrade 2\n\n\nGrade 3\n\n\nGrade 4\n\n\nGrade 5\n\n\n\n\n\n\nBlood and lymphatic system disorders\n\n\n—\n\n\n1 (2.3)\n\n\n—\n\n\n1 (2.3)\n\n\n1 (2.3)\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (1.8)\n\n\n6 (11)\n\n\n\n\nAnaemia\n\n\n—\n\n\n—\n\n\n1 (2.3)\n\n\n1 (2.3)\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (1.8)\n\n\n1 (1.8)\n\n\n3 (5.4)\n\n\n\n\nIncreased tendency to bruise\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (2.3)\n\n\n—\n\n\n—\n\n\n—\n\n\n—\n\n\n3 (5.4)\n\n\n2 (3.6)\n\n\n\n\nIron deficiency anaemia\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (2.3)\n\n\n1 (2.3)\n\n\n1 (1.8)\n\n\n2 (3.6)\n\n\n—\n\n\n1 (1.8)\n\n\n1 (1.8)\n\n\n\n\nThrombocytopenia\n\n\n—\n\n\n1 (2.3)\n\n\n—\n\n\n1 (2.3)\n\n\n—\n\n\n—\n\n\n—\n\n\n3 (5.4)\n\n\n—\n\n\n4 (7.1)\n\n\n\n\nGastrointestinal disorders\n\n\n—\n\n\n—\n\n\n—\n\n\n2 (4.5)\n\n\n1 (2.3)\n\n\n—\n\n\n—\n\n\n—\n\n\n2 (3.6)\n\n\n5 (8.9)\n\n\n\n\nDifficult digestion\n\n\n—\n\n\n—\n\n\n—\n\n\n3 (6.8)\n\n\n—\n\n\n1 (1.8)\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (1.8)\n\n\n\n\nIntestinal dilatation\n\n\n1 (2.3)\n\n\n—\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (1.8)\n\n\n1 (1.8)\n\n\n—\n\n\n—\n\n\n1 (1.8)\n\n\n\n\nMyochosis\n\n\n—\n\n\n2 (4.5)\n\n\n1 (2.3)\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (1.8)\n\n\n—\n\n\n1 (1.8)\n\n\n3 (5.4)\n\n\n\n\nNon-erosive reflux disease\n\n\n3 (6.8)\n\n\n—\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (1.8)\n\n\n—\n\n\n—\n\n\n3 (5.4)\n\n\n3 (5.4)\n\n\n\n\nPancreatic enzyme abnormality\n\n\n—\n\n\n—\n\n\n1 (2.3)\n\n\n1 (2.3)\n\n\n1 (2.3)\n\n\n2 (3.6)\n\n\n1 (1.8)\n\n\n1 (1.8)\n\n\n1 (1.8)\n\n\n—"
+    "text": "{gtreg} for regulatory submissions\n\n\n\n\n\n  \n  \n    \n      Adverse Event\n      \n        Drug A, N = 44\n      \n      \n        Drug B, N = 56\n      \n    \n    \n      Grade 1\n      Grade 2\n      Grade 3\n      Grade 4\n      Grade 5\n      Grade 1\n      Grade 2\n      Grade 3\n      Grade 4\n      Grade 5\n    \n  \n  \n    Blood and lymphatic system disorders\n—\n1 (2.3)\n—\n1 (2.3)\n1 (2.3)\n—\n—\n—\n1 (1.8)\n6 (11)\n    Anaemia\n—\n—\n1 (2.3)\n1 (2.3)\n—\n—\n—\n1 (1.8)\n1 (1.8)\n3 (5.4)\n    Increased tendency to bruise\n—\n—\n—\n1 (2.3)\n—\n—\n—\n—\n3 (5.4)\n2 (3.6)\n    Iron deficiency anaemia\n—\n—\n—\n1 (2.3)\n1 (2.3)\n1 (1.8)\n2 (3.6)\n—\n1 (1.8)\n1 (1.8)\n    Thrombocytopenia\n—\n1 (2.3)\n—\n1 (2.3)\n—\n—\n—\n3 (5.4)\n—\n4 (7.1)\n    Gastrointestinal disorders\n—\n—\n—\n2 (4.5)\n1 (2.3)\n—\n—\n—\n2 (3.6)\n5 (8.9)\n    Difficult digestion\n—\n—\n—\n3 (6.8)\n—\n1 (1.8)\n—\n—\n—\n1 (1.8)\n    Intestinal dilatation\n1 (2.3)\n—\n—\n—\n—\n1 (1.8)\n1 (1.8)\n—\n—\n1 (1.8)\n    Myochosis\n—\n2 (4.5)\n1 (2.3)\n—\n—\n—\n1 (1.8)\n—\n1 (1.8)\n3 (5.4)\n    Non-erosive reflux disease\n3 (6.8)\n—\n—\n—\n—\n1 (1.8)\n—\n—\n3 (5.4)\n3 (5.4)\n    Pancreatic enzyme abnormality\n—\n—\n1 (2.3)\n1 (2.3)\n1 (2.3)\n2 (3.6)\n1 (1.8)\n1 (1.8)\n1 (1.8)\n—"
   },
   {
     "objectID": "slides/index.html#gtsummary-theme-basics",
@@ -333,34 +333,76 @@
     "href": "slides/index.html#gtsummary-default-theme",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "{gtsummary} default theme",
-    "text": "{gtsummary} default theme\n\n\nreset_gtsummary_theme()\nm1 %>%\n  tbl_regression(\n    exponentiate = TRUE\n  ) %>%\n  modify_caption(\n    \"Default Theme\"\n  )\n\n\n\n\nDefault Theme\n\n\n\n\nCharacteristic\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.091\n\n\n\n\nT Stage\n\n\n\n\n\n\n\n\n\n\nT1\n\n\n—\n\n\n—\n\n\n\n\n\n\nT2\n\n\n0.58\n\n\n0.24, 1.37\n\n\n0.2\n\n\n\n\nT3\n\n\n0.94\n\n\n0.39, 2.28\n\n\n0.9\n\n\n\n\nT4\n\n\n0.79\n\n\n0.33, 1.90\n\n\n0.6\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval"
+    "text": "{gtsummary} default theme\n\n\nreset_gtsummary_theme()\nm1 |>\n  tbl_regression(\n    exponentiate = TRUE\n  ) |>\n  modify_caption(\n    \"Default Theme\"\n  )\n\n\n\n\nDefault Theme\n\n\n\n\nCharacteristic\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.091\n\n\n\n\nT Stage\n\n\n\n\n\n\n\n\n\n\nT1\n\n\n—\n\n\n—\n\n\n\n\n\n\nT2\n\n\n0.58\n\n\n0.24, 1.37\n\n\n0.2\n\n\n\n\nT3\n\n\n0.94\n\n\n0.39, 2.28\n\n\n0.9\n\n\n\n\nT4\n\n\n0.79\n\n\n0.33, 1.90\n\n\n0.6\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval"
   },
   {
     "objectID": "slides/index.html#gtsummary-theme_gtsummary_journal",
     "href": "slides/index.html#gtsummary-theme_gtsummary_journal",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "{gtsummary} theme_gtsummary_journal()",
-    "text": "{gtsummary} theme_gtsummary_journal()\n\n\nreset_gtsummary_theme()\ntheme_gtsummary_journal(journal = \"jama\")\n\nm1 %>%\n  tbl_regression(\n    exponentiate = TRUE\n  ) %>%\n  modify_caption(\n    \"Journal Theme (JAMA)\"\n  )\n\n\n\n\nJournal Theme (JAMA)\n\n\n\n\nCharacteristic\n\n\nOR (95% CI)1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n1.02 (1.00 to 1.04)\n\n\n0.091\n\n\n\n\nT Stage\n\n\n\n\n\n\n\n\nT1\n\n\n—\n\n\n\n\n\n\nT2\n\n\n0.58 (0.24 to 1.37)\n\n\n0.22\n\n\n\n\nT3\n\n\n0.94 (0.39 to 2.28)\n\n\n0.89\n\n\n\n\nT4\n\n\n0.79 (0.33 to 1.90)\n\n\n0.61\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\nContributions welcome!"
+    "text": "{gtsummary} theme_gtsummary_journal()\n\n\nreset_gtsummary_theme()\ntheme_gtsummary_journal(journal = \"jama\")\n\nm1 |>\n  tbl_regression(\n    exponentiate = TRUE\n  ) |>\n  modify_caption(\n    \"Journal Theme (JAMA)\"\n  )\n\n\n\n\nJournal Theme (JAMA)\n\n\n\n\nCharacteristic\n\n\nOR (95% CI)1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n1.02 (1.00 to 1.04)\n\n\n0.091\n\n\n\n\nT Stage\n\n\n\n\n\n\n\n\nT1\n\n\n—\n\n\n\n\n\n\nT2\n\n\n0.58 (0.24 to 1.37)\n\n\n0.22\n\n\n\n\nT3\n\n\n0.94 (0.39 to 2.28)\n\n\n0.89\n\n\n\n\nT4\n\n\n0.79 (0.33 to 1.90)\n\n\n0.61\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\nContributions welcome!"
   },
   {
     "objectID": "slides/index.html#gtsummary-theme_gtsummary_language",
     "href": "slides/index.html#gtsummary-theme_gtsummary_language",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "{gtsummary} theme_gtsummary_language()",
-    "text": "{gtsummary} theme_gtsummary_language()\n\n\nreset_gtsummary_theme()\ntheme_gtsummary_language(language = \"zh-tw\")\n\nm1 %>%\n  tbl_regression(\n    exponentiate = TRUE\n  ) %>%\n  modify_caption(\n    \"Language Theme (Chinese)\"\n  )\n\n\n\n\nLanguage Theme (Chinese)\n\n\n\n\n特色\n\n\nOR1\n\n\n95% CI1\n\n\nP 值\n\n\n\n\n\n\nAge\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.091\n\n\n\n\nT Stage\n\n\n\n\n\n\n\n\n\n\nT1\n\n\n—\n\n\n—\n\n\n\n\n\n\nT2\n\n\n0.58\n\n\n0.24, 1.37\n\n\n0.2\n\n\n\n\nT3\n\n\n0.94\n\n\n0.39, 2.28\n\n\n0.9\n\n\n\n\nT4\n\n\n0.79\n\n\n0.33, 1.90\n\n\n0.6\n\n\n\n\n\n\n1 OR=勝算比, CI=信賴區間\n\n\n\n\n\n\n\nLanguage options: “de” (German), “en” (English), “es” (Spanish), “fr” (French), “gu” (Gujarati), “hi” (Hindi), “is” (Icelandic), “ja” (Japanese), “kr” (Korean), “mr” (Marathi), “nl” (Dutch), “no” (Norwegian), “pt” (Portuguese), “se” (Swedish), “zh-cn” (Chinese Simplified), “zh-tw” (Chinese Traditional)"
+    "text": "{gtsummary} theme_gtsummary_language()\n\n\nreset_gtsummary_theme()\ntheme_gtsummary_language(language = \"zh-tw\")\n\nm1 |>\n  tbl_regression(\n    exponentiate = TRUE\n  ) |>\n  modify_caption(\n    \"Language Theme (Chinese)\"\n  )\n\n\n\n\nLanguage Theme (Chinese)\n\n\n\n\n特色\n\n\nOR1\n\n\n95% CI1\n\n\nP 值\n\n\n\n\n\n\nAge\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.091\n\n\n\n\nT Stage\n\n\n\n\n\n\n\n\n\n\nT1\n\n\n—\n\n\n—\n\n\n\n\n\n\nT2\n\n\n0.58\n\n\n0.24, 1.37\n\n\n0.2\n\n\n\n\nT3\n\n\n0.94\n\n\n0.39, 2.28\n\n\n0.9\n\n\n\n\nT4\n\n\n0.79\n\n\n0.33, 1.90\n\n\n0.6\n\n\n\n\n\n\n1 OR=勝算比, CI=信賴區間\n\n\n\n\n\n\n\nLanguage options: “de” (German), “en” (English), “es” (Spanish), “fr” (French), “gu” (Gujarati), “hi” (Hindi), “is” (Icelandic), “ja” (Japanese), “kr” (Korean), “mr” (Marathi), “nl” (Dutch), “no” (Norwegian), “pt” (Portuguese), “se” (Swedish), “zh-cn” (Chinese Simplified), “zh-tw” (Chinese Traditional)"
   },
   {
     "objectID": "slides/index.html#gtsummary-theme_gtsummary_compact",
     "href": "slides/index.html#gtsummary-theme_gtsummary_compact",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "{gtsummary} theme_gtsummary_compact()",
-    "text": "{gtsummary} theme_gtsummary_compact()\nreset_gtsummary_theme()\ntheme_gtsummary_compact()\n\ntbl_regression(m1, exponentiate = TRUE) %>%\n  modify_caption(\"Compact Theme\")\n\n\n\nCompact Theme\n\n\n\n\nCharacteristic\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.091\n\n\n\n\nT Stage\n\n\n\n\n\n\n\n\n\n\nT1\n\n\n—\n\n\n—\n\n\n\n\n\n\nT2\n\n\n0.58\n\n\n0.24, 1.37\n\n\n0.2\n\n\n\n\nT3\n\n\n0.94\n\n\n0.39, 2.28\n\n\n0.9\n\n\n\n\nT4\n\n\n0.79\n\n\n0.33, 1.90\n\n\n0.6\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\nReduces padding and font size"
+    "text": "{gtsummary} theme_gtsummary_compact()\n\nreset_gtsummary_theme()\ntheme_gtsummary_compact()\n\ntbl_regression(m1, exponentiate = TRUE) |>\n  modify_caption(\"Compact Theme\")\n\n\n\nCompact Theme\n\n\n\n\nCharacteristic\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.091\n\n\n\n\nT Stage\n\n\n\n\n\n\n\n\n\n\nT1\n\n\n—\n\n\n—\n\n\n\n\n\n\nT2\n\n\n0.58\n\n\n0.24, 1.37\n\n\n0.2\n\n\n\n\nT3\n\n\n0.94\n\n\n0.39, 2.28\n\n\n0.9\n\n\n\n\nT4\n\n\n0.79\n\n\n0.33, 1.90\n\n\n0.6\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\nReduces padding and font size"
   },
   {
     "objectID": "slides/index.html#gtsummary-set_gtsummary_theme",
     "href": "slides/index.html#gtsummary-set_gtsummary_theme",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "{gtsummary} set_gtsummary_theme()",
-    "text": "{gtsummary} set_gtsummary_theme()\n\nset_gtsummary_theme() to use a custom theme.\nSee the {gtsummary} + themes vignette for examples\n\nhttp://www.danieldsjoberg.com/gtsummary/articles/themes.html\n\n\n\nClinical Reporting with {gtsummary}"
+    "text": "{gtsummary} set_gtsummary_theme()\n\nset_gtsummary_theme() to use a custom theme.\nSee the {gtsummary} + themes vignette for examples\n\nhttp://www.danieldsjoberg.com/gtsummary/articles/themes.html"
+  },
+  {
+    "objectID": "slides/index.html#gtsummary-print-engines-1",
+    "href": "slides/index.html#gtsummary-print-engines-1",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "{gtsummary} print engines",
+    "text": "{gtsummary} print engines"
+  },
+  {
+    "objectID": "slides/index.html#gtsummary-print-engines-2",
+    "href": "slides/index.html#gtsummary-print-engines-2",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "{gtsummary} print engines",
+    "text": "{gtsummary} print engines\nUse any print engine to customize table\n\n\nlibrary(gt)\ntrial |>\n  select(age, grade) |>\n  tbl_summary() |>\n  as_gt() |>\n  cols_width(label ~ px(300)) |>\n  cols_align(columns = stat_0, \n             align = \"left\")\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n\n\nN = 2001\n\n\n\n\n\n\nAge\n\n\n47 (38, 57)\n\n\n\n\nUnknown\n\n\n11\n\n\n\n\nGrade\n\n\n\n\n\n\nI\n\n\n68 (34%)\n\n\n\n\nII\n\n\n68 (34%)\n\n\n\n\nIII\n\n\n64 (32%)\n\n\n\n\n\n\n1 Median (IQR); n (%)"
+  },
+  {
+    "objectID": "slides/index.html#gtsummary-website",
+    "href": "slides/index.html#gtsummary-website",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "{gtsummary} website",
+    "text": "{gtsummary} website\nhttp://www.danieldsjoberg.com/gtsummary/"
+  },
+  {
+    "objectID": "slides/index.html#gtsummary-installation",
+    "href": "slides/index.html#gtsummary-installation",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "{gtsummary} installation",
+    "text": "{gtsummary} installation\n\n\nInstall production version from CRAN:\n\ninstall.packages(\"gtsummary\")\n\n\nInstall development version from GitHub:\n\nremotes::install_github(\"ddsjoberg/gtsummary\")"
+  },
+  {
+    "objectID": "slides/index.html#gtsummary-sandbox-in-bstfun",
+    "href": "slides/index.html#gtsummary-sandbox-in-bstfun",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "{gtsummary} sandbox in {bstfun}",
+    "text": "{gtsummary} sandbox in {bstfun}\nhttp://www.danieldsjoberg.com/bstfun/"
+  },
+  {
+    "objectID": "slides/index.html#thank-you",
+    "href": "slides/index.html#thank-you",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Thank you",
+    "text": "Thank you\n\n\n\n Ask on stackoverflow.com\n Use the gtsummary tag\n Hundreds of Qs already answered!\n\n danieldsjoberg.com\n @statistishdan\n linkedin.com/in/ddsjoberg/\n github.com/ddsjoberg\n\n\n\n\n\nClinical Reporting with {gtsummary}"
   }
 ]
