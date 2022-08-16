@@ -14,6 +14,7 @@ execute:
   echo: true
   output: asis
   freeze: auto
+cache: true
 ---
 
 {{< include 00-setup.qmd >}}
@@ -30,86 +31,9 @@ execute:
 
 {{< include 06-tbl_merge.qmd >}}
 
+{{< include 07-themes.qmd >}}
 
-# {gtsummary} themes
+{{< include 08-print_engines.qmd >}}
 
-## {gtsummary} theme basics
+{{< include 09-summary.qmd >}}
 
-- A **theme** is a set of customization preferences that can be easily set and reused. 
-
-- Themes control **default settings for existing functions**
-
-- Themes control more **fine-grained customization** not available via arguments or helper functions
-
-- Easily use one of the **available themes**, or **create your own**
-
-## {gtsummary} default theme
-
-```{r}
-#| output-location: "column"
-reset_gtsummary_theme()
-m1 %>%
-  tbl_regression(
-    exponentiate = TRUE
-  ) %>%
-  modify_caption(
-    "Default Theme"
-  )
-```
-
-## {gtsummary} theme_gtsummary_journal()
-
-```{r}
-#| output-location: "column"
-reset_gtsummary_theme()
-theme_gtsummary_journal(journal = "jama")
-
-m1 %>%
-  tbl_regression(
-    exponentiate = TRUE
-  ) %>%
-  modify_caption(
-    "Journal Theme (JAMA)"
-  )
-```
-
-*Contributions welcome!*
-
-## {gtsummary} theme_gtsummary_language()
-
-```{r}
-#| output-location: "column"
-reset_gtsummary_theme()
-theme_gtsummary_language(language = "zh-tw")
-
-m1 %>%
-  tbl_regression(
-    exponentiate = TRUE
-  ) %>%
-  modify_caption(
-    "Language Theme (Chinese)"
-  )
-```
-
-Language options: "de" (German), "en" (English), "es" (Spanish), "fr" (French), "gu" (Gujarati), "hi" (Hindi), "is" (Icelandic), "ja" (Japanese), "kr" (Korean), "mr" (Marathi), "nl" (Dutch), "no" (Norwegian), "pt" (Portuguese), "se" (Swedish), "zh-cn" (Chinese Simplified), "zh-tw" (Chinese Traditional)
-
-## {gtsummary} theme_gtsummary_compact()
-
-```{r}
-reset_gtsummary_theme()
-theme_gtsummary_compact()
-
-tbl_regression(m1, exponentiate = TRUE) %>%
-  modify_caption("Compact Theme")
-```
-
-*Reduces padding and font size*
-
-## {gtsummary} set_gtsummary_theme()
-
-
-* `set_gtsummary_theme()` to use a custom theme.
-
-* See the {gtsummary} + themes vignette for examples
-
-http://www.danieldsjoberg.com/gtsummary/articles/themes.html

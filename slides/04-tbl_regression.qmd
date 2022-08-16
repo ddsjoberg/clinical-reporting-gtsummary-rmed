@@ -1,11 +1,9 @@
-
 # tbl_regression()
 
 ## Traditional model summary()
 
 ::: columns
 ::: {.column width="50%" style="font-size:0.75em;font-family:monospace"}
-
 ```{r}
 #| output: true
 #| label: trad-model-summary
@@ -19,13 +17,9 @@ m1 <-
 :::
 
 ::: {.column width="50%" style="font-size:0.5em;"}
-```{r}
-#| echo: false
-m1
-```
+![](images/raw-output-logistic-regression.png)
 :::
 :::
-
 
 Looks **messy** and it's not easy to digest
 
@@ -36,9 +30,9 @@ Looks **messy** and it's not easy to digest
 tbl_regression(m1)
 ```
 
-- Displays **p-values** for covariates
+-   Displays **p-values** for covariates
 
-- Shows **reference levels** for categorical variables
+-   Shows **reference levels** for categorical variables
 
 ## Customize tbl_regression() output
 
@@ -54,11 +48,11 @@ tbl_regression(
   )
 ```
 
-- Display **odds ratio** estimates and **confidence intervals**
+-   Display **odds ratio** estimates and **confidence intervals**
 
-- Add global p-values
+-   Add global p-values
 
-- Add various model statistics
+-   Add various model statistics
 
 ## Supported models in tbl_regression()
 
@@ -81,6 +75,6 @@ tbl_uvreg <-
 tbl_uvreg
 ```
 
-- Specify  model `method`, `method.args`, and the `response` variable
+-   Specify model `method`, `method.args`, and the `response` variable
 
-- Arguments and helper functions like `exponentiate`, `bold_*()`, `add_global_p()` can also be used with `tbl_uvregression()`
+-   Arguments and helper functions like `exponentiate`, `bold_*()`, `add_global_p()` can also be used with `tbl_uvregression()`

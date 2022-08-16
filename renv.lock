@@ -235,6 +235,14 @@
       "Hash": "fa53ce256cd280f468c080a58ea5ba8c",
       "Requirements": []
     },
+    "cranlogs": {
+      "Package": "cranlogs",
+      "Version": "2.1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "cfa4eec97df94fd69cb8652368966020",
+      "Requirements": []
+    },
     "crayon": {
       "Package": "crayon",
       "Version": "1.5.1",
@@ -423,6 +431,8 @@
       "Package": "gtreg",
       "Version": "0.1.0",
       "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "a4d4c7d9903893dce3040faedc5eac82",
       "Requirements": []
     },
     "gtsummary": {
@@ -477,6 +487,19 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "88d1b310583777edf01ccd1216fb0b2b",
+      "Requirements": []
+    },
+    "icons": {
+      "Package": "icons",
+      "Version": "0.2.0",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "mitchelloharawild",
+      "RemoteRepo": "icons",
+      "RemoteRef": "master",
+      "RemoteSha": "6e4dc378ac86c1d4f4ea167f408bed07b3df14fb",
+      "Hash": "73775362cd0dcad43ba00cfb9c89a928",
       "Requirements": []
     },
     "ids": {

@@ -1,0 +1,79 @@
+# In Closing
+
+## {gtsummary} website
+
+[http://www.danieldsjoberg.com/gtsummary/](http://www.danieldsjoberg.com/gtsummary/)
+
+```{=html}
+<iframe width="780" height="500" src="http://www.danieldsjoberg.com/gtsummary/" title="gtsummary Documentation"></iframe>
+```
+
+## {gtsummary} installation
+
+::: columns
+::: {.column width="50%" }
+Install production version from CRAN:
+
+```{r}
+#| eval: false
+install.packages("gtsummary")
+```
+:::
+
+::: {.column width="50%"}
+Install development version from GitHub:
+
+```{r}
+#| eval: false
+remotes::install_github("ddsjoberg/gtsummary")
+```
+:::
+:::
+
+```{r}
+#| echo: false
+library(ggplot2)
+
+cranlogs::cran_downloads("gtsummary", from = "2019-05-05") |> 
+  ggplot(aes(x = date, y = cumsum(count))) +
+  geom_area(fill = "#7090A5", alpha = 0.8) +
+  scale_y_continuous(
+    expand = c(0, 0), 
+    labels = style_number,
+    n.breaks = 6
+  ) +
+  scale_x_continuous(
+    expand = c(0, 0),
+    labels = function(x) format(lubridate::as_date(x), format = "%b %Y"),
+    n.breaks = 6
+  ) +
+  labs(x = NULL, y = "Cumulative Downloads") +
+  theme_bw() +
+  theme(text = element_text(size = 15, family = "Atkinson Hyperlegible"))
+```
+
+## {gtsummary} sandbox in {bstfun} 
+
+[http://www.danieldsjoberg.com/bstfun/](http://www.danieldsjoberg.com/bstfun/)
+
+
+
+::: columns
+::: {.column width="50%" }
+![](images/bstfun_website.jpg)
+:::
+
+::: {.column width="50%"}
+![](images/add_sparkline_ex1.png)
+![](images/add_inline_forest_plot_ex1.png)
+:::
+:::
+
+## Thank you
+
+![](https://github.com/ddsjoberg/gtsummary/blob/main/data-raw/misc_files/tbl_summary_demo_fast.gif)
+
+#### gtsummary questions?
+
+`r icons::fontawesome("stack-overflow")` Ask on [stackoverflow.com](stackoverflow.com) and *use the gtsummary tag*. Hundreds of Qs already answered!
+`r icons::fontawesome("twitter")` @statistishdan,    `r icons::fontawesome("github")` @ddsjoberg

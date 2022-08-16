@@ -226,7 +226,8 @@ sm_trial %>%
     percent = "row",
     margin = "row"
   ) %>%
-  add_p(source_note = TRUE)
+  add_p(source_note = TRUE) %>%
+  bold_labels()
 ```
 
 ## Continuous Summaries with tbl_continuous()

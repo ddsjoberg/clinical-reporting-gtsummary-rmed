@@ -122,7 +122,7 @@ sm_trial %>%
 
 * The {gtreg} package uses {gtsummary} to construct tables for regulatory agencies.
 
-* https://shannonpileggi.github.io/gtreg/
+* [https://shannonpileggi.github.io/gtreg/](https://shannonpileggi.github.io/gtreg/)
 
 ```{r}
 #| output-location: "slide"
