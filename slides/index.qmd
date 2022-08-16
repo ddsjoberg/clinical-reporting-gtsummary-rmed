@@ -11,36 +11,24 @@ format:
     slide-number: true
     chalkboard: true
 execute:
+  echo: true
+  output: asis
   freeze: auto
 ---
 
+{{< include 00-setup.qmd >}}
 
-```{r child='00-setup.qmd'}
-```
+{{< include 01-background.qmd >}}
 
+{{< include 02-trial.qmd >}}
 
-```{r child='01-background.qmd'}
-```
+{{< include 03-tbl_summary.qmd >}}
 
+{{< include 04-tbl_regression.qmd >}}
 
-```{r child='02-trial.qmd'}
-```
+{{< include 05-inline_text.qmd >}}
 
-
-```{r child='03-tbl_summary.qmd'}
-```
-
-
-```{r child='04-tbl_regression.qmd'}
-```
-
-
-```{r child='05-inline_text.qmd'}
-```
-
-```{r child='06-tbl_merge.qmd'}
-```
-
+{{< include 06-tbl_merge.qmd >}}
 
 
 # {gtsummary} themes

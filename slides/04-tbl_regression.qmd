@@ -4,9 +4,11 @@
 ## Traditional model summary()
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="50%" style="font-size:0.75em;font-family:monospace"}
 
-```{r results='hide'}
+```{r}
+#| output: true
+#| label: trad-model-summary
 m1 <- 
   glm(
     response ~ age + stage,
@@ -16,8 +18,11 @@ m1 <-
 ```
 :::
 
-::: {.column width="50%"}
-![](images/raw-output-logistic-regression.png)
+::: {.column width="50%" style="font-size:0.5em;"}
+```{r}
+#| echo: false
+m1
+```
 :::
 :::
 
