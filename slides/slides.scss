@@ -3,7 +3,7 @@
 // fonts
 @import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
 
-$font-family-sans-serif: "Atkinson Hyperlegible", sans-serif, monospace;
+$font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
 $presentation-heading-color: #7090A5;
 $presentation-title-slide-text-align: "left";
 $presentation-font-size-root: 33px;
@@ -14,11 +14,6 @@ $link-color: #7090A5;
 
 details>summary {
   font-size: 0.75em;
-}
-
-.unformatted {
-  font-size: 0.75em;
-  font-family: "Courier New", monospace;
 }
 
 .smaller {

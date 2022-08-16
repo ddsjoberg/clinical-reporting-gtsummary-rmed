@@ -1,6 +1,7 @@
 ## Acknowledgements
 
 ```{r}
+#| echo: false
 library(gtsummary)
 library(tidyverse)
 

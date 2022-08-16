@@ -4,7 +4,7 @@
 ## Traditional model summary()
 
 ::: columns
-::: {.column width="50%" style="font-size:0.75em;"}
+::: {.column width="50%" style="font-size:0.75em;font-family:monospace"}
 
 ```{r}
 #| output: true
@@ -19,8 +19,9 @@ m1 <-
 :::
 
 ::: {.column width="50%" style="font-size:0.5em;"}
-```{r trad-model-summary}
+```{r}
 #| echo: false
+m1
 ```
 :::
 :::
