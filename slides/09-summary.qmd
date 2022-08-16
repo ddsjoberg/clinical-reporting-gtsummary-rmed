@@ -32,6 +32,8 @@ remotes::install_github("ddsjoberg/gtsummary")
 
 ```{r}
 #| echo: false
+#| out-width: '100%'
+#| fig-asp: 0.375
 library(ggplot2)
 
 cranlogs::cran_downloads("gtsummary", from = "2019-05-05") |> 
