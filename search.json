@@ -207,6 +207,118 @@
     "href": "slides/index.html#survival-outcomes-with-tbl_survfit",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Survival outcomes with tbl_survfit()",
-    "text": "Survival outcomes with tbl_survfit()\nlibrary(survival)\nfit <- survfit(Surv(ttdeath, death) ~ trt, trial)\n\ntbl_survfit(\n  fit, \n  times = c(12, 24),\n  label_header = \"**{time} Month**\"\n) %>%\n  add_p()\n\n\n\n\n\nCharacteristic\n\n\n12 Month\n\n\n24 Month\n\n\np-value1\n\n\n\n\n\n\nChemotherapy Treatment\n\n\n\n\n\n\n0.2\n\n\n\n\nDrug A\n\n\n91% (85%, 97%)\n\n\n47% (38%, 58%)\n\n\n\n\n\n\nDrug B\n\n\n86% (80%, 93%)\n\n\n41% (33%, 52%)\n\n\n\n\n\n\n\n\n1 Log-rank test\n\n\n\n\n\n\n\n\nClinical Reporting with {gtsummary}"
+    "text": "Survival outcomes with tbl_survfit()\nlibrary(survival)\nfit <- survfit(Surv(ttdeath, death) ~ trt, trial)\n\ntbl_survfit(\n  fit, \n  times = c(12, 24),\n  label_header = \"**{time} Month**\"\n) %>%\n  add_p()\n\n\n\n\n\nCharacteristic\n\n\n12 Month\n\n\n24 Month\n\n\np-value1\n\n\n\n\n\n\nChemotherapy Treatment\n\n\n\n\n\n\n0.2\n\n\n\n\nDrug A\n\n\n91% (85%, 97%)\n\n\n47% (38%, 58%)\n\n\n\n\n\n\nDrug B\n\n\n86% (80%, 93%)\n\n\n41% (33%, 52%)\n\n\n\n\n\n\n\n\n1 Log-rank test"
+  },
+  {
+    "objectID": "slides/index.html#traditional-model-summary",
+    "href": "slides/index.html#traditional-model-summary",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Traditional model summary()",
+    "text": "Traditional model summary()\n\n\n\nm1 <- \n  glm(\n    response ~ age + stage,\n    data = trial,\n    family = binomial(link = \"logit\")\n  )\n\n\n\n\n\nLooks messy and it’s not easy to digest"
+  },
+  {
+    "objectID": "slides/index.html#basic-tbl_regression",
+    "href": "slides/index.html#basic-tbl_regression",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Basic tbl_regression()",
+    "text": "Basic tbl_regression()\n\n\ntbl_regression(m1)\n\n\n\n\n\n\nCharacteristic\n\n\nlog(OR)1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n0.02\n\n\n0.00, 0.04\n\n\n0.091\n\n\n\n\nT Stage\n\n\n\n\n\n\n\n\n\n\nT1\n\n\n—\n\n\n—\n\n\n\n\n\n\nT2\n\n\n-0.54\n\n\n-1.4, 0.31\n\n\n0.2\n\n\n\n\nT3\n\n\n-0.06\n\n\n-1.0, 0.82\n\n\n0.9\n\n\n\n\nT4\n\n\n-0.23\n\n\n-1.1, 0.64\n\n\n0.6\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\nDisplays p-values for covariates\nShows reference levels for categorical variables"
+  },
+  {
+    "objectID": "slides/index.html#customize-tbl_regression-output",
+    "href": "slides/index.html#customize-tbl_regression-output",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Customize tbl_regression() output",
+    "text": "Customize tbl_regression() output\n\n\ntbl_regression(\n  m1,\n  exponentiate = TRUE\n) %>% \n  add_global_p() %>%\n  add_glance_table(\n    include = c(nobs, logLik, AIC, BIC)\n  )\n\n\n\n\n\n\nCharacteristic\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.087\n\n\n\n\nT Stage\n\n\n\n\n\n\n0.6\n\n\n\n\nT1\n\n\n—\n\n\n—\n\n\n\n\n\n\nT2\n\n\n0.58\n\n\n0.24, 1.37\n\n\n\n\n\n\nT3\n\n\n0.94\n\n\n0.39, 2.28\n\n\n\n\n\n\nT4\n\n\n0.79\n\n\n0.33, 1.90\n\n\n\n\n\n\nNo. Obs.\n\n\n183\n\n\n\n\n\n\n\n\nLog-likelihood\n\n\n-112\n\n\n\n\n\n\n\n\nAIC\n\n\n234\n\n\n\n\n\n\n\n\nBIC\n\n\n250\n\n\n\n\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\nDisplay odds ratio estimates and confidence intervals\nAdd global p-values\nAdd various model statistics"
+  },
+  {
+    "objectID": "slides/index.html#supported-models-in-tbl_regression",
+    "href": "slides/index.html#supported-models-in-tbl_regression",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Supported models in tbl_regression()",
+    "text": "Supported models in tbl_regression()\nbiglm::bigglm(), biglmm::bigglm(), brms::brm(), cmprsk::crr(), fixest::feglm(), fixest::femlm(), fixest::feNmlm(), fixest::feols(), gam::gam(), geepack::geeglm(), glmmTMB::glmmTMB(), lavaan::lavaan(), lfe::felm(), lme4::glmer(), lme4::glmer.nb(), lme4::lmer(), MASS::glm.nb(), MASS::polr(), mgcv::gam(), mice::mira, nnet::multinom(), ordinal::clm(), ordinal::clmm(), parsnip::model_fit, plm::plm(), rstanarm::stan_glm(), stats::aov(), stats::glm(), stats::lm(), stats::nls(), survey::svycoxph(), survey::svyglm(), survey::svyolr(), survival::clogit(), survival::coxph(), survival::survreg(), tidycmprsk::crr(), VGAM::vglm()\nCustom tidiers can be written and passed to tbl_regression() using the tidy_fun= argument."
+  },
+  {
+    "objectID": "slides/index.html#univariate-models-with-tbl_uvregression",
+    "href": "slides/index.html#univariate-models-with-tbl_uvregression",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Univariate models with tbl_uvregression()",
+    "text": "Univariate models with tbl_uvregression()\n\n\ntbl_uvreg <- \n  sm_trial %>% \n  tbl_uvregression(\n    method = glm,\n    y = response,\n    method.args = list(family = binomial),\n    exponentiate = TRUE\n  )\ntbl_uvreg\n\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nChemotherapy Treatment\n\n\n193\n\n\n\n\n\n\n\n\n\n\nDrug A\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nDrug B\n\n\n\n\n1.21\n\n\n0.66, 2.24\n\n\n0.5\n\n\n\n\nAge\n\n\n183\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.10\n\n\n\n\nGrade\n\n\n193\n\n\n\n\n\n\n\n\n\n\nI\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nII\n\n\n\n\n0.95\n\n\n0.45, 2.00\n\n\n0.9\n\n\n\n\nIII\n\n\n\n\n1.10\n\n\n0.52, 2.29\n\n\n0.8\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\nSpecify model method, method.args, and the response variable\nArguments and helper functions like exponentiate, bold_*(), add_global_p() can also be used with tbl_uvregression()"
+  },
+  {
+    "objectID": "slides/index.html#gtsummary-reporting-with-inline_text",
+    "href": "slides/index.html#gtsummary-reporting-with-inline_text",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "{gtsummary} reporting with inline_text()",
+    "text": "{gtsummary} reporting with inline_text()\n\nTables are important, but we often need to report results in-line in a report.\nAny statistic reported in a {gtsummary} table can be extracted and reported in-line in an R Markdown document with the inline_text() function.\nThe pattern of what is reported can be modified with the pattern = argument.\nDefault is pattern = \"{estimate} ({conf.level*100}% CI {conf.low}, {conf.high}; {p.value})\"."
+  },
+  {
+    "objectID": "slides/index.html#gtsummary-reporting-with-inline_text-1",
+    "href": "slides/index.html#gtsummary-reporting-with-inline_text-1",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "{gtsummary} reporting with inline_text()",
+    "text": "{gtsummary} reporting with inline_text()\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nChemotherapy Treatment\n\n\n193\n\n\n\n\n\n\n\n\n\n\nDrug A\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nDrug B\n\n\n\n\n1.21\n\n\n0.66, 2.24\n\n\n0.5\n\n\n\n\nAge\n\n\n183\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.10\n\n\n\n\nGrade\n\n\n193\n\n\n\n\n\n\n\n\n\n\nI\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nII\n\n\n\n\n0.95\n\n\n0.45, 2.00\n\n\n0.9\n\n\n\n\nIII\n\n\n\n\n1.10\n\n\n0.52, 2.29\n\n\n0.8\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\nIn Code: The odds ratio for age is `r inline_text(tbl_uvreg, variable = age)`\nIn Report: The odds ratio for age is 1.02 (95% CI 1.00, 1.04; p=0.10)"
+  },
+  {
+    "objectID": "slides/index.html#tbl_merge-for-side-by-side-tables",
+    "href": "slides/index.html#tbl_merge-for-side-by-side-tables",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "tbl_merge() for side-by-side tables",
+    "text": "tbl_merge() for side-by-side tables\n\n\nA univariable table:\ntbl_uvsurv <- \n  trial %>% \n  select(age, grade, death, ttdeath) %>% \n  tbl_uvregression(\n    method = coxph,\n    y = Surv(ttdeath, death),\n    exponentiate = TRUE\n  ) %>% \n  add_global_p()\ntbl_uvsurv\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n189\n\n\n1.01\n\n\n0.99, 1.02\n\n\n0.3\n\n\n\n\nGrade\n\n\n200\n\n\n\n\n\n\n0.075\n\n\n\n\nI\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nII\n\n\n\n\n1.28\n\n\n0.80, 2.05\n\n\n\n\n\n\nIII\n\n\n\n\n1.69\n\n\n1.07, 2.66\n\n\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval\n\n\n\n\n\n\nA multivariable table:\ntbl_mvsurv <- \n  coxph(\n    Surv(ttdeath, death) ~ age + grade, \n    data = trial\n  ) %>% \n  tbl_regression(\n    exponentiate = TRUE\n  ) %>% \n  add_global_p() \ntbl_mvsurv\n\n\n\n\n\nCharacteristic\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n1.01\n\n\n0.99, 1.02\n\n\n0.3\n\n\n\n\nGrade\n\n\n\n\n\n\n0.041\n\n\n\n\nI\n\n\n—\n\n\n—\n\n\n\n\n\n\nII\n\n\n1.20\n\n\n0.73, 1.97\n\n\n\n\n\n\nIII\n\n\n1.80\n\n\n1.13, 2.87\n\n\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval"
+  },
+  {
+    "objectID": "slides/index.html#tbl_merge-for-side-by-side-tables-1",
+    "href": "slides/index.html#tbl_merge-for-side-by-side-tables-1",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "tbl_merge() for side-by-side tables",
+    "text": "tbl_merge() for side-by-side tables\ntbl_merge(\n  list(tbl_uvsurv, tbl_mvsurv),\n  tab_spanner = c(\"**Univariable**\", \"**Multivariable**\")\n)\n\n\n\n\n\nCharacteristic\n\n\nUnivariable\n\n\nMultivariable\n\n\n\n\nN\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n189\n\n\n1.01\n\n\n0.99, 1.02\n\n\n0.3\n\n\n1.01\n\n\n0.99, 1.02\n\n\n0.3\n\n\n\n\nGrade\n\n\n200\n\n\n\n\n\n\n0.075\n\n\n\n\n\n\n0.041\n\n\n\n\nI\n\n\n\n\n—\n\n\n—\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nII\n\n\n\n\n1.28\n\n\n0.80, 2.05\n\n\n\n\n1.20\n\n\n0.73, 1.97\n\n\n\n\n\n\nIII\n\n\n\n\n1.69\n\n\n1.07, 2.66\n\n\n\n\n1.80\n\n\n1.13, 2.87\n\n\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval"
+  },
+  {
+    "objectID": "slides/index.html#tbl_stack-to-combine-vertically",
+    "href": "slides/index.html#tbl_stack-to-combine-vertically",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "tbl_stack() to combine vertically",
+    "text": "tbl_stack() to combine vertically\n\n\nA univariable table:\ntbl_uvsurv2 <-\n  coxph(Surv(ttdeath, death) ~ trt, \n        data = trial) %>%\n  tbl_regression(\n    show_single_row = trt,\n    label = trt ~ \"Drug B vs A\",\n    exponentiate = TRUE\n  )\ntbl_uvsurv2\n\n\n\n\n\nCharacteristic\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nDrug B vs A\n\n\n1.25\n\n\n0.86, 1.81\n\n\n0.2\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval\n\n\n\n\n\n\nA multivariable table:\ntbl_mvsurv2 <-\n  coxph(Surv(ttdeath, death) ~ \n          trt + grade + stage + marker, \n        data = trial) %>%\n  tbl_regression(\n    show_single_row = trt,\n    label = trt ~ \"Drug B vs A\",\n    exponentiate = TRUE, \n    include = \"trt\"\n  )\ntbl_mvsurv2\n\n\n\n\n\nCharacteristic\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nDrug B vs A\n\n\n1.30\n\n\n0.88, 1.92\n\n\n0.2\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval"
+  },
+  {
+    "objectID": "slides/index.html#tbl_stack-to-combine-vertically-1",
+    "href": "slides/index.html#tbl_stack-to-combine-vertically-1",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "tbl_stack() to combine vertically",
+    "text": "tbl_stack() to combine vertically\n\n\nlist(tbl_uvsurv2, tbl_mvsurv2) %>%\n  tbl_stack(\n    group_header = \n      c(\"Unadjusted\", \"Adjusted\")\n  )\n\n\n\n\n\n\nCharacteristic\n\n\nHR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nUnadjusted\n\n\n\n\nDrug B vs A\n\n\n1.25\n\n\n0.86, 1.81\n\n\n0.2\n\n\n\n\nAdjusted\n\n\n\n\nDrug B vs A\n\n\n1.30\n\n\n0.88, 1.92\n\n\n0.2\n\n\n\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval"
+  },
+  {
+    "objectID": "slides/index.html#tbl_strata-for-stratified-tables",
+    "href": "slides/index.html#tbl_strata-for-stratified-tables",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "tbl_strata() for stratified tables",
+    "text": "tbl_strata() for stratified tables\nsm_trial %>%\n  mutate(grade = paste(\"Grade\", grade)) %>%\n  tbl_strata(\n    strata = grade,\n    ~tbl_summary(.x, by = trt, missing = \"no\") %>%\n      modify_header(all_stat_cols() ~ \"**{level}**\")\n  )\n\n\n\n\n\nCharacteristic\n\n\nGrade I\n\n\nGrade II\n\n\nGrade III\n\n\n\n\nDrug A1\n\n\nDrug B1\n\n\nDrug A1\n\n\nDrug B1\n\n\nDrug A1\n\n\nDrug B1\n\n\n\n\n\n\nAge\n\n\n46 (36, 60)\n\n\n48 (42, 55)\n\n\n44 (31, 54)\n\n\n50 (43, 57)\n\n\n52 (42, 60)\n\n\n45 (36, 52)\n\n\n\n\nTumor Response\n\n\n8 (23%)\n\n\n13 (41%)\n\n\n7 (23%)\n\n\n12 (36%)\n\n\n13 (43%)\n\n\n8 (24%)\n\n\n\n\n\n\n1 Median (IQR); n (%)"
+  },
+  {
+    "objectID": "slides/index.html#define-custom-function-tbl_cmh",
+    "href": "slides/index.html#define-custom-function-tbl_cmh",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Define custom function tbl_cmh()",
+    "text": "Define custom function tbl_cmh()"
+  },
+  {
+    "objectID": "slides/index.html#define-custom-function-tbl_cmh-1",
+    "href": "slides/index.html#define-custom-function-tbl_cmh-1",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Define custom function tbl_cmh()",
+    "text": "Define custom function tbl_cmh()"
+  },
+  {
+    "objectID": "slides/index.html#gtreg-for-regulatory-submissions",
+    "href": "slides/index.html#gtreg-for-regulatory-submissions",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "{gtreg} for regulatory submissions",
+    "text": "{gtreg} for regulatory submissions\n\nThe {gtreg} package uses {gtsummary} to construct tables for regulatory agencies.\nhttps://shannonpileggi.github.io/gtreg/\n\n\ngtreg::df_adverse_events |>\n  gtreg::tbl_ae(\n    id_df = gtreg::df_patient_characteristics,\n    id = patient_id,\n    ae = adverse_event,\n    soc = system_organ_class, \n    by = grade, \n    strata = trt\n  ) |>\n  modify_header(gtreg::all_ae_cols() ~ \"**Grade {by}**\") |> \n  bold_labels()\n\n\n\n\n\nClinical Reporting with {gtsummary}"
+  },
+  {
+    "objectID": "slides/index.html#gtreg-for-regulatory-submissions-output",
+    "href": "slides/index.html#gtreg-for-regulatory-submissions-output",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "{gtreg} for regulatory submissions",
+    "text": "{gtreg} for regulatory submissions\n\n\n\n\n\nAdverse Event\n\n\nDrug A, N = 44\n\n\nDrug B, N = 56\n\n\n\n\nGrade 1\n\n\nGrade 2\n\n\nGrade 3\n\n\nGrade 4\n\n\nGrade 5\n\n\nGrade 1\n\n\nGrade 2\n\n\nGrade 3\n\n\nGrade 4\n\n\nGrade 5\n\n\n\n\n\n\nBlood and lymphatic system disorders\n\n\n—\n\n\n1 (2.3)\n\n\n—\n\n\n1 (2.3)\n\n\n1 (2.3)\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (1.8)\n\n\n6 (11)\n\n\n\n\nAnaemia\n\n\n—\n\n\n—\n\n\n1 (2.3)\n\n\n1 (2.3)\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (1.8)\n\n\n1 (1.8)\n\n\n3 (5.4)\n\n\n\n\nIncreased tendency to bruise\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (2.3)\n\n\n—\n\n\n—\n\n\n—\n\n\n—\n\n\n3 (5.4)\n\n\n2 (3.6)\n\n\n\n\nIron deficiency anaemia\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (2.3)\n\n\n1 (2.3)\n\n\n1 (1.8)\n\n\n2 (3.6)\n\n\n—\n\n\n1 (1.8)\n\n\n1 (1.8)\n\n\n\n\nThrombocytopenia\n\n\n—\n\n\n1 (2.3)\n\n\n—\n\n\n1 (2.3)\n\n\n—\n\n\n—\n\n\n—\n\n\n3 (5.4)\n\n\n—\n\n\n4 (7.1)\n\n\n\n\nGastrointestinal disorders\n\n\n—\n\n\n—\n\n\n—\n\n\n2 (4.5)\n\n\n1 (2.3)\n\n\n—\n\n\n—\n\n\n—\n\n\n2 (3.6)\n\n\n5 (8.9)\n\n\n\n\nDifficult digestion\n\n\n—\n\n\n—\n\n\n—\n\n\n3 (6.8)\n\n\n—\n\n\n1 (1.8)\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (1.8)\n\n\n\n\nIntestinal dilatation\n\n\n1 (2.3)\n\n\n—\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (1.8)\n\n\n1 (1.8)\n\n\n—\n\n\n—\n\n\n1 (1.8)\n\n\n\n\nMyochosis\n\n\n—\n\n\n2 (4.5)\n\n\n1 (2.3)\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (1.8)\n\n\n—\n\n\n1 (1.8)\n\n\n3 (5.4)\n\n\n\n\nNon-erosive reflux disease\n\n\n3 (6.8)\n\n\n—\n\n\n—\n\n\n—\n\n\n—\n\n\n1 (1.8)\n\n\n—\n\n\n—\n\n\n3 (5.4)\n\n\n3 (5.4)\n\n\n\n\nPancreatic enzyme abnormality\n\n\n—\n\n\n—\n\n\n1 (2.3)\n\n\n1 (2.3)\n\n\n1 (2.3)\n\n\n2 (3.6)\n\n\n1 (1.8)\n\n\n1 (1.8)\n\n\n1 (1.8)\n\n\n—"
   }
 ]
