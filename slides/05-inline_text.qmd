@@ -1,0 +1,23 @@
+# inline_text()
+
+## {gtsummary} reporting with inline_text()
+
+- Tables are important, but we often need to report results in-line in a report.
+
+- Any statistic reported in a {gtsummary} table can be extracted and reported in-line in an R Markdown document with the `inline_text()` function.
+
+- The pattern of what is reported can be modified with the `pattern = ` argument.  
+
+- Default is `pattern = "{estimate} ({conf.level*100}% CI {conf.low}, {conf.high}; {p.value})"`.
+
+## {gtsummary} reporting with inline_text()
+
+```{r echo=FALSE}
+tbl_uvreg
+```
+
+**In Code:** 
+The odds ratio for age is `` `r "\u0060r inline_text(tbl_uvreg, variable = age)\u0060"` ``
+
+**In Report:** 
+The odds ratio for age is `r inline_text(tbl_uvreg, variable = age)`

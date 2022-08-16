@@ -1,4 +1,4 @@
-# `tbl_summary()`
+# tbl_summary()
 
 ## Basic tbl_summary()
 

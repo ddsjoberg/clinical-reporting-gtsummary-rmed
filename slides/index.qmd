@@ -30,3 +30,14 @@ execute:
 ```{r child='03-tbl_summary.qmd'}
 ```
 
+
+```{r child='04-tbl_regression.qmd'}
+```
+
+
+```{r child='05-inline_text.qmd'}
+```
+
+```{r child='06-tbl_merge.qmd'}
+```
+

@@ -1,0 +1,81 @@
+
+# tbl_regression()
+
+## Traditional model summary()
+
+::: columns
+::: {.column width="50%"}
+
+```{r results='hide'}
+m1 <- 
+  glm(
+    response ~ age + stage,
+    data = trial,
+    family = binomial(link = "logit")
+  )
+```
+:::
+
+::: {.column width="50%"}
+![](images/raw-output-logistic-regression.png)
+:::
+:::
+
+
+Looks **messy** and it's not easy to digest
+
+## Basic tbl_regression()
+
+```{r}
+#| output-location: "column"
+tbl_regression(m1)
+```
+
+- Displays **p-values** for covariates
+
+- Shows **reference levels** for categorical variables
+
+## Customize tbl_regression() output
+
+```{r}
+#| output-location: "column"
+tbl_regression(
+  m1,
+  exponentiate = TRUE
+) %>% 
+  add_global_p() %>%
+  add_glance_table(
+    include = c(nobs, logLik, AIC, BIC)
+  )
+```
+
+- Display **odds ratio** estimates and **confidence intervals**
+
+- Add global p-values
+
+- Add various model statistics
+
+## Supported models in tbl_regression()
+
+`r broom.helpers::supported_models$model`
+
+**Custom tidiers** can be written and passed to `tbl_regression()` using the `tidy_fun=` argument.
+
+## Univariate models with tbl_uvregression()
+
+```{r}
+#| output-location: "column"
+tbl_uvreg <- 
+  sm_trial %>% 
+  tbl_uvregression(
+    method = glm,
+    y = response,
+    method.args = list(family = binomial),
+    exponentiate = TRUE
+  )
+tbl_uvreg
+```
+
+- Specify  model `method`, `method.args`, and the `response` variable
+
+- Arguments and helper functions like `exponentiate`, `bold_*()`, `add_global_p()` can also be used with `tbl_uvregression()`
