@@ -71,9 +71,27 @@ cranlogs::cran_downloads("gtsummary", from = "2019-05-05") |>
 
 ## Thank you
 
-![](https://github.com/ddsjoberg/gtsummary/blob/main/data-raw/misc_files/tbl_summary_demo_fast.gif)
+![](https://raw.githubusercontent.com/ddsjoberg/gtsummary/main/data-raw/misc_files/tbl_summary_demo_fast.gif)
 
-#### gtsummary questions?
 
-`r icons::fontawesome("stack-overflow")` Ask on [stackoverflow.com](stackoverflow.com) and *use the gtsummary tag*. Hundreds of Qs already answered!
-`r icons::fontawesome("twitter")` @statistishdan,    `r icons::fontawesome("github")` @ddsjoberg
+::: columns
+::: {.column width="50%"}
+`r fontawesome::fa("stack-overflow", fill = fa_fill)` Ask on [stackoverflow.com](stackoverflow.com) 
+
+`r fontawesome::fa("align-justify", fill = fa_fill)` *Use the gtsummary tag*
+
+`r fontawesome::fa("fire", fill = fa_fill)` Hundreds of Qs already answered!
+:::
+
+::: {.column width="50%"}
+`r fontawesome::fa("link", fill = fa_fill)` [danieldsjoberg.com](https://www.danieldsjoberg.com/)
+
+`r fontawesome::fa("twitter", fill = fa_fill)` [\@statistishdan](https://twitter.com/statistishdan)
+
+`r fontawesome::fa("linkedin", fill = fa_fill)` [linkedin.com/in/ddsjoberg/](https://www.linkedin.com/in/ddsjoberg/)
+
+`r fontawesome::fa("github", fill = fa_fill)` [github.com/ddsjoberg](https://github.com/ddsjoberg/)
+:::
+:::
+
+
