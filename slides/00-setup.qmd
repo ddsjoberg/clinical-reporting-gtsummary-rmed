@@ -2,6 +2,7 @@
 
 ```{r}
 #| echo: false
+#| cache: false
 library(gtsummary)
 library(tidyverse)
 

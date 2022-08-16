@@ -31,7 +31,7 @@ This presentation will use a subset of the variables.
 
 ```{r}
 sm_trial <-
-  trial %>% 
+  trial |> 
   select(trt, age, grade, response)
 ```
 :::
@@ -42,7 +42,7 @@ sm_trial <-
 tibble(
   Variable = names(sm_trial),
   Label = map_chr(Variable, ~attr(trial[[.x]], "label"))
-) %>% 
+) |> 
   gt::gt()
 ```
 :::

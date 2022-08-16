@@ -41,8 +41,8 @@ tbl_regression(m1)
 tbl_regression(
   m1,
   exponentiate = TRUE
-) %>% 
-  add_global_p() %>%
+) |> 
+  add_global_p() |>
   add_glance_table(
     include = c(nobs, logLik, AIC, BIC)
   )
@@ -65,7 +65,7 @@ tbl_regression(
 ```{r}
 #| output-location: "column"
 tbl_uvreg <- 
-  sm_trial %>% 
+  sm_trial |> 
   tbl_uvregression(
     method = glm,
     y = response,

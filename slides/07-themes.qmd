@@ -15,10 +15,10 @@
 ```{r}
 #| output-location: "column"
 reset_gtsummary_theme()
-m1 %>%
+m1 |>
   tbl_regression(
     exponentiate = TRUE
-  ) %>%
+  ) |>
   modify_caption(
     "Default Theme"
   )
@@ -31,10 +31,10 @@ m1 %>%
 reset_gtsummary_theme()
 theme_gtsummary_journal(journal = "jama")
 
-m1 %>%
+m1 |>
   tbl_regression(
     exponentiate = TRUE
-  ) %>%
+  ) |>
   modify_caption(
     "Journal Theme (JAMA)"
   )
@@ -49,10 +49,10 @@ m1 %>%
 reset_gtsummary_theme()
 theme_gtsummary_language(language = "zh-tw")
 
-m1 %>%
+m1 |>
   tbl_regression(
     exponentiate = TRUE
-  ) %>%
+  ) |>
   modify_caption(
     "Language Theme (Chinese)"
   )
@@ -66,7 +66,7 @@ Language options: "de" (German), "en" (English), "es" (Spanish), "fr" (French), 
 reset_gtsummary_theme()
 theme_gtsummary_compact()
 
-tbl_regression(m1, exponentiate = TRUE) %>%
+tbl_regression(m1, exponentiate = TRUE) |>
   modify_caption("Compact Theme")
 ```
 

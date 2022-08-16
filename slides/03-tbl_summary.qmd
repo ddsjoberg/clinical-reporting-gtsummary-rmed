@@ -88,11 +88,11 @@ tbl_summary(
 ```{r}
 #| output-location: "column"
 #| code-line-numbers: "5,6"
-sm_trial %>%
+sm_trial |>
   tbl_summary(
     by = trt
-  ) %>% 
-  add_p() %>% 
+  ) |> 
+  add_p() |> 
   add_q(method = "fdr")
 ```
 
@@ -104,14 +104,14 @@ sm_trial %>%
 
 ```{r}
 #| code-line-numbers: "12"
-trial %>%
-  select(trt, marker, response) %>%
+trial |>
+  select(trt, marker, response) |>
   tbl_summary(
     by = trt,
     statistic = list(marker ~ "{mean} ({sd})",
                      response ~ "{p}%"),
     missing = "no"
-  ) %>% 
+  ) |> 
   add_difference()
 ```
 
@@ -122,13 +122,13 @@ trial %>%
 ```{r}
 #| output-location: "column"
 #| code-line-numbers: "6,7,8,9,10"
-sm_trial %>%
+sm_trial |>
   tbl_summary(
     by = trt,
     missing = "no"
-  ) %>% 
-  add_overall() %>% 
-  add_n() %>% 
+  ) |> 
+  add_overall() |> 
+  add_n() |> 
   add_stat_label(
     label = all_categorical() ~ "No. (%)"
   ) 
@@ -145,11 +145,11 @@ sm_trial %>%
 ```{r}
 #| eval: false
 #| code-line-numbers: "6"
-sm_trial %>%
+sm_trial |>
   tbl_summary(
     by = trt,
     missing = "no"
-  ) %>% 
+  ) |> 
   add_stat(...)
 ```
 :::
@@ -168,13 +168,13 @@ sm_trial %>%
 ```{r}
 #| output-location: "column"
 #| code-line-numbers: "6,7,8"
-sm_trial %>%
+sm_trial |>
   tbl_summary(
     by = trt
-  ) %>%
-  add_p() %>% 
-  bold_labels() %>% 
-  italicize_levels() %>% 
+  ) |>
+  add_p() |> 
+  bold_labels() |> 
+  italicize_levels() |> 
   bold_p(t = 0.8)
 ```
 
@@ -186,16 +186,16 @@ sm_trial %>%
 
 ```{r}
 #| output-location: "column"
-sm_trial %>% 
+sm_trial |> 
   tbl_summary(
     by = trt, missing = "no"
-  ) %>%
+  ) |>
   modify_header(
       stat_1 ~ "**Group A**",
       stat_2 ~ "**Group B**"
-  ) %>% 
+  ) |> 
   modify_spanning_header(
-    all_stat_cols() ~ "**Drug**") %>% 
+    all_stat_cols() ~ "**Drug**") |> 
   modify_footnote(
     all_stat_cols() ~ 
       paste("median (IQR) for continuous;",
@@ -219,14 +219,14 @@ And a detailed `tbl_summary()` vignette at http://www.danieldsjoberg.com/gtsumma
 
 ```{r}
 #| output-location: "column"
-sm_trial %>%
+sm_trial |>
   tbl_cross(
     row = trt, 
     col = grade,
     percent = "row",
     margin = "row"
-  ) %>%
-  add_p(source_note = TRUE) %>%
+  ) |>
+  add_p(source_note = TRUE) |>
   bold_labels()
 ```
 
@@ -236,7 +236,7 @@ sm_trial %>%
 
 ```{r}
 #| output-location: "column"
-sm_trial %>%
+sm_trial |>
   tbl_continuous(
     variable = age,
     by = trt,
@@ -252,9 +252,9 @@ survey::svydesign(
   ids = ~1, 
   data = as.data.frame(Titanic), 
   weights = ~Freq
-) %>%
-  tbl_svysummary(by = Survived) %>%
-  add_p() %>%
+) |>
+  tbl_svysummary(by = Survived) |>
+  add_p() |>
   modify_spanning_header(
     all_stat_cols() ~ "**Survived**")
 ```
@@ -269,6 +269,6 @@ tbl_survfit(
   fit, 
   times = c(12, 24),
   label_header = "**{time} Month**"
-) %>%
+) |>
   add_p()
 ```
