@@ -70,7 +70,8 @@ tbl_regression(
 
 ```{r}
 #| echo: false
-# countdown(minutes = 8)
+#| cache: false
+countdown(minutes = 8)
 ```
 
 ## Univariate models with tbl_uvregression()

@@ -1,13 +1,12 @@
 ## Example Dataset
 
-:::: {.columns .v-center-container}
-
+::: {.columns .v-center-container}
 ::: {.column width="40%"}
-* The `trial` data set is included with {gtsummary}
+-   The `trial` data set is included with {gtsummary}
 
-* Simulated data set of baseline characteristics for 200 patients who receive Drug A or Drug B
+-   Simulated data set of baseline characteristics for 200 patients who receive Drug A or Drug B
 
-* Variables were assigned labels using the `labelled` package
+-   Variables were assigned labels using the `labelled` package
 :::
 
 ::: {.column width="60%"}
@@ -18,15 +17,12 @@ library(gtsummary)
 library(tidyverse)
 head(trial) |> gt::gt()
 ```
-
 :::
-
-::::
+:::
 
 ## Example Dataset
 
-:::: {.columns .v-center-container}
-
+::: {.columns .v-center-container}
 ::: {.column width="60%"}
 This presentation will use a subset of the variables.
 
@@ -49,20 +45,20 @@ tibble(
   gt::gt()
 ```
 :::
-
-::::
+:::
 
 ## Exercise 1
 
 As an exercise, we'll prepare data, data summaries, analyses, and a brief write-up of the results.
 
-1. Download zip file with exercises with [this link](https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/raw/main/exercises/exercises.zip).
+1.  Download zip file with exercises with [this link](https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/raw/main/exercises/exercises.zip).
 
-1. Extract the zip file locally and open in an RStudio project. You can unzip the file with your system utilities, or with `zip::unzip()`. Unzip the files into their own folder!
+2.  Extract the zip file locally and open in an RStudio project. You can unzip the file with your system utilities, or with `zip::unzip()`. Unzip the files into their own folder!
 
-1. Add variable labels to the data frame using `labelled::set_variable_labels()`.
+3.  Add variable labels to the data frame using `labelled::set_variable_labels()`.
 
 ```{r}
 #| echo: false
+#| cache: false
 countdown(minutes = 8, font_size = "1.5em")
 ```

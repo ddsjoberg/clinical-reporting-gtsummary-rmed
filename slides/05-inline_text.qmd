@@ -33,5 +33,6 @@ Write a brief summary of the results above using `inline_text()` to report value
 
 ```{r}
 #| echo: false
-# countdown(minutes = 8)
+#| cache: false
+countdown(minutes = 8)
 ```
