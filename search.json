@@ -123,6 +123,34 @@
     "href": "slides/index.html#customize-tbl_summary-output",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Customize tbl_summary() output",
+    "text": "Customize tbl_summary() output\n\n\ntbl_summary(\n  sm_trial,\n  by = trt,\n)\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\n\n\n\n\nAge\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nUnknown\n\n\n7\n\n\n4\n\n\n\n\nGrade\n\n\n\n\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\nUnknown\n\n\n3\n\n\n4\n\n\n\n\n\n\n1 Median (IQR); n (%)\n\n\n\n\n\n\n\n\n\n\n\nby: specifies a column variable for cross-tabulation"
+  },
+  {
+    "objectID": "slides/index.html#customize-tbl_summary-output-1",
+    "href": "slides/index.html#customize-tbl_summary-output-1",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Customize tbl_summary() output",
+    "text": "Customize tbl_summary() output\n\n\ntbl_summary(\n  sm_trial,\n  by = trt,\n  type = age ~ \"continuous2\",\n)\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\n\n\n\n\nAge\n\n\n\n\n\n\n\n\nMedian (IQR)\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nUnknown\n\n\n7\n\n\n4\n\n\n\n\nGrade\n\n\n\n\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\nUnknown\n\n\n3\n\n\n4\n\n\n\n\n\n\n1 n (%)\n\n\n\n\n\n\n\n\n\n\n\nby: specifies a column variable for cross-tabulation\ntype: specifies the summary type"
+  },
+  {
+    "objectID": "slides/index.html#customize-tbl_summary-output-2",
+    "href": "slides/index.html#customize-tbl_summary-output-2",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Customize tbl_summary() output",
+    "text": "Customize tbl_summary() output\n\n\ntbl_summary(\n  sm_trial,\n  by = trt,\n  type = age ~ \"continuous2\",\n  statistic = \n    list(\n      age ~ c(\"{mean} ({sd})\", \n              \"{min}, {max}\"), \n      response ~ \"{n} / {N} ({p}%)\"\n    ),\n)\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\n\n\n\n\nAge\n\n\n\n\n\n\n\n\nMean (SD)\n\n\n47 (15)\n\n\n47 (14)\n\n\n\n\nRange\n\n\n6, 78\n\n\n9, 83\n\n\n\n\nUnknown\n\n\n7\n\n\n4\n\n\n\n\nGrade\n\n\n\n\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response\n\n\n28 / 95 (29%)\n\n\n33 / 98 (34%)\n\n\n\n\nUnknown\n\n\n3\n\n\n4\n\n\n\n\n\n\n1 n (%); n / N (%)\n\n\n\n\n\n\n\n\n\n\n\nby: specifies a column variable for cross-tabulation\ntype: specifies the summary type\nstatistic: customize the reported statistics"
+  },
+  {
+    "objectID": "slides/index.html#customize-tbl_summary-output-3",
+    "href": "slides/index.html#customize-tbl_summary-output-3",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Customize tbl_summary() output",
+    "text": "Customize tbl_summary() output\n\n\ntbl_summary(\n  sm_trial,\n  by = trt,\n  type = age ~ \"continuous2\",\n  statistic = \n    list(\n      age ~ c(\"{mean} ({sd})\", \n              \"{min}, {max}\"), \n      response ~ \"{n} / {N} ({p}%)\"\n    ),\n  label = \n    grade ~ \"Pathologic tumor grade\",\n)\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\n\n\n\n\nAge\n\n\n\n\n\n\n\n\nMean (SD)\n\n\n47 (15)\n\n\n47 (14)\n\n\n\n\nRange\n\n\n6, 78\n\n\n9, 83\n\n\n\n\nUnknown\n\n\n7\n\n\n4\n\n\n\n\nPathologic tumor grade\n\n\n\n\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response\n\n\n28 / 95 (29%)\n\n\n33 / 98 (34%)\n\n\n\n\nUnknown\n\n\n3\n\n\n4\n\n\n\n\n\n\n1 n (%); n / N (%)\n\n\n\n\n\n\n\n\n\n\n\nby: specifies a column variable for cross-tabulation\ntype: specifies the summary type\nstatistic: customize the reported statistics\n\n\n\nlabel: change or customize variable labels"
+  },
+  {
+    "objectID": "slides/index.html#customize-tbl_summary-output-4",
+    "href": "slides/index.html#customize-tbl_summary-output-4",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Customize tbl_summary() output",
     "text": "Customize tbl_summary() output\n\n\ntbl_summary(\n  sm_trial,\n  by = trt,\n  type = age ~ \"continuous2\",\n  statistic = \n    list(\n      age ~ c(\"{mean} ({sd})\", \n              \"{min}, {max}\"), \n      response ~ \"{n} / {N} ({p}%)\"\n    ),\n  label = \n    grade ~ \"Pathologic tumor grade\",\n  digits = age ~ 1\n)\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\n\n\n\n\nAge\n\n\n\n\n\n\n\n\nMean (SD)\n\n\n47.0 (14.7)\n\n\n47.4 (14.0)\n\n\n\n\nRange\n\n\n6.0, 78.0\n\n\n9.0, 83.0\n\n\n\n\nUnknown\n\n\n7\n\n\n4\n\n\n\n\nPathologic tumor grade\n\n\n\n\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response\n\n\n28 / 95 (29%)\n\n\n33 / 98 (34%)\n\n\n\n\nUnknown\n\n\n3\n\n\n4\n\n\n\n\n\n\n1 n (%); n / N (%)\n\n\n\n\n\n\n\n\n\n\n\nby: specifies a column variable for cross-tabulation\ntype: specifies the summary type\nstatistic: customize the reported statistics\n\n\n\nlabel: change or customize variable labels\ndigits: specify the number of decimal places for rounding"
   },
   {
@@ -186,7 +214,7 @@
     "href": "slides/index.html#update-tbl_summary-with-modify_",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Update tbl_summary() with modify_*()",
-    "text": "Update tbl_summary() with modify_*()\n\n\nsm_trial |> \n  tbl_summary(\n    by = trt, missing = \"no\"\n  ) |>\n  modify_header(\n      stat_1 ~ \"**Group A**\",\n      stat_2 ~ \"**Group B**\"\n  ) |> \n  modify_spanning_header(\n    all_stat_cols() ~ \"**Drug**\") |> \n  modify_footnote(\n    all_stat_cols() ~ \n      paste(\"median (IQR) for continuous;\",\n            \"n (%) for categorical\")\n  )\n\n\n\n\n\n\nCharacteristic\n\n\nDrug\n\n\n\n\nGroup A1\n\n\nGroup B1\n\n\n\n\n\n\nAge\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nGrade\n\n\n\n\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\n\n\n1 median (IQR) for continuous; n (%) for categorical\n\n\n\n\n\n\n\n\nUse show_header_names() to see the internal header names available for use in modify_header()"
+    "text": "Update tbl_summary() with modify_*()\n\n\nsm_trial |> \n  tbl_summary(by = trt, \n              missing = \"no\") |>\n  modify_header(\n      stat_1 ~ \"**Group A**\",\n      stat_2 ~ \"**Group B**\"\n  ) |> \n  modify_spanning_header(\n    all_stat_cols() ~ \"**Drug**\") |> \n  modify_footnote(\n    all_stat_cols() ~ \n      paste(\"median (IQR) for continuous;\",\n            \"n (%) for categorical\")\n  )\n\n\n\n\n\n\nCharacteristic\n\n\nDrug\n\n\n\n\nGroup A1\n\n\nGroup B1\n\n\n\n\n\n\nAge\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nGrade\n\n\n\n\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\n\n\n1 median (IQR) for continuous; n (%) for categorical\n\n\n\n\n\n\n\n\nUse show_header_names() to see the internal header names available for use in modify_header()"
   },
   {
     "objectID": "slides/index.html#add-on-functions-in-gtsummary-1",
