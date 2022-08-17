@@ -267,10 +267,10 @@ As an exercise, we'll prepare data, data summaries, analyses, and a brief write-
 
 1. Add variable labels to the data frame using `labelled::set_variable_labels()`.
 
-::: {.cell hash='index_cache/revealjs/unnamed-chunk-5_7c3a697ed5f57bd39f8a53f140e39489'}
+::: {.cell hash='index_cache/revealjs/unnamed-chunk-5_0b65526c9dddd91ad403ded169c33af6'}
 ::: {.cell-output-display}
 ```{=html}
-<div class="countdown" id="timer_62fc3de1" style="right:0;bottom:0;font-size:1.5em;" data-warnwhen="0">
+<div class="countdown" id="timer_62fc46eb" style="right:0;bottom:0;font-size:1.5em;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 ```
@@ -542,14 +542,8 @@ sm_trial |>
 
 1. Consider using gtsummary functions that build on a summary table.
 
-::: {.cell hash='index_cache/revealjs/unnamed-chunk-9_0b8ed2eb707fbab05a4c56d328b54972'}
-::: {.cell-output-display}
-```{=html}
-<div class="countdown" id="timer_62fc3cb0" style="right:0;bottom:0;font-size:1.5em;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-```
-:::
+::: {.cell hash='index_cache/revealjs/unnamed-chunk-9_102674d0343685b3357b28bb535d60fc'}
+
 :::
 
 ## Update tbl_summary() with add\_\*()
@@ -1118,14 +1112,8 @@ Is there a difference in death rates by smoking status?
     - Review the tests available at [https://www.danieldsjoberg.com/gtsummary/reference/tests.html](https://www.danieldsjoberg.com/gtsummary/reference/tests.html).
     - Let me know if you'd like a hint as to which test to use. It'll be one that takes advantage of `adj.vars`.
 
-::: {.cell hash='index_cache/revealjs/unnamed-chunk-19_09e36437c06aa55b4eaca1bee7ccde06'}
-::: {.cell-output-display}
-```{=html}
-<div class="countdown" id="timer_62fc3ebd" style="right:0;bottom:0;font-size:1.5em;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-```
-:::
+::: {.cell hash='index_cache/revealjs/unnamed-chunk-19_453bab42b0a9e0a029d8fc7129cd170c'}
+
 :::
 
 # tbl_regression()
@@ -1307,14 +1295,8 @@ tbl_regression(
 
 1. What modifications did you decide to make the the regression summary?
 
-::: {.cell hash='index_cache/revealjs/unnamed-chunk-23_222a088e275f104f46cbcaeb81ea814d'}
-::: {.cell-output-display}
-```{=html}
-<div class="countdown" id="timer_62fc3e4c" style="right:0;bottom:0;font-size:1.5em;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-```
-:::
+::: {.cell hash='index_cache/revealjs/unnamed-chunk-23_f9d2e64f9f2964729c542b15d239ff61'}
+
 :::
 
 ## Univariate models with tbl_uvregression()
@@ -1490,14 +1472,8 @@ Write a brief summary of the results above using `inline_text()` to report value
 
 1. Report the odds ratio for death from the multivariable logistic regression model.
 
-::: {.cell hash='index_cache/revealjs/unnamed-chunk-26_43432d7617e07ac99c863c9ca6cf274f'}
-::: {.cell-output-display}
-```{=html}
-<div class="countdown" id="timer_62fc40eb" style="right:0;bottom:0;font-size:1.5em;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-```
-:::
+::: {.cell hash='index_cache/revealjs/unnamed-chunk-26_5c79cab8adf359603eb900743bb2cb2f'}
+
 :::
 
 # tbl_merge()/tbl_stack()

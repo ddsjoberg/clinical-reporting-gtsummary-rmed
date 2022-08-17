@@ -62,6 +62,7 @@ As an exercise, we'll prepare data, data summaries, analyses, and a brief write-
 
 1. Add variable labels to the data frame using `labelled::set_variable_labels()`.
 
-```{r echo=FALSE}
+```{r}
+#| echo: false
 countdown(minutes = 8, font_size = "1.5em")
 ```

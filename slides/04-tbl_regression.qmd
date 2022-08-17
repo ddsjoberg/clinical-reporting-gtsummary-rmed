@@ -68,8 +68,9 @@ tbl_regression(
 
 1. What modifications did you decide to make the the regression summary?
 
-```{r echo=FALSE}
-countdown(minutes = 8, font_size = "1.5em")
+```{r}
+#| echo: false
+# countdown(minutes = 8)
 ```
 
 ## Univariate models with tbl_uvregression()

@@ -110,8 +110,9 @@ sm_trial |>
 
 1. Consider using gtsummary functions that build on a summary table.
 
-```{r echo=FALSE}
-countdown(minutes = 8, font_size = "1.5em")
+```{r}
+#| echo: false
+# countdown(minutes = 8)
 ```
 
 ## Update tbl_summary() with add\_\*()
@@ -311,5 +312,5 @@ Is there a difference in death rates by smoking status?
 
 ```{r}
 #| echo: false
-countdown(minutes = 8, font_size = "1.5em")
+# countdown(minutes = 8)
 ```

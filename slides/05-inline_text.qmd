@@ -31,6 +31,7 @@ Write a brief summary of the results above using `inline_text()` to report value
 
 1. Report the odds ratio for death from the multivariable logistic regression model.
 
-```{r echo=FALSE}
-countdown(minutes = 8, font_size = "1.5em")
+```{r}
+#| echo: false
+# countdown(minutes = 8)
 ```
