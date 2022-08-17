@@ -291,7 +291,7 @@
     "href": "slides/index.html#exercise-5",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Exercise 5",
-    "text": "Exercise 5\nWrite a brief summary of the results above using inline_text() to report values from the tables directly into the markdown report.\n\nReport at least one statistic from the cohort summary.\nReport the difference in death rates.\nReport the odds ratio for death from the multivariable logistic regression model.\n\n\n\n08:00"
+    "text": "Exercise 5\nWrite a brief summary of the results above using inline_text() to report values from the tables directly into the markdown report. You’ll likely need gtsummary::show_header_names().\n\nReport at least one statistic from the cohort summary.\nReport the difference in death rates.\nReport the odds ratio for death from the multivariable logistic regression model.\n\n\n\n08:00"
   },
   {
     "objectID": "slides/index.html#tbl_merge-for-side-by-side-tables",
