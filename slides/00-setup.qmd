@@ -5,6 +5,7 @@
 #| cache: false
 library(gtsummary)
 library(tidyverse)
+library(countdown)
 
 knit_print.gtsummary <- function(x, ...) {
   gtsummary::as_gt(x) |> gt::as_raw_html()

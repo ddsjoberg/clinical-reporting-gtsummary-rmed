@@ -6,7 +6,7 @@
 ::: {.column width="50%" style="font-size:0.75em;font-family:monospace"}
 ```{r}
 #| output: true
-#| label: trad-model-summary
+#| label: raw-model-summary
 m1 <- 
   glm(
     response ~ age + stage,
@@ -59,6 +59,18 @@ tbl_regression(
 `r broom.helpers::supported_models$model`
 
 **Custom tidiers** can be written and passed to `tbl_regression()` using the `tidy_fun=` argument.
+
+## Exercise 4
+
+1. Build a logistic regression model with death as the outcome. Include smoking and the other variables as covariates.
+
+1. Summarize the logistic regression model with `tbl_regression()`.
+
+1. What modifications did you decide to make the the regression summary?
+
+```{r echo=FALSE}
+countdown(minutes = 8, font_size = "1.5em")
+```
 
 ## Univariate models with tbl_uvregression()
 

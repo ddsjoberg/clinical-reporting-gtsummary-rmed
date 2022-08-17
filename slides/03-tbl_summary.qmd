@@ -5,6 +5,7 @@
 ::: {.columns .v-center-container}
 ::: {.column width="50%"}
 ```{r}
+#| label: 'simple-summary'
 sm_trial |> 
   select(-trt) |>  
   tbl_summary()
@@ -28,7 +29,7 @@ sm_trial |>
 
 ```{r}
 #| output-location: "column"
-
+#| label: 'customize-summary'
 tbl_summary(
   sm_trial,
   by = trt,
@@ -88,6 +89,7 @@ tbl_summary(
 ```{r}
 #| output-location: "column"
 #| code-line-numbers: "5,6"
+#| label: 'summary-with-p'
 sm_trial |>
   tbl_summary(
     by = trt
@@ -100,9 +102,22 @@ sm_trial |>
 
 -   `add_q()`: adds a column of p-values adjusted for multiple comparisons through a call to `p.adjust()`
 
+## Exercise 2
+
+1. Create a summary table split by whether or not the participant quit smoking or not.
+
+1. Include all variables in the table except the study outcome: death.
+
+1. Consider using gtsummary functions that build on a summary table.
+
+```{r echo=FALSE}
+countdown(minutes = 8, font_size = "1.5em")
+```
+
 ## Update tbl_summary() with add\_\*()
 
 ```{r}
+#| label: 'summary-with-difference'
 #| code-line-numbers: "12"
 trial |>
   select(trt, marker, response) |>
@@ -120,6 +135,7 @@ trial |>
 ## Update tbl_summary() with add\_\*()
 
 ```{r}
+#| label: 'summary-with-overall'
 #| output-location: "column"
 #| code-line-numbers: "6,7,8,9,10"
 sm_trial |>
@@ -143,6 +159,7 @@ sm_trial |>
 ::: {.columns .v-center-container}
 ::: {.column width="50%"}
 ```{r}
+#| label: 'summary-with-custom-stat'
 #| eval: false
 #| code-line-numbers: "6"
 sm_trial |>
@@ -166,6 +183,7 @@ sm_trial |>
 ## Update with bold\_\*()/italicize\_\*()
 
 ```{r}
+#| label: 'summary-bold'
 #| output-location: "column"
 #| code-line-numbers: "6,7,8"
 sm_trial |>
@@ -185,6 +203,7 @@ sm_trial |>
 ## Update tbl_summary() with modify\_\*()
 
 ```{r}
+#| label: 'summary-modified'
 #| output-location: "column"
 sm_trial |> 
   tbl_summary(
@@ -218,6 +237,7 @@ And a detailed `tbl_summary()` vignette at http://www.danieldsjoberg.com/gtsumma
 `tbl_cross()` is a wrapper for `tbl_summary()` for **n x m** tables
 
 ```{r}
+#| label: 'tbl_cross'
 #| output-location: "column"
 sm_trial |>
   tbl_cross(
@@ -235,6 +255,7 @@ sm_trial |>
 `tbl_continuous()` summarizes a continuous variable by 1, 2, or more categorical variables
 
 ```{r}
+#| label: 'tbl_continuous'
 #| output-location: "column"
 sm_trial |>
   tbl_continuous(
@@ -247,6 +268,7 @@ sm_trial |>
 ## Survey data with tbl_svysummary()
 
 ```{r}
+#| label: 'tbl_svysummary'
 #| output-location: "column"
 survey::svydesign(
   ids = ~1, 
@@ -262,6 +284,7 @@ survey::svydesign(
 ## Survival outcomes with tbl_survfit()
 
 ```{r}
+#| label: 'tbl_survfit'
 library(survival)
 fit <- survfit(Surv(ttdeath, death) ~ trt, trial)
 
@@ -271,4 +294,22 @@ tbl_survfit(
   label_header = "**{time} Month**"
 ) |>
   add_p()
+```
+
+## Exercise 3
+
+Is there a difference in death rates by smoking status?
+
+1. Using `tbl_summary()` report the death rates by smoking status.
+
+1. Add the (unadjusted) difference in death rates by smoking status using `add_difference()`.
+
+1. Produce a second table that reports an *adjusted* difference in death rates.
+    - The rate will be adjusted for all covariates in the data frame.
+    - Review the tests available at [https://www.danieldsjoberg.com/gtsummary/reference/tests.html](https://www.danieldsjoberg.com/gtsummary/reference/tests.html).
+    - Let me know if you'd like a hint as to which test to use. It'll be one that takes advantage of `adj.vars`.
+
+```{r}
+#| echo: false
+countdown(minutes = 8, font_size = "1.5em")
 ```

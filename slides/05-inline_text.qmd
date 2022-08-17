@@ -2,13 +2,13 @@
 
 ## {gtsummary} reporting with inline_text()
 
-- Tables are important, but we often need to report results in-line in a report.
+-   Tables are important, but we often need to report results in-line in a report.
 
-- Any statistic reported in a {gtsummary} table can be extracted and reported in-line in an R Markdown document with the `inline_text()` function.
+-   Any statistic reported in a {gtsummary} table can be extracted and reported in-line in an R Markdown document with the `inline_text()` function.
 
-- The pattern of what is reported can be modified with the `pattern = ` argument.  
+-   The pattern of what is reported can be modified with the `pattern =` argument.
 
-- Default is `pattern = "{estimate} ({conf.level*100}% CI {conf.low}, {conf.high}; {p.value})"`.
+-   Default is `pattern = "{estimate} ({conf.level*100}% CI {conf.low}, {conf.high}; {p.value})"`.
 
 ## {gtsummary} reporting with inline_text()
 
@@ -17,8 +17,20 @@
 tbl_uvreg
 ```
 
-**In Code:** 
-The odds ratio for age is `` `r "\u0060r inline_text(tbl_uvreg, variable = age)\u0060"` ``
+**In Code:** The odds ratio for age is `` `r "\u0060r inline_text(tbl_uvreg, variable = age)\u0060"` ``
 
-**In Report:** 
-The odds ratio for age is `r inline_text(tbl_uvreg, variable = age)`
+**In Report:** The odds ratio for age is `r inline_text(tbl_uvreg, variable = age)`
+
+## Exercise 5
+
+Write a brief summary of the results above using `inline_text()` to report values from the tables directly into the markdown report.
+
+1. Report at least one statistic from the cohort summary.
+
+1. Report the difference in death rates.
+
+1. Report the odds ratio for death from the multivariable logistic regression model.
+
+```{r echo=FALSE}
+countdown(minutes = 8, font_size = "1.5em")
+```

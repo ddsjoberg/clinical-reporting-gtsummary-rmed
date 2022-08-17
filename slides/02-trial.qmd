@@ -12,6 +12,7 @@
 
 ::: {.column width="60%"}
 ```{r}
+#| label: 'describe-trial'
 #| message: false
 library(gtsummary)
 library(tidyverse)
@@ -30,6 +31,7 @@ head(trial) |> gt::gt()
 This presentation will use a subset of the variables.
 
 ```{r}
+#| label: 'create-small-trial'
 sm_trial <-
   trial |> 
   select(trt, age, grade, response)
@@ -39,6 +41,7 @@ sm_trial <-
 ::: {.column width="40%"}
 ```{r}
 #| echo: false
+#| label: 'describe-small-trial'
 tibble(
   Variable = names(sm_trial),
   Label = map_chr(Variable, ~attr(trial[[.x]], "label"))
@@ -48,3 +51,17 @@ tibble(
 :::
 
 ::::
+
+## Exercise 1
+
+As an exercise, we'll prepare data, data summaries, analyses, and a brief write-up of the results.
+
+1. Download zip file with exercises with [this link](https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/raw/main/exercises/exercises.zip).
+
+1. Extract the zip file locally and open in an RStudio project. You can unzip the file with your system utilities, or with `zip::unzip()`. Unzip the files into their own folder!
+
+1. Add variable labels to the data frame using `labelled::set_variable_labels()`.
+
+```{r echo=FALSE}
+countdown(minutes = 8, font_size = "1.5em")
+```

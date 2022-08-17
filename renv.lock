@@ -227,6 +227,19 @@
       "Hash": "2ba81b120c1655ab696c935ef33ea716",
       "Requirements": []
     },
+    "countdown": {
+      "Package": "countdown",
+      "Version": "0.3.5",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "gadenbuie",
+      "RemoteRepo": "countdown",
+      "RemoteRef": "main",
+      "RemoteSha": "a544fa48e2248996002e059ca07ad620d2aec3a8",
+      "Hash": "8bf5b31c3ee0ca66fec6bdbe7723d3bd",
+      "Requirements": []
+    },
     "cpp11": {
       "Package": "cpp11",
       "Version": "0.4.2",
@@ -487,19 +500,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "88d1b310583777edf01ccd1216fb0b2b",
-      "Requirements": []
-    },
-    "icons": {
-      "Package": "icons",
-      "Version": "0.2.0",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteUsername": "mitchelloharawild",
-      "RemoteRepo": "icons",
-      "RemoteRef": "master",
-      "RemoteSha": "6e4dc378ac86c1d4f4ea167f408bed07b3df14fb",
-      "Hash": "73775362cd0dcad43ba00cfb9c89a928",
       "Requirements": []
     },
     "ids": {
@@ -880,10 +880,10 @@
     },
     "survival": {
       "Package": "survival",
-      "Version": "3.3-1",
+      "Version": "3.4-0",
       "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "f6189c70451d3d68e0d571235576e833",
+      "Repository": "RSPM",
+      "Hash": "04411ae66ab4659230c067c32966fc20",
       "Requirements": []
     },
     "sys": {
@@ -980,6 +980,14 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "976507b5a105bc3bdf6a5a5f29e0684f",
+      "Requirements": []
+    },
+    "whisker": {
+      "Package": "whisker",
+      "Version": "0.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "ca970b96d894e90397ed20637a0c1bbe",
       "Requirements": []
     },
     "withr": {
