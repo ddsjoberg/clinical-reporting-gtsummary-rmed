@@ -24,10 +24,11 @@ tbl_uvreg
 ## Exercise 5
 
 Write a brief summary of the results above using `inline_text()` to report values from the tables directly into the markdown report.
+You'll likely need `gtsummary::show_header_names()`.
 
-1. Report at least one statistic from the cohort summary.
+1. Report at least one statistic from the cohort summary. 
 
-1. Report the difference in death rates.
+1. Report the difference in death rates. 
 
 1. Report the odds ratio for death from the multivariable logistic regression model.
 
