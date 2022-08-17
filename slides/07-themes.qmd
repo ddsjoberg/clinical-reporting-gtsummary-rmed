@@ -79,4 +79,4 @@ tbl_regression(m1, exponentiate = TRUE) |>
 
 * See the {gtsummary} + themes vignette for examples
 
-http://www.danieldsjoberg.com/gtsummary/articles/themes.html
+[http://www.danieldsjoberg.com/gtsummary/articles/themes.html](http://www.danieldsjoberg.com/gtsummary/articles/themes.html)

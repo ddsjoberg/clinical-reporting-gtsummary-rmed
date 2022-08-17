@@ -25,11 +25,129 @@ sm_trial |>
 :::
 :::
 
-## Customize tbl_summary() output
+## Customize tbl_summary() output {auto-animate="true"}
 
 ```{r}
 #| output-location: "column"
-#| label: 'customize-summary'
+#| label: 'customize-summary1'
+tbl_summary(
+  sm_trial,
+  by = trt,
+)
+```
+
+::: small
+::: columns
+::: {.column width="50%"}
+-   `by`: specifies a column variable for cross-tabulation
+:::
+
+::: {.column width="50%"}
+:::
+:::
+:::
+
+## Customize tbl_summary() output {auto-animate="true"}
+
+```{r}
+#| output-location: "column"
+#| label: 'customize-summary2'
+tbl_summary(
+  sm_trial,
+  by = trt,
+  type = age ~ "continuous2",
+)
+```
+
+::: small
+::: columns
+::: {.column width="50%"}
+-   `by`: specifies a column variable for cross-tabulation
+
+-   `type`: specifies the summary type
+:::
+
+::: {.column width="50%"}
+
+:::
+:::
+:::
+
+## Customize tbl_summary() output {auto-animate="true"}
+
+```{r}
+#| output-location: "column"
+#| label: 'customize-summary3'
+tbl_summary(
+  sm_trial,
+  by = trt,
+  type = age ~ "continuous2",
+  statistic = 
+    list(
+      age ~ c("{mean} ({sd})", 
+              "{min}, {max}"), 
+      response ~ "{n} / {N} ({p}%)"
+    ),
+)
+```
+
+::: small
+::: columns
+::: {.column width="50%"}
+-   `by`: specifies a column variable for cross-tabulation
+
+-   `type`: specifies the summary type
+
+-   `statistic`: customize the reported statistics
+:::
+
+::: {.column width="50%"}
+
+:::
+:::
+:::
+
+## Customize tbl_summary() output {auto-animate="true"}
+
+```{r}
+#| output-location: "column"
+#| label: 'customize-summary4'
+tbl_summary(
+  sm_trial,
+  by = trt,
+  type = age ~ "continuous2",
+  statistic = 
+    list(
+      age ~ c("{mean} ({sd})", 
+              "{min}, {max}"), 
+      response ~ "{n} / {N} ({p}%)"
+    ),
+  label = 
+    grade ~ "Pathologic tumor grade",
+)
+```
+
+::: small
+::: columns
+::: {.column width="50%"}
+-   `by`: specifies a column variable for cross-tabulation
+
+-   `type`: specifies the summary type
+
+-   `statistic`: customize the reported statistics
+:::
+
+::: {.column width="50%"}
+-   `label`: change or customize variable labels
+:::
+:::
+:::
+
+## Customize tbl_summary() output {auto-animate="true"}
+
+```{r}
+#| output-location: "column"
+#| label: 'customize-summary5'
 tbl_summary(
   sm_trial,
   by = trt,
@@ -63,6 +181,7 @@ tbl_summary(
 :::
 :::
 :::
+
 
 ## {gtsummary} + formulas
 
@@ -207,10 +326,10 @@ sm_trial |>
 ```{r}
 #| label: 'summary-modified'
 #| output-location: "column"
+#| code-line-numbers: "4,5,6,7,8,9,10,11,12,13"
 sm_trial |> 
-  tbl_summary(
-    by = trt, missing = "no"
-  ) |>
+  tbl_summary(by = trt, 
+              missing = "no") |>
   modify_header(
       stat_1 ~ "**Group A**",
       stat_2 ~ "**Group B**"
@@ -230,9 +349,9 @@ sm_trial |>
 
 And many more!
 
-See the documentation at http://www.danieldsjoberg.com/gtsummary/reference/index.html
+See the documentation at [http://www.danieldsjoberg.com/gtsummary/reference/index.html](http://www.danieldsjoberg.com/gtsummary/reference/index.html)
 
-And a detailed `tbl_summary()` vignette at http://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html
+And a detailed `tbl_summary()` vignette at [http://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html](http://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html)
 
 ## Cross-tabulation with tbl_cross()
 
