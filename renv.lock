@@ -1027,6 +1027,12 @@
       "Repository": "CRAN",
       "Hash": "458bb38374d73bf83b1bb85e353da200",
       "Requirements": []
+    },
+    "zip": {
+      "Package": "zip",
+      "Version": "2.2.0",
+      "Source": "Repository",
+      "Requirements": []
     }
   }
 }
