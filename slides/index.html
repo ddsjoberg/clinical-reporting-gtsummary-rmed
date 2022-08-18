@@ -443,9 +443,9 @@
 <div class="column" style="width:60%;">
 <ul>
 <li><p>Quality of medical research is often low</p></li>
-<li><p><strong>Low quality code</strong> in medical research part of the problem</p></li>
-<li><p>Low quality code is more likely to <strong>contain errors</strong></p></li>
-<li><p>Reproducibility is often <strong>cumbersome</strong> and <strong>time-consuming</strong></p></li>
+<li><p><span class="emphasis">Low quality code</span> in medical research part of the problem</p></li>
+<li><p>Low quality code is more <span class="emphasis">likely to contain errors</span></p></li>
+<li><p>Reproducibility is often <span class="emphasis">cumbersome</span> and <span class="emphasis">time-consuming</span></p></li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="images/reproducibility-graphic-online1.jpeg"></p>
@@ -460,7 +460,7 @@
 <div class="columns v-center-container">
 <div class="column" style="width:50%;">
 <ul>
-<li>Create <strong>tabular summaries</strong> with sensible defaults but highly customizable</li>
+<li>Create <span class="emphasis">tabular summaries</span> with sensible defaults but highly customizable</li>
 <li>Types of summaries:
 <ul>
 <li>“Table 1”-types</li>
@@ -473,10 +473,10 @@
 </ul>
 </div><div class="column" style="width:50%;">
 <ul>
-<li>Report statistics from {gtsummary} tables <strong>inline</strong> in R Markdown</li>
+<li>Report statistics from {gtsummary} tables <span class="emphasis">inline</span> in R Markdown</li>
 <li>Stack and/or merge any table type</li>
-<li>Use <strong>themes</strong> to standardize across tables</li>
-<li>Choose from different <strong>print engines</strong></li>
+<li>Use <span class="emphasis">themes</span> to standardize across tables</li>
+<li>Choose from different <span class="emphasis">print engines</span></li>
 </ul>
 </div>
 </div>
@@ -762,7 +762,7 @@ Tumor Response
 <li><p>Add variable labels to the data frame using <code>labelled::set_variable_labels()</code>.</p></li>
 </ol>
 <div class="cell-output-display">
-<div class="countdown" id="timer_62fceb05" style="right:0;bottom:0;font-size:1.5em;" data-warnwhen="0">
+<div class="countdown" id="timer_62fe9300" style="right:0;bottom:0;font-size:1.5em;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1672,9 +1672,9 @@ Unknown
 <h2>Add-on functions in {gtsummary}</h2>
 <p><code>tbl_summary()</code> objects can also be updated using related functions.</p>
 <ul>
-<li><p><code>add_*()</code> add additional column of statistics or information, e.g.&nbsp;p-values, q-values, overall statistics, treatment differences, N obs., and more</p></li>
-<li><p><code>modify_*()</code> modify table headers, spanning headers, footnotes, and more</p></li>
-<li><p><code>bold_*()/italicize_*()</code> style labels, variable levels, significant p-values</p></li>
+<li><p><code>add_*()</code> add <span class="emphasis">additional column</span> of statistics or information, e.g.&nbsp;p-values, q-values, overall statistics, treatment differences, N obs., and more</p></li>
+<li><p><code>modify_*()</code> <span class="emphasis">modify</span> table headers, spanning headers, footnotes, and more</p></li>
+<li><p><code>bold_*()/italicize_*()</code> <span class="emphasis">style</span> labels, variable levels, significant p-values</p></li>
 </ul>
 </section>
 <section id="update-tbl_summary-with-add_" class="slide level2">
@@ -1869,7 +1869,7 @@ Unknown
 <li><p>Consider using gtsummary functions that build on a summary table.</p></li>
 </ol>
 <div class="cell-output-display">
-<div class="countdown" id="timer_62fceabd" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62fe92d1" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -2616,17 +2616,20 @@ III
 </section>
 <section id="survey-data-with-tbl_svysummary" class="slide level2">
 <h2>Survey data with tbl_svysummary()</h2>
-<div class="cell columns column-output-location" data-hash="index_cache/revealjs/tbl_svysummary_0107f3379fb4dcd826b1cf11bd831f7b">
+<div class="cell columns column-output-location" data-hash="index_cache/revealjs/tbl_svysummary_78402f76e460235c48912be2b3ffbf98">
 <div class="column">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>survey<span class="sc">::</span><span class="fu">svydesign</span>(</span>
 <span id="cb20-2"><a href="#cb20-2"></a>  <span class="at">ids =</span> <span class="sc">~</span><span class="dv">1</span>, </span>
 <span id="cb20-3"><a href="#cb20-3"></a>  <span class="at">data =</span> <span class="fu">as.data.frame</span>(Titanic), </span>
 <span id="cb20-4"><a href="#cb20-4"></a>  <span class="at">weights =</span> <span class="sc">~</span>Freq</span>
 <span id="cb20-5"><a href="#cb20-5"></a>) <span class="sc">|&gt;</span></span>
-<span id="cb20-6"><a href="#cb20-6"></a>  <span class="fu">tbl_svysummary</span>(<span class="at">by =</span> Survived) <span class="sc">|&gt;</span></span>
-<span id="cb20-7"><a href="#cb20-7"></a>  <span class="fu">add_p</span>() <span class="sc">|&gt;</span></span>
-<span id="cb20-8"><a href="#cb20-8"></a>  <span class="fu">modify_spanning_header</span>(</span>
-<span id="cb20-9"><a href="#cb20-9"></a>    <span class="fu">all_stat_cols</span>() <span class="sc">~</span> <span class="st">"**Survived**"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-6"><a href="#cb20-6"></a>  <span class="fu">tbl_svysummary</span>(</span>
+<span id="cb20-7"><a href="#cb20-7"></a>    <span class="at">by =</span> Survived,</span>
+<span id="cb20-8"><a href="#cb20-8"></a>    <span class="at">include =</span> <span class="fu">c</span>(Class, Sex)</span>
+<span id="cb20-9"><a href="#cb20-9"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb20-10"><a href="#cb20-10"></a>  <span class="fu">add_p</span>() <span class="sc">|&gt;</span></span>
+<span id="cb20-11"><a href="#cb20-11"></a>  <span class="fu">modify_spanning_header</span>(</span>
+<span id="cb20-12"><a href="#cb20-12"></a>    <span class="fu">all_stat_cols</span>() <span class="sc">~</span> <span class="st">"**Survived**"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 
 <table style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
@@ -2754,68 +2757,16 @@ Female
 <td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
 </td>
 </tr>
-<tr>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;">
-Age
-</td>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
-</td>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
-</td>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
-0.4
-</td>
-</tr>
-<tr>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left; text-align: left; text-indent: 10px;">
-Child
-</td>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
-52 (3.5%)
-</td>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
-57 (8.0%)
-</td>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
-</td>
-</tr>
-<tr>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left; text-align: left; text-indent: 10px;">
-Adult
-</td>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
-1,438 (97%)
-</td>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
-654 (92%)
-</td>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
-</td>
-</tr>
-<tr>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;">
-Freq
-</td>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
-342 (140, 513)
-</td>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
-79 (64, 144)
-</td>
-<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
-0.013
-</td>
-</tr>
 </tbody>
 <tfoot style="color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3;">
 <tr>
 <td style="margin: 0px; font-size: 90%; padding-left: 4px; padding-right: 4px; padding-left: 5px; padding-right: 5px;" colspan="4">
-<sup style="font-style: italic; font-weight: normal; font-size: 75%; vertical-align: 0.4em;">1</sup> n (%); Median (IQR)
+<sup style="font-style: italic; font-weight: normal; font-size: 75%; vertical-align: 0.4em;">1</sup> n (%)
 </td>
 </tr>
 <tr>
 <td style="margin: 0px; font-size: 90%; padding-left: 4px; padding-right: 4px; padding-left: 5px; padding-right: 5px;" colspan="4">
-<sup style="font-style: italic; font-weight: normal; font-size: 75%; vertical-align: 0.4em;">2</sup> chi-squared test with Rao &amp; Scott’s second-order correction; Wilcoxon rank-sum test for complex survey samples
+<sup style="font-style: italic; font-weight: normal; font-size: 75%; vertical-align: 0.4em;">2</sup> chi-squared test with Rao &amp; Scott’s second-order correction
 </td>
 </tr>
 </tfoot>
@@ -2919,7 +2870,7 @@ Drug B
 </ul></li>
 </ol>
 <div class="cell-output-display">
-<div class="countdown" id="timer_62fcec92" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62fe91d6" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -2945,7 +2896,7 @@ Drug B
 <p><img data-src="images/raw-output-logistic-regression.png"></p>
 </div>
 </div>
-<p>Looks <strong>messy</strong> and it’s not easy to digest</p>
+<p>Looks <span class="emphasis">messy</span> and it’s not easy to digest</p>
 </section>
 <section id="basic-tbl_regression" class="slide level2">
 <h2>Basic tbl_regression()</h2>
@@ -3065,8 +3016,9 @@ T4
 </div>
 </div>
 <ul>
-<li><p>Displays <strong>p-values</strong> for covariates</p></li>
-<li><p>Shows <strong>reference levels</strong> for categorical variables</p></li>
+<li><p>Displays <span class="emphasis">p-values</span> for covariates</p></li>
+<li><p>Shows <span class="emphasis">reference levels</span> for categorical variables</p></li>
+<li><p><span class="emphasis">Model type recognized</span> as logistic regression with odds ratio appearing in header</p></li>
 </ul>
 </section>
 <section id="customize-tbl_regression-output" class="slide level2">
@@ -3240,8 +3192,8 @@ BIC
 </div>
 </div>
 <ul>
-<li><p>Display <strong>odds ratio</strong> estimates and <strong>confidence intervals</strong></p></li>
-<li><p>Add global p-values</p></li>
+<li><p>Display <span class="emphasis">odds ratio</span> estimates and <span class="emphasis">confidence intervals</span></p></li>
+<li><p>Add <span class="emphasis">global p-values</span></p></li>
 <li><p>Add various model statistics</p></li>
 </ul>
 </section>
@@ -3258,7 +3210,7 @@ BIC
 <li><p>What modifications did you decide to make the the regression summary?</p></li>
 </ol>
 <div class="cell-output-display">
-<div class="countdown" id="timer_62fcec85" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62fe9180" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -3447,10 +3399,10 @@ III
 <section id="gtsummary-reporting-with-inline_text" class="slide level2">
 <h2>{gtsummary} reporting with inline_text()</h2>
 <ul>
-<li><p>Tables are important, but we often need to report results in-line in a report.</p></li>
+<li><p>Tables are important, but we often need to <span class="emphasis">report results in-line</span> in a report.</p></li>
 <li><p>Any statistic reported in a {gtsummary} table can be extracted and reported in-line in an R Markdown document with the <code>inline_text()</code> function.</p></li>
-<li><p>The pattern of what is reported can be modified with the <code>pattern =</code> argument.</p></li>
-<li><p>Default is <code>pattern = "{estimate} ({conf.level*100}% CI {conf.low}, {conf.high}; {p.value})"</code>.</p></li>
+<li><p>The pattern of what is reported can be modified with the <code>pattern=</code> argument.</p></li>
+<li><p>Default is <code>pattern = "{estimate} ({conf.level*100}% CI {conf.low}, {conf.high}; {p.value})"</code> for regression summaries.</p></li>
 </ul>
 </section>
 <section id="gtsummary-reporting-with-inline_text-1" class="slide level2">
@@ -3615,6 +3567,109 @@ III
 <p><strong>In Code:</strong> The odds ratio for age is <code>`r inline_text(tbl_uvreg, variable = age)`</code></p>
 <p><strong>In Report:</strong> The odds ratio for age is 1.02 (95% CI 1.00, 1.04; p=0.10)</p>
 </section>
+<section id="gtsummary-reporting-with-inline_text-2" class="slide level2">
+<h2>{gtsummary} reporting with inline_text()</h2>
+<div class="cell columns column-output-location" data-hash="index_cache/revealjs/unnamed-chunk-30_0edb7e9bc2b61a19b1802101da5254e5">
+<div class="column">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>gts_small_summary <span class="ot">&lt;-</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>  trial <span class="sc">%&gt;%</span> </span>
+<span id="cb26-3"><a href="#cb26-3"></a>  <span class="fu">tbl_summary</span>(</span>
+<span id="cb26-4"><a href="#cb26-4"></a>    <span class="at">by =</span> trt,</span>
+<span id="cb26-5"><a href="#cb26-5"></a>    <span class="at">include =</span> marker,</span>
+<span id="cb26-6"><a href="#cb26-6"></a>    <span class="at">missing =</span> <span class="st">"no"</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb26-8"><a href="#cb26-8"></a>  <span class="fu">add_difference</span>()</span>
+<span id="cb26-9"><a href="#cb26-9"></a>gts_small_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+
+<table style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
+<thead style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
+<tr>
+<th style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: left;" rowspan="1" colspan="1">
+<strong>Characteristic</strong>
+</th>
+<th style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: center;" rowspan="1" colspan="1">
+<strong>Drug A</strong>, N = 98<sup style="font-style: italic; font-weight: normal; font-size: 75%; vertical-align: 0.4em;">1</sup>
+</th>
+<th style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: center;" rowspan="1" colspan="1">
+<strong>Drug B</strong>, N = 102<sup style="font-style: italic; font-weight: normal; font-size: 75%; vertical-align: 0.4em;">1</sup>
+</th>
+<th style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: center;" rowspan="1" colspan="1">
+<strong>Difference</strong><sup style="font-style: italic; font-weight: normal; font-size: 75%; vertical-align: 0.4em;">2</sup>
+</th>
+<th style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: center;" rowspan="1" colspan="1">
+<strong>95% CI</strong><sup style="font-style: italic; font-weight: normal; font-size: 75%; vertical-align: 0.4em;">2,3</sup>
+</th>
+<th style="color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: center;" rowspan="1" colspan="1">
+<strong>p-value</strong><sup style="font-style: italic; font-weight: normal; font-size: 75%; vertical-align: 0.4em;">2</sup>
+</th>
+</tr>
+</thead>
+<tbody style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3;">
+<tr>
+<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;">
+Marker Level (ng/mL)
+</td>
+<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
+0.84 (0.24, 1.57)
+</td>
+<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
+0.52 (0.19, 1.20)
+</td>
+<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
+0.20
+</td>
+<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
+-0.05, 0.44
+</td>
+<td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;">
+0.12
+</td>
+</tr>
+</tbody>
+<tfoot style="color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3;">
+<tr>
+<td style="margin: 0px; font-size: 90%; padding-left: 4px; padding-right: 4px; padding-left: 5px; padding-right: 5px;" colspan="6">
+<sup style="font-style: italic; font-weight: normal; font-size: 75%; vertical-align: 0.4em;">1</sup> Median (IQR)
+</td>
+</tr>
+<tr>
+<td style="margin: 0px; font-size: 90%; padding-left: 4px; padding-right: 4px; padding-left: 5px; padding-right: 5px;" colspan="6">
+<sup style="font-style: italic; font-weight: normal; font-size: 75%; vertical-align: 0.4em;">2</sup> Welch Two Sample t-test
+</td>
+</tr>
+<tr>
+<td style="margin: 0px; font-size: 90%; padding-left: 4px; padding-right: 4px; padding-left: 5px; padding-right: 5px;" colspan="6">
+<sup style="font-style: italic; font-weight: normal; font-size: 75%; vertical-align: 0.4em;">3</sup> CI = Confidence Interval
+</td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:78%;">
+<div class="small">
+<p><strong>In Code:</strong></p>
+<ul>
+<li>The median (IQR) marker among participants randomized to Drug A was <code>`r inline_text(gts_small_summary, variable = marker, column = 'Drug A')`</code>.</li>
+<li>The median (IQR) age among participants randomized to Drug A was <code>`r inline_text(gts_small_summary, variable = marker, column = 'Drug A', pattern = '{median}')`</code>.</li>
+<li>The difference in marker level was <code>`r inline_text(gts_small_summary, variable = marker, pattern = '{estimate} (95% {ci})')`</code>.</li>
+</ul>
+</div>
+</div><div class="column" style="width:22%;">
+<div class="smaller">
+<p><strong>In Report:</strong></p>
+<ul>
+<li>The median (IQR) marker among participants randomized to Drug A was 0.84 (0.24, 1.57).</li>
+<li>The median (IQR) age among participants randomized to Drug A was 0.84.</li>
+<li>The difference in marker level was 0.20 (95% -0.05, 0.44).</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
 <section id="exercise-5" class="slide level2">
 <h2>Exercise 5</h2>
 <p>Write a brief summary of the results above using <code>inline_text()</code> to report values from the tables directly into the markdown report. You’ll likely need <code>gtsummary::show_header_names()</code>.</p>
@@ -3624,7 +3679,7 @@ III
 <li><p>Report the odds ratio for death from the multivariable logistic regression model.</p></li>
 </ol>
 <div class="cell-output-display">
-<div class="countdown" id="timer_62fceaf6" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62fe917f" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -3639,17 +3694,17 @@ III
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>A <strong>univariable</strong> table:</p>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-31_e2400d48e35a35d9eb892944ed9d8354">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>tbl_uvsurv <span class="ot">&lt;-</span> </span>
-<span id="cb26-2"><a href="#cb26-2"></a>  trial <span class="sc">|&gt;</span> </span>
-<span id="cb26-3"><a href="#cb26-3"></a>  <span class="fu">select</span>(age, grade, death, ttdeath) <span class="sc">|&gt;</span> </span>
-<span id="cb26-4"><a href="#cb26-4"></a>  <span class="fu">tbl_uvregression</span>(</span>
-<span id="cb26-5"><a href="#cb26-5"></a>    <span class="at">method =</span> coxph,</span>
-<span id="cb26-6"><a href="#cb26-6"></a>    <span class="at">y =</span> <span class="fu">Surv</span>(ttdeath, death),</span>
-<span id="cb26-7"><a href="#cb26-7"></a>    <span class="at">exponentiate =</span> <span class="cn">TRUE</span></span>
-<span id="cb26-8"><a href="#cb26-8"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb26-9"><a href="#cb26-9"></a>  <span class="fu">add_global_p</span>()</span>
-<span id="cb26-10"><a href="#cb26-10"></a>tbl_uvsurv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-32_007a43328e6c81f05a1485f0a97b3933">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>tbl_uvsurv <span class="ot">&lt;-</span> </span>
+<span id="cb27-2"><a href="#cb27-2"></a>  trial <span class="sc">|&gt;</span> </span>
+<span id="cb27-3"><a href="#cb27-3"></a>  <span class="fu">select</span>(age, grade, death, ttdeath) <span class="sc">|&gt;</span> </span>
+<span id="cb27-4"><a href="#cb27-4"></a>  <span class="fu">tbl_uvregression</span>(</span>
+<span id="cb27-5"><a href="#cb27-5"></a>    <span class="at">method =</span> coxph,</span>
+<span id="cb27-6"><a href="#cb27-6"></a>    <span class="at">y =</span> <span class="fu">Surv</span>(ttdeath, death),</span>
+<span id="cb27-7"><a href="#cb27-7"></a>    <span class="at">exponentiate =</span> <span class="cn">TRUE</span></span>
+<span id="cb27-8"><a href="#cb27-8"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb27-9"><a href="#cb27-9"></a>  <span class="fu">add_global_p</span>()</span>
+<span id="cb27-10"><a href="#cb27-10"></a>tbl_uvsurv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <table style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
 <thead style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
@@ -3762,17 +3817,17 @@ III
 </div>
 </div><div class="column" style="width:50%;">
 <p>A <strong>multivariable</strong> table:</p>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-32_90a02917a7bc15eed74088e85092e11d">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>tbl_mvsurv <span class="ot">&lt;-</span> </span>
-<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">coxph</span>(</span>
-<span id="cb27-3"><a href="#cb27-3"></a>    <span class="fu">Surv</span>(ttdeath, death) <span class="sc">~</span> age <span class="sc">+</span> grade, </span>
-<span id="cb27-4"><a href="#cb27-4"></a>    <span class="at">data =</span> trial</span>
-<span id="cb27-5"><a href="#cb27-5"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb27-6"><a href="#cb27-6"></a>  <span class="fu">tbl_regression</span>(</span>
-<span id="cb27-7"><a href="#cb27-7"></a>    <span class="at">exponentiate =</span> <span class="cn">TRUE</span></span>
-<span id="cb27-8"><a href="#cb27-8"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb27-9"><a href="#cb27-9"></a>  <span class="fu">add_global_p</span>() </span>
-<span id="cb27-10"><a href="#cb27-10"></a>tbl_mvsurv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-33_b0672905fa9f990afb573ed80a7ffcc1">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>tbl_mvsurv <span class="ot">&lt;-</span> </span>
+<span id="cb28-2"><a href="#cb28-2"></a>  <span class="fu">coxph</span>(</span>
+<span id="cb28-3"><a href="#cb28-3"></a>    <span class="fu">Surv</span>(ttdeath, death) <span class="sc">~</span> age <span class="sc">+</span> grade, </span>
+<span id="cb28-4"><a href="#cb28-4"></a>    <span class="at">data =</span> trial</span>
+<span id="cb28-5"><a href="#cb28-5"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb28-6"><a href="#cb28-6"></a>  <span class="fu">tbl_regression</span>(</span>
+<span id="cb28-7"><a href="#cb28-7"></a>    <span class="at">exponentiate =</span> <span class="cn">TRUE</span></span>
+<span id="cb28-8"><a href="#cb28-8"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb28-9"><a href="#cb28-9"></a>  <span class="fu">add_global_p</span>() </span>
+<span id="cb28-10"><a href="#cb28-10"></a>tbl_mvsurv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <table style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
 <thead style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
@@ -3873,11 +3928,11 @@ III
 </section>
 <section id="tbl_merge-for-side-by-side-tables-1" class="slide level2">
 <h2>tbl_merge() for side-by-side tables</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-33_19808b37c95451b0bbc0e62fe450015c">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">tbl_merge</span>(</span>
-<span id="cb28-2"><a href="#cb28-2"></a>  <span class="fu">list</span>(tbl_uvsurv, tbl_mvsurv),</span>
-<span id="cb28-3"><a href="#cb28-3"></a>  <span class="at">tab_spanner =</span> <span class="fu">c</span>(<span class="st">"**Univariable**"</span>, <span class="st">"**Multivariable**"</span>)</span>
-<span id="cb28-4"><a href="#cb28-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-34_0b39eed43b733ab8bf2f91b2002c0f76">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">tbl_merge</span>(</span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">list</span>(tbl_uvsurv, tbl_mvsurv),</span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="at">tab_spanner =</span> <span class="fu">c</span>(<span class="st">"**Univariable**"</span>, <span class="st">"**Multivariable**"</span>)</span>
+<span id="cb29-4"><a href="#cb29-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <table style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
 <thead style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
@@ -4051,16 +4106,16 @@ III
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>A <strong>univariable</strong> table:</p>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-34_0e0efb87c35eb64d6f04291e1177dbb0">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>tbl_uvsurv2 <span class="ot">&lt;-</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">coxph</span>(<span class="fu">Surv</span>(ttdeath, death) <span class="sc">~</span> trt, </span>
-<span id="cb29-3"><a href="#cb29-3"></a>        <span class="at">data =</span> trial) <span class="sc">|&gt;</span></span>
-<span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">tbl_regression</span>(</span>
-<span id="cb29-5"><a href="#cb29-5"></a>    <span class="at">show_single_row =</span> trt,</span>
-<span id="cb29-6"><a href="#cb29-6"></a>    <span class="at">label =</span> trt <span class="sc">~</span> <span class="st">"Drug B vs A"</span>,</span>
-<span id="cb29-7"><a href="#cb29-7"></a>    <span class="at">exponentiate =</span> <span class="cn">TRUE</span></span>
-<span id="cb29-8"><a href="#cb29-8"></a>  )</span>
-<span id="cb29-9"><a href="#cb29-9"></a>tbl_uvsurv2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-35_be4b7d6d674359aab3fa590f4261a2c2">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>tbl_uvsurv2 <span class="ot">&lt;-</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">coxph</span>(<span class="fu">Surv</span>(ttdeath, death) <span class="sc">~</span> trt, </span>
+<span id="cb30-3"><a href="#cb30-3"></a>        <span class="at">data =</span> trial) <span class="sc">|&gt;</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a>  <span class="fu">tbl_regression</span>(</span>
+<span id="cb30-5"><a href="#cb30-5"></a>    <span class="at">show_single_row =</span> trt,</span>
+<span id="cb30-6"><a href="#cb30-6"></a>    <span class="at">label =</span> trt <span class="sc">~</span> <span class="st">"Drug B vs A"</span>,</span>
+<span id="cb30-7"><a href="#cb30-7"></a>    <span class="at">exponentiate =</span> <span class="cn">TRUE</span></span>
+<span id="cb30-8"><a href="#cb30-8"></a>  )</span>
+<span id="cb30-9"><a href="#cb30-9"></a>tbl_uvsurv2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <table style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
 <thead style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
@@ -4107,18 +4162,18 @@ Drug B vs A
 </div>
 </div><div class="column" style="width:50%;">
 <p>A <strong>multivariable</strong> table:</p>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-35_45295465e998cf1c097993149a93cb7c">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>tbl_mvsurv2 <span class="ot">&lt;-</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">coxph</span>(<span class="fu">Surv</span>(ttdeath, death) <span class="sc">~</span> </span>
-<span id="cb30-3"><a href="#cb30-3"></a>          trt <span class="sc">+</span> grade <span class="sc">+</span> stage <span class="sc">+</span> marker, </span>
-<span id="cb30-4"><a href="#cb30-4"></a>        <span class="at">data =</span> trial) <span class="sc">|&gt;</span></span>
-<span id="cb30-5"><a href="#cb30-5"></a>  <span class="fu">tbl_regression</span>(</span>
-<span id="cb30-6"><a href="#cb30-6"></a>    <span class="at">show_single_row =</span> trt,</span>
-<span id="cb30-7"><a href="#cb30-7"></a>    <span class="at">label =</span> trt <span class="sc">~</span> <span class="st">"Drug B vs A"</span>,</span>
-<span id="cb30-8"><a href="#cb30-8"></a>    <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb30-9"><a href="#cb30-9"></a>    <span class="at">include =</span> <span class="st">"trt"</span></span>
-<span id="cb30-10"><a href="#cb30-10"></a>  )</span>
-<span id="cb30-11"><a href="#cb30-11"></a>tbl_mvsurv2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-36_04bf6029c04a40855ba74b469f7b4e16">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>tbl_mvsurv2 <span class="ot">&lt;-</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">coxph</span>(<span class="fu">Surv</span>(ttdeath, death) <span class="sc">~</span> </span>
+<span id="cb31-3"><a href="#cb31-3"></a>          trt <span class="sc">+</span> grade <span class="sc">+</span> stage <span class="sc">+</span> marker, </span>
+<span id="cb31-4"><a href="#cb31-4"></a>        <span class="at">data =</span> trial) <span class="sc">|&gt;</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a>  <span class="fu">tbl_regression</span>(</span>
+<span id="cb31-6"><a href="#cb31-6"></a>    <span class="at">show_single_row =</span> trt,</span>
+<span id="cb31-7"><a href="#cb31-7"></a>    <span class="at">label =</span> trt <span class="sc">~</span> <span class="st">"Drug B vs A"</span>,</span>
+<span id="cb31-8"><a href="#cb31-8"></a>    <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb31-9"><a href="#cb31-9"></a>    <span class="at">include =</span> <span class="st">"trt"</span></span>
+<span id="cb31-10"><a href="#cb31-10"></a>  )</span>
+<span id="cb31-11"><a href="#cb31-11"></a>tbl_mvsurv2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <table style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
 <thead style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
@@ -4168,13 +4223,13 @@ Drug B vs A
 </section>
 <section id="tbl_stack-to-combine-vertically-1" class="slide level2">
 <h2>tbl_stack() to combine vertically</h2>
-<div class="cell columns column-output-location" data-hash="index_cache/revealjs/unnamed-chunk-36_1005ad79cd5db006af557396e30660bc">
+<div class="cell columns column-output-location" data-hash="index_cache/revealjs/unnamed-chunk-37_b39aa1ac86d5677f4235601a6065de66">
 <div class="column">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">list</span>(tbl_uvsurv2, tbl_mvsurv2) <span class="sc">|&gt;</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">tbl_stack</span>(</span>
-<span id="cb31-3"><a href="#cb31-3"></a>    <span class="at">group_header =</span> </span>
-<span id="cb31-4"><a href="#cb31-4"></a>      <span class="fu">c</span>(<span class="st">"Unadjusted"</span>, <span class="st">"Adjusted"</span>)</span>
-<span id="cb31-5"><a href="#cb31-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">list</span>(tbl_uvsurv2, tbl_mvsurv2) <span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">tbl_stack</span>(</span>
+<span id="cb32-3"><a href="#cb32-3"></a>    <span class="at">group_header =</span> </span>
+<span id="cb32-4"><a href="#cb32-4"></a>      <span class="fu">c</span>(<span class="st">"Unadjusted"</span>, <span class="st">"Adjusted"</span>)</span>
+<span id="cb32-5"><a href="#cb32-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 
 <table style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
@@ -4248,14 +4303,14 @@ Drug B vs A
 </section>
 <section id="tbl_strata-for-stratified-tables" class="slide level2">
 <h2>tbl_strata() for stratified tables</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-37_6838cf5ba8ee66f0830599339a4565fc">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>sm_trial <span class="sc">|&gt;</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">mutate</span>(<span class="at">grade =</span> <span class="fu">paste</span>(<span class="st">"Grade"</span>, grade)) <span class="sc">|&gt;</span></span>
-<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">tbl_strata</span>(</span>
-<span id="cb32-4"><a href="#cb32-4"></a>    <span class="at">strata =</span> grade,</span>
-<span id="cb32-5"><a href="#cb32-5"></a>    <span class="sc">~</span><span class="fu">tbl_summary</span>(.x, <span class="at">by =</span> trt, <span class="at">missing =</span> <span class="st">"no"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb32-6"><a href="#cb32-6"></a>      <span class="fu">modify_header</span>(<span class="fu">all_stat_cols</span>() <span class="sc">~</span> <span class="st">"**{level}**"</span>)</span>
-<span id="cb32-7"><a href="#cb32-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-38_6042c37d107ef15b0f00167beb7244c1">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>sm_trial <span class="sc">|&gt;</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">mutate</span>(<span class="at">grade =</span> <span class="fu">paste</span>(<span class="st">"Grade"</span>, grade)) <span class="sc">|&gt;</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">tbl_strata</span>(</span>
+<span id="cb33-4"><a href="#cb33-4"></a>    <span class="at">strata =</span> grade,</span>
+<span id="cb33-5"><a href="#cb33-5"></a>    <span class="sc">~</span><span class="fu">tbl_summary</span>(.x, <span class="at">by =</span> trt, <span class="at">missing =</span> <span class="st">"no"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb33-6"><a href="#cb33-6"></a>      <span class="fu">modify_header</span>(<span class="fu">all_stat_cols</span>() <span class="sc">~</span> <span class="st">"**{level}**"</span>)</span>
+<span id="cb33-7"><a href="#cb33-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <table style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
 <thead style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
@@ -4371,21 +4426,21 @@ Tumor Response
 <li><p>The {gtreg} package uses {gtsummary} to construct tables for regulatory agencies.</p></li>
 <li><p><a href="https://shannonpileggi.github.io/gtreg/">https://shannonpileggi.github.io/gtreg/</a></p></li>
 </ul>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-38_64142bc9ad26d82f7feaee71451a23d6">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>gtreg<span class="sc">::</span>df_adverse_events <span class="sc">|&gt;</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a>  gtreg<span class="sc">::</span><span class="fu">tbl_ae</span>(</span>
-<span id="cb33-3"><a href="#cb33-3"></a>    <span class="at">id_df =</span> gtreg<span class="sc">::</span>df_patient_characteristics,</span>
-<span id="cb33-4"><a href="#cb33-4"></a>    <span class="at">id =</span> patient_id,</span>
-<span id="cb33-5"><a href="#cb33-5"></a>    <span class="at">ae =</span> adverse_event,</span>
-<span id="cb33-6"><a href="#cb33-6"></a>    <span class="at">soc =</span> system_organ_class, </span>
-<span id="cb33-7"><a href="#cb33-7"></a>    <span class="at">by =</span> grade, </span>
-<span id="cb33-8"><a href="#cb33-8"></a>    <span class="at">strata =</span> trt</span>
-<span id="cb33-9"><a href="#cb33-9"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb33-10"><a href="#cb33-10"></a>  <span class="fu">modify_header</span>(gtreg<span class="sc">::</span><span class="fu">all_ae_cols</span>() <span class="sc">~</span> <span class="st">"**Grade {by}**"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb33-11"><a href="#cb33-11"></a>  <span class="fu">bold_labels</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-39_1b11c691332bfdcb0427bdcab5e24a3f">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>gtreg<span class="sc">::</span>df_adverse_events <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>  gtreg<span class="sc">::</span><span class="fu">tbl_ae</span>(</span>
+<span id="cb34-3"><a href="#cb34-3"></a>    <span class="at">id_df =</span> gtreg<span class="sc">::</span>df_patient_characteristics,</span>
+<span id="cb34-4"><a href="#cb34-4"></a>    <span class="at">id =</span> patient_id,</span>
+<span id="cb34-5"><a href="#cb34-5"></a>    <span class="at">ae =</span> adverse_event,</span>
+<span id="cb34-6"><a href="#cb34-6"></a>    <span class="at">soc =</span> system_organ_class, </span>
+<span id="cb34-7"><a href="#cb34-7"></a>    <span class="at">by =</span> grade, </span>
+<span id="cb34-8"><a href="#cb34-8"></a>    <span class="at">strata =</span> trt</span>
+<span id="cb34-9"><a href="#cb34-9"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb34-10"><a href="#cb34-10"></a>  <span class="fu">modify_header</span>(gtreg<span class="sc">::</span><span class="fu">all_ae_cols</span>() <span class="sc">~</span> <span class="st">"**Grade {by}**"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb34-11"><a href="#cb34-11"></a>  <span class="fu">bold_labels</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
-</section><section id="gtreg-for-regulatory-submissions-output" class="slide level2 output-location-slide"><h2>{gtreg} for regulatory submissions</h2><div class="cell output-location-slide" data-hash="index_cache/revealjs/unnamed-chunk-38_64142bc9ad26d82f7feaee71451a23d6">
+</section><section id="gtreg-for-regulatory-submissions-output" class="slide level2 output-location-slide"><h2>{gtreg} for regulatory submissions</h2><div class="cell output-location-slide" data-hash="index_cache/revealjs/unnamed-chunk-39_1b11c691332bfdcb0427bdcab5e24a3f">
 
 <table style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
 <thead style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
@@ -4839,16 +4894,16 @@ Pancreatic enzyme abnormality
 </section>
 <section id="gtsummary-default-theme" class="slide level2">
 <h2>{gtsummary} default theme</h2>
-<div class="cell columns column-output-location" data-hash="index_cache/revealjs/unnamed-chunk-39_14e3dac28fb5d14b8f29c932dc2fd693">
+<div class="cell columns column-output-location" data-hash="index_cache/revealjs/unnamed-chunk-40_167de58f4254583e71b09575a31fb5e2">
 <div class="column">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">reset_gtsummary_theme</span>()</span>
-<span id="cb34-2"><a href="#cb34-2"></a>m1 <span class="sc">|&gt;</span></span>
-<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">tbl_regression</span>(</span>
-<span id="cb34-4"><a href="#cb34-4"></a>    <span class="at">exponentiate =</span> <span class="cn">TRUE</span></span>
-<span id="cb34-5"><a href="#cb34-5"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb34-6"><a href="#cb34-6"></a>  <span class="fu">modify_caption</span>(</span>
-<span id="cb34-7"><a href="#cb34-7"></a>    <span class="st">"Default Theme"</span></span>
-<span id="cb34-8"><a href="#cb34-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">reset_gtsummary_theme</span>()</span>
+<span id="cb35-2"><a href="#cb35-2"></a>m1 <span class="sc">|&gt;</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">tbl_regression</span>(</span>
+<span id="cb35-4"><a href="#cb35-4"></a>    <span class="at">exponentiate =</span> <span class="cn">TRUE</span></span>
+<span id="cb35-5"><a href="#cb35-5"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb35-6"><a href="#cb35-6"></a>  <span class="fu">modify_caption</span>(</span>
+<span id="cb35-7"><a href="#cb35-7"></a>    <span class="st">"Default Theme"</span></span>
+<span id="cb35-8"><a href="#cb35-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 
 <table style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
@@ -4967,18 +5022,18 @@ T4
 </section>
 <section id="gtsummary-theme_gtsummary_journal" class="slide level2">
 <h2>{gtsummary} theme_gtsummary_journal()</h2>
-<div class="cell columns column-output-location" data-hash="index_cache/revealjs/unnamed-chunk-40_fb53916d129522a2676c685fcc82dde4">
+<div class="cell columns column-output-location" data-hash="index_cache/revealjs/unnamed-chunk-41_21936d6d189cd8d7811ca35130d822ef">
 <div class="column">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">reset_gtsummary_theme</span>()</span>
-<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">theme_gtsummary_journal</span>(<span class="at">journal =</span> <span class="st">"jama"</span>)</span>
-<span id="cb35-3"><a href="#cb35-3"></a></span>
-<span id="cb35-4"><a href="#cb35-4"></a>m1 <span class="sc">|&gt;</span></span>
-<span id="cb35-5"><a href="#cb35-5"></a>  <span class="fu">tbl_regression</span>(</span>
-<span id="cb35-6"><a href="#cb35-6"></a>    <span class="at">exponentiate =</span> <span class="cn">TRUE</span></span>
-<span id="cb35-7"><a href="#cb35-7"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb35-8"><a href="#cb35-8"></a>  <span class="fu">modify_caption</span>(</span>
-<span id="cb35-9"><a href="#cb35-9"></a>    <span class="st">"Journal Theme (JAMA)"</span></span>
-<span id="cb35-10"><a href="#cb35-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">reset_gtsummary_theme</span>()</span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">theme_gtsummary_journal</span>(<span class="at">journal =</span> <span class="st">"jama"</span>)</span>
+<span id="cb36-3"><a href="#cb36-3"></a></span>
+<span id="cb36-4"><a href="#cb36-4"></a>m1 <span class="sc">|&gt;</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a>  <span class="fu">tbl_regression</span>(</span>
+<span id="cb36-6"><a href="#cb36-6"></a>    <span class="at">exponentiate =</span> <span class="cn">TRUE</span></span>
+<span id="cb36-7"><a href="#cb36-7"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb36-8"><a href="#cb36-8"></a>  <span class="fu">modify_caption</span>(</span>
+<span id="cb36-9"><a href="#cb36-9"></a>    <span class="st">"Journal Theme (JAMA)"</span></span>
+<span id="cb36-10"><a href="#cb36-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 
 <table style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
@@ -5078,18 +5133,18 @@ T4
 </section>
 <section id="gtsummary-theme_gtsummary_language" class="slide level2">
 <h2>{gtsummary} theme_gtsummary_language()</h2>
-<div class="cell columns column-output-location" data-hash="index_cache/revealjs/unnamed-chunk-41_d6cfd5711cca602b3511d24ed744e5d8">
+<div class="cell columns column-output-location" data-hash="index_cache/revealjs/unnamed-chunk-42_93ea91558300bef2b163cff8bc216452">
 <div class="column">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">reset_gtsummary_theme</span>()</span>
-<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">theme_gtsummary_language</span>(<span class="at">language =</span> <span class="st">"zh-tw"</span>)</span>
-<span id="cb36-3"><a href="#cb36-3"></a></span>
-<span id="cb36-4"><a href="#cb36-4"></a>m1 <span class="sc">|&gt;</span></span>
-<span id="cb36-5"><a href="#cb36-5"></a>  <span class="fu">tbl_regression</span>(</span>
-<span id="cb36-6"><a href="#cb36-6"></a>    <span class="at">exponentiate =</span> <span class="cn">TRUE</span></span>
-<span id="cb36-7"><a href="#cb36-7"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb36-8"><a href="#cb36-8"></a>  <span class="fu">modify_caption</span>(</span>
-<span id="cb36-9"><a href="#cb36-9"></a>    <span class="st">"Language Theme (Chinese)"</span></span>
-<span id="cb36-10"><a href="#cb36-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">reset_gtsummary_theme</span>()</span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">theme_gtsummary_language</span>(<span class="at">language =</span> <span class="st">"zh-tw"</span>)</span>
+<span id="cb37-3"><a href="#cb37-3"></a></span>
+<span id="cb37-4"><a href="#cb37-4"></a>m1 <span class="sc">|&gt;</span></span>
+<span id="cb37-5"><a href="#cb37-5"></a>  <span class="fu">tbl_regression</span>(</span>
+<span id="cb37-6"><a href="#cb37-6"></a>    <span class="at">exponentiate =</span> <span class="cn">TRUE</span></span>
+<span id="cb37-7"><a href="#cb37-7"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb37-8"><a href="#cb37-8"></a>  <span class="fu">modify_caption</span>(</span>
+<span id="cb37-9"><a href="#cb37-9"></a>    <span class="st">"Language Theme (Chinese)"</span></span>
+<span id="cb37-10"><a href="#cb37-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 
 <table style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
@@ -5209,12 +5264,12 @@ T4
 </section>
 <section id="gtsummary-theme_gtsummary_compact" class="slide level2">
 <h2>{gtsummary} theme_gtsummary_compact()</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-42_3f475e246130c487cede5f5c7aa8bd85">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">reset_gtsummary_theme</span>()</span>
-<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">theme_gtsummary_compact</span>()</span>
-<span id="cb37-3"><a href="#cb37-3"></a></span>
-<span id="cb37-4"><a href="#cb37-4"></a><span class="fu">tbl_regression</span>(m1, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb37-5"><a href="#cb37-5"></a>  <span class="fu">modify_caption</span>(<span class="st">"Compact Theme"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-43_0676245c531d38453443529d2031f16a">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">reset_gtsummary_theme</span>()</span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="fu">theme_gtsummary_compact</span>()</span>
+<span id="cb38-3"><a href="#cb38-3"></a></span>
+<span id="cb38-4"><a href="#cb38-4"></a><span class="fu">tbl_regression</span>(m1, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb38-5"><a href="#cb38-5"></a>  <span class="fu">modify_caption</span>(<span class="st">"Compact Theme"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <table style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 13px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
 <caption>
@@ -5350,16 +5405,16 @@ T4
 <section id="gtsummary-print-engines-2" class="slide level2">
 <h2>{gtsummary} print engines</h2>
 <p>Use any print engine to customize table</p>
-<div class="cell columns column-output-location" data-hash="index_cache/revealjs/unnamed-chunk-43_48d0010e47772b924d819ef2310729fc">
+<div class="cell columns column-output-location" data-hash="index_cache/revealjs/unnamed-chunk-44_401532c7486f2ba495be25c61ae2a1cf">
 <div class="column">
-<div class="sourceCode cell-code" id="cb38" data-code-line-numbers="1,5,6,7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb38-2"><a href="#cb38-2"></a>trial <span class="sc">|&gt;</span></span>
-<span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">select</span>(age, grade) <span class="sc">|&gt;</span></span>
-<span id="cb38-4"><a href="#cb38-4"></a>  <span class="fu">tbl_summary</span>() <span class="sc">|&gt;</span></span>
-<span id="cb38-5"><a href="#cb38-5"></a>  <span class="fu">as_gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb38-6"><a href="#cb38-6"></a>  <span class="fu">cols_width</span>(label <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">300</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb38-7"><a href="#cb38-7"></a>  <span class="fu">cols_align</span>(<span class="at">columns =</span> stat_0, </span>
-<span id="cb38-8"><a href="#cb38-8"></a>             <span class="at">align =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39" data-code-line-numbers="1,5,6,7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb39-2"><a href="#cb39-2"></a>trial <span class="sc">|&gt;</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">select</span>(age, grade) <span class="sc">|&gt;</span></span>
+<span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">tbl_summary</span>() <span class="sc">|&gt;</span></span>
+<span id="cb39-5"><a href="#cb39-5"></a>  <span class="fu">as_gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb39-6"><a href="#cb39-6"></a>  <span class="fu">cols_width</span>(label <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">300</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb39-7"><a href="#cb39-7"></a>  <span class="fu">cols_align</span>(<span class="at">columns =</span> stat_0, </span>
+<span id="cb39-8"><a href="#cb39-8"></a>             <span class="at">align =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 
 <table style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 13px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; table-layout: fixed;">
@@ -5453,18 +5508,18 @@ III
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Install production version from CRAN:</p>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-44_aa49f4ff9dd6e3fabf3b24d5004734c8">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">install.packages</span>(<span class="st">"gtsummary"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-45_5c51172a8aeae85bfcc27ba945d21448">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">install.packages</span>(<span class="st">"gtsummary"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <p>Install development version from GitHub:</p>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-45_a0df45ff9f3d403d35f2d0ca91a5170e">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"ddsjoberg/gtsummary"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-46_bd33a96c894c9e4c59dd98cedfc40eed">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"ddsjoberg/gtsummary"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-46-1.png" style="width:100.0%" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-47-1.png" style="width:100.0%" class="r-stretch"></section>
 <section id="gtsummary-sandbox-in-bstfun" class="slide level2">
 <h2>{gtsummary} sandbox in {bstfun}</h2>
 <p><a href="http://www.danieldsjoberg.com/bstfun/">http://www.danieldsjoberg.com/bstfun/</a></p>

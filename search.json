@@ -242,7 +242,7 @@
     "href": "slides/index.html#survey-data-with-tbl_svysummary",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Survey data with tbl_svysummary()",
-    "text": "Survey data with tbl_svysummary()\n\n\nsurvey::svydesign(\n  ids = ~1, \n  data = as.data.frame(Titanic), \n  weights = ~Freq\n) |>\n  tbl_svysummary(by = Survived) |>\n  add_p() |>\n  modify_spanning_header(\n    all_stat_cols() ~ \"**Survived**\")\n\n\n\n\n\n\nCharacteristic\n\n\nSurvived\n\n\np-value2\n\n\n\n\nNo, N = 1,4901\n\n\nYes, N = 7111\n\n\n\n\n\n\nClass\n\n\n\n\n\n\n0.7\n\n\n\n\n1st\n\n\n122 (8.2%)\n\n\n203 (29%)\n\n\n\n\n\n\n2nd\n\n\n167 (11%)\n\n\n118 (17%)\n\n\n\n\n\n\n3rd\n\n\n528 (35%)\n\n\n178 (25%)\n\n\n\n\n\n\nCrew\n\n\n673 (45%)\n\n\n212 (30%)\n\n\n\n\n\n\nSex\n\n\n\n\n\n\n0.048\n\n\n\n\nMale\n\n\n1,364 (92%)\n\n\n367 (52%)\n\n\n\n\n\n\nFemale\n\n\n126 (8.5%)\n\n\n344 (48%)\n\n\n\n\n\n\nAge\n\n\n\n\n\n\n0.4\n\n\n\n\nChild\n\n\n52 (3.5%)\n\n\n57 (8.0%)\n\n\n\n\n\n\nAdult\n\n\n1,438 (97%)\n\n\n654 (92%)\n\n\n\n\n\n\nFreq\n\n\n342 (140, 513)\n\n\n79 (64, 144)\n\n\n0.013\n\n\n\n\n\n\n1 n (%); Median (IQR)\n\n\n\n\n2 chi-squared test with Rao & Scott’s second-order correction; Wilcoxon rank-sum test for complex survey samples"
+    "text": "Survey data with tbl_svysummary()\n\n\nsurvey::svydesign(\n  ids = ~1, \n  data = as.data.frame(Titanic), \n  weights = ~Freq\n) |>\n  tbl_svysummary(\n    by = Survived,\n    include = c(Class, Sex)\n  ) |>\n  add_p() |>\n  modify_spanning_header(\n    all_stat_cols() ~ \"**Survived**\")\n\n\n\n\n\n\nCharacteristic\n\n\nSurvived\n\n\np-value2\n\n\n\n\nNo, N = 1,4901\n\n\nYes, N = 7111\n\n\n\n\n\n\nClass\n\n\n\n\n\n\n0.7\n\n\n\n\n1st\n\n\n122 (8.2%)\n\n\n203 (29%)\n\n\n\n\n\n\n2nd\n\n\n167 (11%)\n\n\n118 (17%)\n\n\n\n\n\n\n3rd\n\n\n528 (35%)\n\n\n178 (25%)\n\n\n\n\n\n\nCrew\n\n\n673 (45%)\n\n\n212 (30%)\n\n\n\n\n\n\nSex\n\n\n\n\n\n\n0.048\n\n\n\n\nMale\n\n\n1,364 (92%)\n\n\n367 (52%)\n\n\n\n\n\n\nFemale\n\n\n126 (8.5%)\n\n\n344 (48%)\n\n\n\n\n\n\n\n\n1 n (%)\n\n\n\n\n2 chi-squared test with Rao & Scott’s second-order correction"
   },
   {
     "objectID": "slides/index.html#survival-outcomes-with-tbl_survfit",
@@ -270,7 +270,7 @@
     "href": "slides/index.html#basic-tbl_regression",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Basic tbl_regression()",
-    "text": "Basic tbl_regression()\n\n\ntbl_regression(m1)\n\n\n\n\n\n\nCharacteristic\n\n\nlog(OR)1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n0.02\n\n\n0.00, 0.04\n\n\n0.091\n\n\n\n\nT Stage\n\n\n\n\n\n\n\n\n\n\nT1\n\n\n—\n\n\n—\n\n\n\n\n\n\nT2\n\n\n-0.54\n\n\n-1.4, 0.31\n\n\n0.2\n\n\n\n\nT3\n\n\n-0.06\n\n\n-1.0, 0.82\n\n\n0.9\n\n\n\n\nT4\n\n\n-0.23\n\n\n-1.1, 0.64\n\n\n0.6\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\nDisplays p-values for covariates\nShows reference levels for categorical variables"
+    "text": "Basic tbl_regression()\n\n\ntbl_regression(m1)\n\n\n\n\n\n\nCharacteristic\n\n\nlog(OR)1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n0.02\n\n\n0.00, 0.04\n\n\n0.091\n\n\n\n\nT Stage\n\n\n\n\n\n\n\n\n\n\nT1\n\n\n—\n\n\n—\n\n\n\n\n\n\nT2\n\n\n-0.54\n\n\n-1.4, 0.31\n\n\n0.2\n\n\n\n\nT3\n\n\n-0.06\n\n\n-1.0, 0.82\n\n\n0.9\n\n\n\n\nT4\n\n\n-0.23\n\n\n-1.1, 0.64\n\n\n0.6\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\nDisplays p-values for covariates\nShows reference levels for categorical variables\nModel type recognized as logistic regression with odds ratio appearing in header"
   },
   {
     "objectID": "slides/index.html#customize-tbl_regression-output",
@@ -305,7 +305,7 @@
     "href": "slides/index.html#gtsummary-reporting-with-inline_text",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "{gtsummary} reporting with inline_text()",
-    "text": "{gtsummary} reporting with inline_text()\n\nTables are important, but we often need to report results in-line in a report.\nAny statistic reported in a {gtsummary} table can be extracted and reported in-line in an R Markdown document with the inline_text() function.\nThe pattern of what is reported can be modified with the pattern = argument.\nDefault is pattern = \"{estimate} ({conf.level*100}% CI {conf.low}, {conf.high}; {p.value})\"."
+    "text": "{gtsummary} reporting with inline_text()\n\nTables are important, but we often need to report results in-line in a report.\nAny statistic reported in a {gtsummary} table can be extracted and reported in-line in an R Markdown document with the inline_text() function.\nThe pattern of what is reported can be modified with the pattern= argument.\nDefault is pattern = \"{estimate} ({conf.level*100}% CI {conf.low}, {conf.high}; {p.value})\" for regression summaries."
   },
   {
     "objectID": "slides/index.html#gtsummary-reporting-with-inline_text-1",
@@ -313,6 +313,13 @@
     "title": "Clinical Reporting with {gtsummary}",
     "section": "{gtsummary} reporting with inline_text()",
     "text": "{gtsummary} reporting with inline_text()\n\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nChemotherapy Treatment\n\n\n193\n\n\n\n\n\n\n\n\n\n\nDrug A\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nDrug B\n\n\n\n\n1.21\n\n\n0.66, 2.24\n\n\n0.5\n\n\n\n\nAge\n\n\n183\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.10\n\n\n\n\nGrade\n\n\n193\n\n\n\n\n\n\n\n\n\n\nI\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nII\n\n\n\n\n0.95\n\n\n0.45, 2.00\n\n\n0.9\n\n\n\n\nIII\n\n\n\n\n1.10\n\n\n0.52, 2.29\n\n\n0.8\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\nIn Code: The odds ratio for age is `r inline_text(tbl_uvreg, variable = age)`\nIn Report: The odds ratio for age is 1.02 (95% CI 1.00, 1.04; p=0.10)"
+  },
+  {
+    "objectID": "slides/index.html#gtsummary-reporting-with-inline_text-2",
+    "href": "slides/index.html#gtsummary-reporting-with-inline_text-2",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "{gtsummary} reporting with inline_text()",
+    "text": "{gtsummary} reporting with inline_text()\n\n\ngts_small_summary <-\n  trial %>% \n  tbl_summary(\n    by = trt,\n    include = marker,\n    missing = \"no\"\n  ) %>%\n  add_difference()\ngts_small_summary\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\nDifference2\n\n\n95% CI2,3\n\n\np-value2\n\n\n\n\n\n\nMarker Level (ng/mL)\n\n\n0.84 (0.24, 1.57)\n\n\n0.52 (0.19, 1.20)\n\n\n0.20\n\n\n-0.05, 0.44\n\n\n0.12\n\n\n\n\n\n\n1 Median (IQR)\n\n\n\n\n2 Welch Two Sample t-test\n\n\n\n\n3 CI = Confidence Interval\n\n\n\n\n\n\n\n\n\n\nIn Code:\n\nThe median (IQR) marker among participants randomized to Drug A was `r inline_text(gts_small_summary, variable = marker, column = 'Drug A')`.\nThe median (IQR) age among participants randomized to Drug A was `r inline_text(gts_small_summary, variable = marker, column = 'Drug A', pattern = '{median}')`.\nThe difference in marker level was `r inline_text(gts_small_summary, variable = marker, pattern = '{estimate} (95% {ci})')`.\n\n\n\n\nIn Report:\n\nThe median (IQR) marker among participants randomized to Drug A was 0.84 (0.24, 1.57).\nThe median (IQR) age among participants randomized to Drug A was 0.84.\nThe difference in marker level was 0.20 (95% -0.05, 0.44)."
   },
   {
     "objectID": "slides/index.html#exercise-5",
