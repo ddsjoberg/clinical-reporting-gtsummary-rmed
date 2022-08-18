@@ -2,13 +2,13 @@
 
 ## {gtsummary} reporting with inline_text()
 
--   Tables are important, but we often need to report results in-line in a report.
+-   Tables are important, but we often need to [report results in-line]{.emphasis} in a report.
 
 -   Any statistic reported in a {gtsummary} table can be extracted and reported in-line in an R Markdown document with the `inline_text()` function.
 
--   The pattern of what is reported can be modified with the `pattern =` argument.
+-   The pattern of what is reported can be modified with the `pattern=` argument.
 
--   Default is `pattern = "{estimate} ({conf.level*100}% CI {conf.low}, {conf.high}; {p.value})"`.
+-   Default is `pattern = "{estimate} ({conf.level*100}% CI {conf.low}, {conf.high}; {p.value})"` for regression summaries.
 
 ## {gtsummary} reporting with inline_text()
 
@@ -20,6 +20,47 @@ tbl_uvreg
 **In Code:** The odds ratio for age is `` `r "\u0060r inline_text(tbl_uvreg, variable = age)\u0060"` ``
 
 **In Report:** The odds ratio for age is `r inline_text(tbl_uvreg, variable = age)`
+
+## {gtsummary} reporting with inline_text()
+
+```{r}
+#| output-location: "column"
+gts_small_summary <-
+  trial %>% 
+  tbl_summary(
+    by = trt,
+    include = marker,
+    missing = "no"
+  ) %>%
+  add_difference()
+gts_small_summary
+```
+
+::: columns
+::: {.column width="78%"}
+::: {.small}
+**In Code:** 
+
+- The median (IQR) marker among participants randomized to Drug A was `` `r "\u0060r inline_text(gts_small_summary, variable = marker, column = 'Drug A')\u0060"` ``.
+- The median (IQR) age among participants randomized to Drug A was `` `r "\u0060r inline_text(gts_small_summary, variable = marker, column = 'Drug A', pattern = '{median}')\u0060"` ``.
+- The difference in marker level was `` `r "\u0060r inline_text(gts_small_summary, variable = marker, pattern = '{estimate} (95% {ci})')\u0060"` ``.
+:::
+:::
+
+::: {.column width="22%"}
+::: {.smaller}
+**In Report:** 
+
+- The median (IQR) marker among participants randomized to Drug A was `r inline_text(gts_small_summary, variable = marker, column = "Drug A")`.
+- The median (IQR) age among participants randomized to Drug A was `r inline_text(gts_small_summary, variable = marker, column = "Drug A", pattern = "{median}")`.
+- The difference in marker level was `r inline_text(gts_small_summary, variable = marker, pattern = "{estimate} (95% {ci})")`.
+:::
+:::
+:::
+
+
+
+
 
 ## Exercise 5
 

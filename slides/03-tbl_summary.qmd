@@ -197,11 +197,11 @@ tbl_summary(
 
 `tbl_summary()` objects can also be updated using related functions.
 
--   `add_*()` add additional column of statistics or information, e.g. p-values, q-values, overall statistics, treatment differences, N obs., and more
+-   `add_*()` add [additional column]{.emphasis} of statistics or information, e.g. p-values, q-values, overall statistics, treatment differences, N obs., and more
 
--   `modify_*()` modify table headers, spanning headers, footnotes, and more
+-   `modify_*()` [modify]{.emphasis} table headers, spanning headers, footnotes, and more
 
--   `bold_*()/italicize_*()` style labels, variable levels, significant p-values
+-   `bold_*()/italicize_*()` [style]{.emphasis} labels, variable levels, significant p-values
 
 ## Update tbl_summary() with add\_\*()
 
@@ -396,7 +396,10 @@ survey::svydesign(
   data = as.data.frame(Titanic), 
   weights = ~Freq
 ) |>
-  tbl_svysummary(by = Survived) |>
+  tbl_svysummary(
+    by = Survived,
+    include = c(Class, Sex)
+  ) |>
   add_p() |>
   modify_spanning_header(
     all_stat_cols() ~ "**Survived**")

@@ -21,7 +21,7 @@ m1 <-
 :::
 :::
 
-Looks **messy** and it's not easy to digest
+Looks [messy]{.emphasis} and it's not easy to digest
 
 ## Basic tbl_regression()
 
@@ -30,9 +30,11 @@ Looks **messy** and it's not easy to digest
 tbl_regression(m1)
 ```
 
--   Displays **p-values** for covariates
+-   Displays [p-values]{.emphasis} for covariates
 
--   Shows **reference levels** for categorical variables
+-   Shows [reference levels]{.emphasis} for categorical variables
+
+-   [Model type recognized]{.emphasis} as logistic regression with odds ratio appearing in header
 
 ## Customize tbl_regression() output
 
@@ -48,9 +50,9 @@ tbl_regression(
   )
 ```
 
--   Display **odds ratio** estimates and **confidence intervals**
+-   Display [odds ratio]{.emphasis} estimates and [confidence intervals]{.emphasis}
 
--   Add global p-values
+-   Add [global p-values]{.emphasis}
 
 -   Add various model statistics
 

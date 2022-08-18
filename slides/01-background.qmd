@@ -5,13 +5,14 @@
 :::: {.columns .v-center-container}
 
 ::: {.column width="60%"}
+
 - Quality of medical research is often low
 
-- **Low quality code** in medical research part of the problem
+- [Low quality code]{.emphasis} in medical research part of the problem
 
-- Low quality code is more likely to **contain errors**
+- Low quality code is more [likely to contain errors]{.emphasis}
 
-- Reproducibility is often **cumbersome** and **time-consuming**
+- Reproducibility is often [cumbersome]{.emphasis} and [time-consuming]{.emphasis}
 :::
 
 ::: {.column width="40%"}
@@ -29,7 +30,7 @@ https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.1
 :::: {.columns .v-center-container}
 
 ::: {.column width="50%"}
-* Create **tabular summaries** with sensible defaults but highly customizable
+* Create [tabular summaries]{.emphasis} with sensible defaults but highly customizable
 * Types of summaries:
   - "Table 1"-types
   - Cross-tabulation
@@ -40,10 +41,10 @@ https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.1
 :::
 
 ::: {.column width="50%"}
-* Report statistics from {gtsummary} tables **inline** in R Markdown
+* Report statistics from {gtsummary} tables [inline]{.emphasis} in R Markdown
 * Stack and/or merge any table type
-* Use **themes** to standardize across tables
-* Choose from different **print engines**
+* Use [themes]{.emphasis} to standardize across tables
+* Choose from different [print engines]{.emphasis}
 :::
 
 ::::

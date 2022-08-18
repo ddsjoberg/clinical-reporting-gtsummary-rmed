@@ -9,8 +9,14 @@ $presentation-title-slide-text-align: "left";
 $presentation-font-size-root: 33px;
 $code-block-font-size: 0.6em;
 $link-color: #7090A5;
+$custom-col: #E67E3A;
 
 /*-- scss:rules --*/
+
+.emphasis {
+  font-weight: bold;
+  color: $custom-col;
+}
 
 details>summary {
   font-size: 0.75em;
