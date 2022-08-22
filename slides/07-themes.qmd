@@ -2,13 +2,13 @@
 
 ## {gtsummary} theme basics
 
-- A **theme** is a set of customization preferences that can be easily set and reused. 
+- A [theme]{.emphasis} is a set of customization preferences that can be easily set and reused. 
 
-- Themes control **default settings for existing functions**
+- Themes control [default settings for existing functions]{.emphasis}
 
-- Themes control more **fine-grained customization** not available via arguments or helper functions
+- Themes control more [fine-grained customization]{.emphasis} not available via arguments or helper functions
 
-- Easily use one of the **available themes**, or **create your own**
+- Easily use one of the [available themes]{.emphasis}, or [create your own]{.emphasis}
 
 ## {gtsummary} default theme
 
@@ -58,7 +58,7 @@ m1 |>
   )
 ```
 
-Language options: "de" (German), "en" (English), "es" (Spanish), "fr" (French), "gu" (Gujarati), "hi" (Hindi), "is" (Icelandic), "ja" (Japanese), "kr" (Korean), "mr" (Marathi), "nl" (Dutch), "no" (Norwegian), "pt" (Portuguese), "se" (Swedish), "zh-cn" (Chinese Simplified), "zh-tw" (Chinese Traditional)
+Language options: German, English, Spanish, French, Gujarati, Hindi, Icelandic, Japanese, Korean, Marathi, Dutch, Norwegian, Portuguese, Swedish), Chinese Simplified, Chinese Traditional
 
 ## {gtsummary} theme_gtsummary_compact()
 

@@ -2,7 +2,7 @@
 
 ## {gtsummary} reporting with inline_text()
 
--   Tables are important, but we often need to [report results in-line]{.emphasis} in a report.
+-   Tables are important, but we often need to [report results in-line]{.emphasis}.
 
 -   Any statistic reported in a {gtsummary} table can be extracted and reported in-line in an R Markdown document with the `inline_text()` function.
 

@@ -2,7 +2,7 @@
 
 ## Basic tbl_summary()
 
-::: {.columns .v-center-container}
+::: {.columns}
 ::: {.column width="50%"}
 ```{r}
 #| label: 'simple-summary'
@@ -221,6 +221,28 @@ sm_trial |>
 
 -   `add_q()`: adds a column of p-values adjusted for multiple comparisons through a call to `p.adjust()`
 
+## Update tbl_summary() with add\_\*()
+
+```{r}
+#| label: 'summary-with-overall'
+#| output-location: "column"
+#| code-line-numbers: "6,7,8,9,10"
+sm_trial |>
+  tbl_summary(
+    by = trt,
+    missing = "no"
+  ) |> 
+  add_overall() |> 
+  add_n() |> 
+  add_stat_label(
+    label = all_categorical() ~ "No. (%)"
+  ) 
+```
+
+-   `add_overall()`: adds a column of overall statistics
+-   `add_n()`: adds a column with the sample size
+-   `add_stat_label()`: adds a description of the reported statistic
+
 ## Exercise 2
 
 1. Create a summary table split by whether or not the participant quit smoking or not.
@@ -252,28 +274,6 @@ trial |>
 ```
 
 -   `add_difference()`: mean and rate differences between two groups. Can also be adjusted differences
-
-## Update tbl_summary() with add\_\*()
-
-```{r}
-#| label: 'summary-with-overall'
-#| output-location: "column"
-#| code-line-numbers: "6,7,8,9,10"
-sm_trial |>
-  tbl_summary(
-    by = trt,
-    missing = "no"
-  ) |> 
-  add_overall() |> 
-  add_n() |> 
-  add_stat_label(
-    label = all_categorical() ~ "No. (%)"
-  ) 
-```
-
--   `add_overall()`: adds a column of overall statistics
--   `add_n()`: adds a column with the sample size
--   `add_stat_label()`: adds a description of the reported statistic
 
 ## Update tbl_summary() with add\_\*()
 
