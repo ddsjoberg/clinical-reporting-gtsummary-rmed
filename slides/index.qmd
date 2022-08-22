@@ -1,7 +1,7 @@
 ---
 title: "Clinical Reporting with {gtsummary}"
 author: "Daniel D. Sjoberg"
-footer:  "[Clinical Reporting with {gtsummary}](https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/)"
+footer:  "[Clinical Reporting with {gtsummary} (bit.ly/rmed-gtsummary-2022)](https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/)"
 logo: "images/gtsummary-logo.png"
 editor: source
 format: 
