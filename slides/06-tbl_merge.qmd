@@ -118,11 +118,21 @@ sm_trial |>
 
 <p align="center"><img src="images/tbl_cmh_markup.png" width=68%></p>
 
-## {gtreg} for regulatory submissions
+## {gtreg} for regulatory submissions 
 
+::: {.columns}
+::: {.column width="80%"}
 * The {gtreg} package uses {gtsummary} to construct tables for regulatory agencies.
 
 * [https://shannonpileggi.github.io/gtreg/](https://shannonpileggi.github.io/gtreg/)
+:::
+
+::: {.column width="20%"}
+<img src="images/gtreg-logo.png" align="right" height="150" />
+:::
+:::
+
+
 
 ```{r}
 #| output-location: "slide"
