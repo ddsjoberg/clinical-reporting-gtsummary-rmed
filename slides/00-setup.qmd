@@ -40,14 +40,47 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 
 `r fontawesome::fa("twitter", fill = fa_fill)` [\@statistishdan](https://twitter.com/statistishdan)
 
-`r fontawesome::fa("linkedin", fill = fa_fill)` [linkedin.com/in/ddsjoberg/](https://www.linkedin.com/in/ddsjoberg/)
+`r fontawesome::fa("linkedin", fill = fa_fill)` [linkedin.com/in/ddsjoberg](https://www.linkedin.com/in/ddsjoberg/)
 
 `r fontawesome::fa("github", fill = fa_fill)` [github.com/ddsjoberg](https://github.com/ddsjoberg/)
 :::
 
 ::: {.column width="40%"}
-![](images/dan-fire-island.jpg)
+![](images/dan-fire-island-circle.png)
 :::
+:::
+
+##
+
+::: {.columns .v-center-container}
+::: {.column width="50%"}
+Shannon Pileggi
+
+![](images/shannon-pileggi-circle.png){width=70%}
+
+`r fontawesome::fa("link", fill = fa_fill)` [pipinghotdata.com](https://www.pipinghotdata.com/)
+
+`r fontawesome::fa("twitter", fill = fa_fill)` [\@pipinghotdata](https://twitter.com/pipinghotdata)
+
+`r fontawesome::fa("linkedin", fill = fa_fill)` [linkedin.com/in/shannon-m-pileggi](https://www.linkedin.com/in/shannon-m-pileggi/)
+
+`r fontawesome::fa("github", fill = fa_fill)` [github.com/shannonpileggi](https://github.com/shannonpileggi/)
+:::
+
+:::{.column width="50%"}
+Karissa Whiting
+
+![](images/karissa-whiting-circle.png){width=70%}
+
+`r fontawesome::fa("link", fill = fa_fill)` [karissawhiting.com](https://www.karissawhiting.com/)
+
+`r fontawesome::fa("twitter", fill = fa_fill)` [\@karissawhiting](https://twitter.com/karissawhiting)
+
+`r fontawesome::fa("linkedin", fill = fa_fill)` [linkedin.com/in/karissa-whiting-48877a52](https://www.linkedin.com/in/karissa-whiting-48877a52/)
+
+`r fontawesome::fa("github", fill = fa_fill)` [github.com/karissawhiting](https://github.com/karissawhiting/)
+:::
+
 :::
 
 ## Checklist

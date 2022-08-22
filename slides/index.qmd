@@ -19,21 +19,21 @@ cache: true
 
 {{< include 00-setup.qmd >}}
 
-{{< include 01-background.qmd >}}
+<!-- {{< include 01-background.qmd >}} -->
 
-{{< include 02-trial.qmd >}}
+<!-- {{< include 02-trial.qmd >}} -->
 
-{{< include 03-tbl_summary.qmd >}}
+<!-- {{< include 03-tbl_summary.qmd >}} -->
 
-{{< include 04-tbl_regression.qmd >}}
+<!-- {{< include 04-tbl_regression.qmd >}} -->
 
-{{< include 05-inline_text.qmd >}}
+<!-- {{< include 05-inline_text.qmd >}} -->
 
-{{< include 06-tbl_merge.qmd >}}
+<!-- {{< include 06-tbl_merge.qmd >}} -->
 
-{{< include 07-themes.qmd >}}
+<!-- {{< include 07-themes.qmd >}} -->
 
-{{< include 08-print_engines.qmd >}}
+<!-- {{< include 08-print_engines.qmd >}} -->
 
-{{< include 09-summary.qmd >}}
+<!-- {{< include 09-summary.qmd >}} -->
 

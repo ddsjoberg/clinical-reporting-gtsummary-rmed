@@ -7,7 +7,7 @@ format: html
 
 ### The Data
 
-Using the National Health and Nutrition Examination Survey Data (`nhefs`), we will assess whether quitting smoking leads to a decrease in the risk of death. We'll also investigate potential confounding factors--age, sex, blood pressure, diabetes, and exercise.
+Using the National Health and Nutrition Examination Survey Data (`nhefs`), we will assess whether quitting smoking leads to a decrease in the risk of death. We'll also investigate whether potential confounding factors--age, sex, blood pressure, diabetes, and exercise.
 
 To begin, let's pare down the data frame and assign column labels.
 
@@ -79,6 +79,9 @@ Is there a difference in death rates by smoking status?
 Prepare an unadjusted and adjusted rate difference in the table.
 
 ```{r death_rate_diff}
+# Visit https://www.danieldsjoberg.com/gtsummary/reference/tests.html for a listing of included tests.
+# Tests that make use of the `add_difference(adj.vars=)` argument are adjusted analyses.
+
 gts_death_unadjusted <-
   df_nhefs %>%
   tbl_summary(
@@ -107,7 +110,7 @@ gts_death_adjusted
 
 # Exercise 4
 
-Build a logistic regression model with death as the outcome. Include smoking and the other variables as covariates. Summarize your regression model in a table, reporting the odds ratio, its confidence interval, and p-value.
+Build a logistic regression model with death as the outcome. Include smoking and the other variables as covariates. Summarize your regression model in a table, reporting the odds ratios, confidence intervals, and p-values.
 
 ```{r regression}
 mod <- glm(death ~ qsmk + age + sex + sbp + dbp + exercise, 
