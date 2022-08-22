@@ -139,8 +139,11 @@ tbl_uvreg
 
 ## Break
 
-![](images/MILLIE-elevator-dance.gif)
+![](images/sister-act-2-dance.gif){width=100%}
 
+::: aside
+[Sister Act 2: Back in the Habit](https://www.youtube.com/watch?v=GqqhKyMZHe0)
+:::
 ```{r}
 #| echo: false
 #| cache: false
