@@ -2,7 +2,7 @@
 
 ## Basic tbl_summary()
 
-::: {.columns}
+::: columns
 ::: {.column width="50%"}
 ```{r}
 #| label: 'simple-summary'
@@ -39,7 +39,7 @@ tbl_summary(
 ::: small
 ::: columns
 ::: {.column width="50%"}
--   `by`: specifies a column variable for cross-tabulation
+-   `by`: specify a column variable for cross-tabulation
 :::
 
 ::: {.column width="50%"}
@@ -62,13 +62,12 @@ tbl_summary(
 ::: small
 ::: columns
 ::: {.column width="50%"}
--   `by`: specifies a column variable for cross-tabulation
+-   `by`: specify a column variable for cross-tabulation
 
--   `type`: specifies the summary type
+-   `type`: specify the summary type
 :::
 
 ::: {.column width="50%"}
-
 :::
 :::
 :::
@@ -94,15 +93,14 @@ tbl_summary(
 ::: small
 ::: columns
 ::: {.column width="50%"}
--   `by`: specifies a column variable for cross-tabulation
+-   `by`: specify a column variable for cross-tabulation
 
--   `type`: specifies the summary type
+-   `type`: specify the summary type
 
 -   `statistic`: customize the reported statistics
 :::
 
 ::: {.column width="50%"}
-
 :::
 :::
 :::
@@ -130,9 +128,9 @@ tbl_summary(
 ::: small
 ::: columns
 ::: {.column width="50%"}
--   `by`: specifies a column variable for cross-tabulation
+-   `by`: specify a column variable for cross-tabulation
 
--   `type`: specifies the summary type
+-   `type`: specify the summary type
 
 -   `statistic`: customize the reported statistics
 :::
@@ -167,9 +165,9 @@ tbl_summary(
 ::: small
 ::: columns
 ::: {.column width="50%"}
--   `by`: specifies a column variable for cross-tabulation
+-   `by`: specify a column variable for cross-tabulation
 
--   `type`: specifies the summary type
+-   `type`: specify the summary type
 
 -   `statistic`: customize the reported statistics
 :::
@@ -181,7 +179,6 @@ tbl_summary(
 :::
 :::
 :::
-
 
 ## {gtsummary} + formulas
 
@@ -245,11 +242,13 @@ sm_trial |>
 
 ## Exercise 2
 
-1. Create a summary table split by whether or not the participant quit smoking or not.
+1.  Create a summary table split by whether or not the participant quit smoking or not.
 
-1. Include all variables in the table except the study outcome: death.
+2.  Include all variables in the table except the study outcome: death.
 
-1. Consider using gtsummary functions that build on a summary table.
+3.  Consider using gtsummary functions that `add_*()`, `modify_*()` or style your summary table.
+
+    -   `tbl_summary()` tutorial for reference: [https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html](https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html)
 
 ```{r}
 #| echo: false
@@ -349,9 +348,9 @@ sm_trial |>
 
 And many more!
 
-See the documentation at [http://www.danieldsjoberg.com/gtsummary/reference/index.html](http://www.danieldsjoberg.com/gtsummary/reference/index.html)
+See the documentation at <http://www.danieldsjoberg.com/gtsummary/reference/index.html>
 
-And a detailed `tbl_summary()` vignette at [http://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html](http://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html)
+And a detailed `tbl_summary()` vignette at <http://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html>
 
 ## Cross-tabulation with tbl_cross()
 
@@ -424,14 +423,15 @@ tbl_survfit(
 
 Is there a difference in death rates by smoking status?
 
-1. Using `tbl_summary()` report the death rates by smoking status.
+1.  Using `tbl_summary()` report the death rates by smoking status.
 
-1. Add the (unadjusted) difference in death rates by smoking status using `add_difference()`.
+2.  Add the (unadjusted) difference in death rates by smoking status using `add_difference()`.
 
-1. Produce a second table that reports an *adjusted* difference in death rates.
-    - The rate will be adjusted for all covariates in the data frame.
-    - Review the tests available at [https://www.danieldsjoberg.com/gtsummary/reference/tests.html](https://www.danieldsjoberg.com/gtsummary/reference/tests.html).
-    - Let me know if you'd like a hint as to which test to use. It'll be one that takes advantage of `adj.vars`.
+3.  Produce a second table that reports an *adjusted* difference in death rates.
+
+    -   The rate will be adjusted for all covariates in the data frame.
+    -   Review the tests available at <https://www.danieldsjoberg.com/gtsummary/reference/tests.html>.
+    -   Let me know if you'd like a hint as to which test to use. It'll be one that takes advantage of `adj.vars`.
 
 ```{r}
 #| echo: false
