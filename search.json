@@ -182,6 +182,13 @@
     "text": "Update tbl_summary() with add_*()\n\n\nsm_trial |>\n  tbl_summary(\n    by = trt\n  ) |> \n  add_p() |> \n  add_q(method = \"fdr\")\n\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\np-value2\n\n\nq-value3\n\n\n\n\n\n\nAge\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n0.7\n\n\n0.9\n\n\n\n\nUnknown\n\n\n7\n\n\n4\n\n\n\n\n\n\n\n\nGrade\n\n\n\n\n\n\n0.9\n\n\n0.9\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\n\n\n\n\nTumor Response\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n0.5\n\n\n0.9\n\n\n\n\nUnknown\n\n\n3\n\n\n4\n\n\n\n\n\n\n\n\n\n\n1 Median (IQR); n (%)\n\n\n\n\n2 Wilcoxon rank sum test; Pearson’s Chi-squared test\n\n\n\n\n3 False discovery rate correction for multiple testing\n\n\n\n\n\n\n\n\nadd_p(): adds a column of p-values\nadd_q(): adds a column of p-values adjusted for multiple comparisons through a call to p.adjust()"
   },
   {
+    "objectID": "slides/index.html#update-tbl_summary-with-add_-1",
+    "href": "slides/index.html#update-tbl_summary-with-add_-1",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Update tbl_summary() with add_*()",
+    "text": "Update tbl_summary() with add_*()\n\n\nsm_trial |>\n  tbl_summary(\n    by = trt,\n    missing = \"no\"\n  ) |> \n  add_overall() |> \n  add_n() |> \n  add_stat_label(\n    label = all_categorical() ~ \"No. (%)\"\n  ) \n\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOverall, N = 200\n\n\nDrug A, N = 98\n\n\nDrug B, N = 102\n\n\n\n\n\n\nAge, Median (IQR)\n\n\n189\n\n\n47 (38, 57)\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nGrade, No. (%)\n\n\n200\n\n\n\n\n\n\n\n\n\n\nI\n\n\n\n\n68 (34%)\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n\n\n68 (34%)\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n\n\n64 (32%)\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response, No. (%)\n\n\n193\n\n\n61 (32%)\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\n\n\n\n\nadd_overall(): adds a column of overall statistics\nadd_n(): adds a column with the sample size\nadd_stat_label(): adds a description of the reported statistic"
+  },
+  {
     "objectID": "slides/index.html#exercise-2",
     "href": "slides/index.html#exercise-2",
     "title": "Clinical Reporting with {gtsummary}",
@@ -189,18 +196,11 @@
     "text": "Exercise 2\n\nCreate a summary table split by whether or not the participant quit smoking or not.\nInclude all variables in the table except the study outcome: death.\nConsider using gtsummary functions that build on a summary table.\n\n\n\n08:00"
   },
   {
-    "objectID": "slides/index.html#update-tbl_summary-with-add_-1",
-    "href": "slides/index.html#update-tbl_summary-with-add_-1",
-    "title": "Clinical Reporting with {gtsummary}",
-    "section": "Update tbl_summary() with add_*()",
-    "text": "Update tbl_summary() with add_*()\n\ntrial |>\n  select(trt, marker, response) |>\n  tbl_summary(\n    by = trt,\n    statistic = list(marker ~ \"{mean} ({sd})\",\n                     response ~ \"{p}%\"),\n    missing = \"no\"\n  ) |> \n  add_difference()\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\nDifference2\n\n\n95% CI2,3\n\n\np-value2\n\n\n\n\n\n\nMarker Level (ng/mL)\n\n\n1.02 (0.89)\n\n\n0.82 (0.83)\n\n\n0.20\n\n\n-0.05, 0.44\n\n\n0.12\n\n\n\n\nTumor Response\n\n\n29%\n\n\n34%\n\n\n-4.2%\n\n\n-18%, 9.9%\n\n\n0.6\n\n\n\n\n\n\n1 Mean (SD); %\n\n\n\n\n2 Welch Two Sample t-test; Two sample test for equality of proportions\n\n\n\n\n3 CI = Confidence Interval\n\n\n\n\n\n\n\nadd_difference(): mean and rate differences between two groups. Can also be adjusted differences"
-  },
-  {
     "objectID": "slides/index.html#update-tbl_summary-with-add_-2",
     "href": "slides/index.html#update-tbl_summary-with-add_-2",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Update tbl_summary() with add_*()",
-    "text": "Update tbl_summary() with add_*()\n\n\nsm_trial |>\n  tbl_summary(\n    by = trt,\n    missing = \"no\"\n  ) |> \n  add_overall() |> \n  add_n() |> \n  add_stat_label(\n    label = all_categorical() ~ \"No. (%)\"\n  ) \n\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOverall, N = 200\n\n\nDrug A, N = 98\n\n\nDrug B, N = 102\n\n\n\n\n\n\nAge, Median (IQR)\n\n\n189\n\n\n47 (38, 57)\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nGrade, No. (%)\n\n\n200\n\n\n\n\n\n\n\n\n\n\nI\n\n\n\n\n68 (34%)\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n\n\n68 (34%)\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n\n\n64 (32%)\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response, No. (%)\n\n\n193\n\n\n61 (32%)\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\n\n\n\n\nadd_overall(): adds a column of overall statistics\nadd_n(): adds a column with the sample size\nadd_stat_label(): adds a description of the reported statistic"
+    "text": "Update tbl_summary() with add_*()\n\ntrial |>\n  select(trt, marker, response) |>\n  tbl_summary(\n    by = trt,\n    statistic = list(marker ~ \"{mean} ({sd})\",\n                     response ~ \"{p}%\"),\n    missing = \"no\"\n  ) |> \n  add_difference()\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\nDifference2\n\n\n95% CI2,3\n\n\np-value2\n\n\n\n\n\n\nMarker Level (ng/mL)\n\n\n1.02 (0.89)\n\n\n0.82 (0.83)\n\n\n0.20\n\n\n-0.05, 0.44\n\n\n0.12\n\n\n\n\nTumor Response\n\n\n29%\n\n\n34%\n\n\n-4.2%\n\n\n-18%, 9.9%\n\n\n0.6\n\n\n\n\n\n\n1 Mean (SD); %\n\n\n\n\n2 Welch Two Sample t-test; Two sample test for equality of proportions\n\n\n\n\n3 CI = Confidence Interval\n\n\n\n\n\n\n\nadd_difference(): mean and rate differences between two groups. Can also be adjusted differences"
   },
   {
     "objectID": "slides/index.html#update-tbl_summary-with-add_-3",
@@ -312,7 +312,7 @@
     "href": "slides/index.html#gtsummary-reporting-with-inline_text",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "{gtsummary} reporting with inline_text()",
-    "text": "{gtsummary} reporting with inline_text()\n\nTables are important, but we often need to report results in-line in a report.\nAny statistic reported in a {gtsummary} table can be extracted and reported in-line in an R Markdown document with the inline_text() function.\nThe pattern of what is reported can be modified with the pattern= argument.\nDefault is pattern = \"{estimate} ({conf.level*100}% CI {conf.low}, {conf.high}; {p.value})\" for regression summaries."
+    "text": "{gtsummary} reporting with inline_text()\n\nTables are important, but we often need to report results in-line.\nAny statistic reported in a {gtsummary} table can be extracted and reported in-line in an R Markdown document with the inline_text() function.\nThe pattern of what is reported can be modified with the pattern= argument.\nDefault is pattern = \"{estimate} ({conf.level*100}% CI {conf.low}, {conf.high}; {p.value})\" for regression summaries."
   },
   {
     "objectID": "slides/index.html#gtsummary-reporting-with-inline_text-1",
@@ -424,7 +424,7 @@
     "href": "slides/index.html#gtsummary-theme_gtsummary_language",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "{gtsummary} theme_gtsummary_language()",
-    "text": "{gtsummary} theme_gtsummary_language()\n\n\nreset_gtsummary_theme()\ntheme_gtsummary_language(language = \"zh-tw\")\n\nm1 |>\n  tbl_regression(\n    exponentiate = TRUE\n  ) |>\n  modify_caption(\n    \"Language Theme (Chinese)\"\n  )\n\n\n\n\nLanguage Theme (Chinese)\n\n\n\n\n特色\n\n\nOR1\n\n\n95% CI1\n\n\nP 值\n\n\n\n\n\n\nAge\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.091\n\n\n\n\nT Stage\n\n\n\n\n\n\n\n\n\n\nT1\n\n\n—\n\n\n—\n\n\n\n\n\n\nT2\n\n\n0.58\n\n\n0.24, 1.37\n\n\n0.2\n\n\n\n\nT3\n\n\n0.94\n\n\n0.39, 2.28\n\n\n0.9\n\n\n\n\nT4\n\n\n0.79\n\n\n0.33, 1.90\n\n\n0.6\n\n\n\n\n\n\n1 OR=勝算比, CI=信賴區間\n\n\n\n\n\n\n\nLanguage options: “de” (German), “en” (English), “es” (Spanish), “fr” (French), “gu” (Gujarati), “hi” (Hindi), “is” (Icelandic), “ja” (Japanese), “kr” (Korean), “mr” (Marathi), “nl” (Dutch), “no” (Norwegian), “pt” (Portuguese), “se” (Swedish), “zh-cn” (Chinese Simplified), “zh-tw” (Chinese Traditional)"
+    "text": "{gtsummary} theme_gtsummary_language()\n\n\nreset_gtsummary_theme()\ntheme_gtsummary_language(language = \"zh-tw\")\n\nm1 |>\n  tbl_regression(\n    exponentiate = TRUE\n  ) |>\n  modify_caption(\n    \"Language Theme (Chinese)\"\n  )\n\n\n\n\nLanguage Theme (Chinese)\n\n\n\n\n特色\n\n\nOR1\n\n\n95% CI1\n\n\nP 值\n\n\n\n\n\n\nAge\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.091\n\n\n\n\nT Stage\n\n\n\n\n\n\n\n\n\n\nT1\n\n\n—\n\n\n—\n\n\n\n\n\n\nT2\n\n\n0.58\n\n\n0.24, 1.37\n\n\n0.2\n\n\n\n\nT3\n\n\n0.94\n\n\n0.39, 2.28\n\n\n0.9\n\n\n\n\nT4\n\n\n0.79\n\n\n0.33, 1.90\n\n\n0.6\n\n\n\n\n\n\n1 OR=勝算比, CI=信賴區間\n\n\n\n\n\n\n\nLanguage options: German, English, Spanish, French, Gujarati, Hindi, Icelandic, Japanese, Korean, Marathi, Dutch, Norwegian, Portuguese, Swedish), Chinese Simplified, Chinese Traditional"
   },
   {
     "objectID": "slides/index.html#gtsummary-theme_gtsummary_compact",
