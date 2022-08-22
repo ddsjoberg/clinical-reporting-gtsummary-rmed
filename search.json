@@ -308,6 +308,13 @@
     "text": "Univariate models with tbl_uvregression()\n\n\ntbl_uvreg <- \n  sm_trial |> \n  tbl_uvregression(\n    method = glm,\n    y = response,\n    method.args = \n      list(family = binomial),\n    exponentiate = TRUE\n  )\ntbl_uvreg\n\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nChemotherapy Treatment\n\n\n193\n\n\n\n\n\n\n\n\n\n\nDrug A\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nDrug B\n\n\n\n\n1.21\n\n\n0.66, 2.24\n\n\n0.5\n\n\n\n\nAge\n\n\n183\n\n\n1.02\n\n\n1.00, 1.04\n\n\n0.10\n\n\n\n\nGrade\n\n\n193\n\n\n\n\n\n\n\n\n\n\nI\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\nII\n\n\n\n\n0.95\n\n\n0.45, 2.00\n\n\n0.9\n\n\n\n\nIII\n\n\n\n\n1.10\n\n\n0.52, 2.29\n\n\n0.8\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\nSpecify model method, method.args, and the response variable\nArguments and helper functions like exponentiate, bold_*(), add_global_p() can also be used with tbl_uvregression()"
   },
   {
+    "objectID": "slides/index.html#break",
+    "href": "slides/index.html#break",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Break",
+    "text": "Break\n\n\n\n10:00"
+  },
+  {
     "objectID": "slides/index.html#gtsummary-reporting-with-inline_text",
     "href": "slides/index.html#gtsummary-reporting-with-inline_text",
     "title": "Clinical Reporting with {gtsummary}",
