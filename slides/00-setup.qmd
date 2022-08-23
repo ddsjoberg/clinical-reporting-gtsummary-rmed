@@ -1,3 +1,5 @@
+# Introduction
+
 ## Acknowledgements
 
 ```{r}
@@ -102,3 +104,20 @@ install.packages(c("gtsummary", "tidyverse", "labelled", "usethis", "causaldata"
 ```
 
 `r fontawesome::fa("check", fill = fa_fill)` Ensure you can knit Rmarkdown files
+
+## Questions
+
+::: {.columns .v-center-container}
+::: {.column width="50%"}
+- Please add any questions to the public Zoom chat.
+
+- Shannon and Karissa will monitor the chat
+
+- We'll also have time for questions at the break and at the end
+
+:::
+::: {.column width="50%"}
+![](images/questions.jpg){width=100%}
+:::
+:::
+
