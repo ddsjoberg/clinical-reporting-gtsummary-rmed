@@ -218,12 +218,46 @@ sm_trial |>
 
 -   `add_q()`: adds a column of p-values adjusted for multiple comparisons through a call to `p.adjust()`
 
-## Update tbl_summary() with add\_\*()
+## Update tbl_summary() with add\_\*()  {auto-animate="true"}
 
 ```{r}
-#| label: 'summary-with-overall'
+#| label: 'summary-with-overall1'
 #| output-location: "column"
-#| code-line-numbers: "6,7,8,9,10"
+#| code-line-numbers: "6"
+sm_trial |>
+  tbl_summary(
+    by = trt,
+    missing = "no"
+  ) |> 
+  add_overall()
+```
+
+-   `add_overall()`: adds a column of overall statistics
+
+## Update tbl_summary() with add\_\*()  {auto-animate="true"}
+
+```{r}
+#| label: 'summary-with-overall2'
+#| output-location: "column"
+#| code-line-numbers: "7"
+sm_trial |>
+  tbl_summary(
+    by = trt,
+    missing = "no"
+  ) |> 
+  add_overall() |> 
+  add_n()
+```
+
+-   `add_overall()`: adds a column of overall statistics
+-   `add_n()`: adds a column with the sample size
+
+## Update tbl_summary() with add\_\*()  {auto-animate="true"}
+
+```{r}
+#| label: 'summary-with-overall3'
+#| output-location: "column"
+#| code-line-numbers: "8,9,10"
 sm_trial |>
   tbl_summary(
     by = trt,
@@ -239,6 +273,66 @@ sm_trial |>
 -   `add_overall()`: adds a column of overall statistics
 -   `add_n()`: adds a column with the sample size
 -   `add_stat_label()`: adds a description of the reported statistic
+
+## Update with bold\_\*()/italicize\_\*()
+
+```{r}
+#| label: 'summary-bold'
+#| output-location: "column"
+#| code-line-numbers: "6,7,8"
+sm_trial |>
+  tbl_summary(
+    by = trt
+  ) |>
+  add_p() |> 
+  bold_labels() |> 
+  italicize_levels() |> 
+  bold_p(t = 0.8)
+```
+
+-   `bold_labels()`: bold the variable labels
+-   `italicize_levels()`: italicize the variable levels
+-   `bold_p()`: bold p-values according a specified threshold
+
+## Update tbl_summary() with modify\_\*()
+
+```{r}
+#| label: 'summary-modified'
+#| output-location: "column"
+#| code-line-numbers: "4,5,6,7,8,9,10,11,12,13"
+tbl <-
+  sm_trial |> 
+  tbl_summary(by = trt, 
+              missing = "no") |>
+  modify_header(
+      stat_1 ~ "**Group A**",
+      stat_2 ~ "**Group B**"
+  ) |> 
+  modify_spanning_header(
+    all_stat_cols() ~ "**Drug**") |> 
+  modify_footnote(
+    all_stat_cols() ~ 
+      paste("median (IQR) for continuous;",
+            "n (%) for categorical")
+  )
+tbl
+```
+
+-   Use `show_header_names()` to see the internal header names available for use in `modify_header()`
+
+## Column names
+
+```{r}
+#| label: 'column-names'
+#| output-location: "column"
+show_header_names(tbl)
+```
+
+<br><br>
+
+::: {.larger}
+`all_stat_cols()` selects columns `"stat_1"` and `"stat_2"`
+:::
 
 ## Exercise 2
 
@@ -300,49 +394,6 @@ sm_trial |>
 :::
 :::
 
-## Update with bold\_\*()/italicize\_\*()
-
-```{r}
-#| label: 'summary-bold'
-#| output-location: "column"
-#| code-line-numbers: "6,7,8"
-sm_trial |>
-  tbl_summary(
-    by = trt
-  ) |>
-  add_p() |> 
-  bold_labels() |> 
-  italicize_levels() |> 
-  bold_p(t = 0.8)
-```
-
--   `bold_labels()`: bold the variable labels
--   `italicize_levels()`: italicize the variable levels
--   `bold_p()`: bold p-values according a specified threshold
-
-## Update tbl_summary() with modify\_\*()
-
-```{r}
-#| label: 'summary-modified'
-#| output-location: "column"
-#| code-line-numbers: "4,5,6,7,8,9,10,11,12,13"
-sm_trial |> 
-  tbl_summary(by = trt, 
-              missing = "no") |>
-  modify_header(
-      stat_1 ~ "**Group A**",
-      stat_2 ~ "**Group B**"
-  ) |> 
-  modify_spanning_header(
-    all_stat_cols() ~ "**Drug**") |> 
-  modify_footnote(
-    all_stat_cols() ~ 
-      paste("median (IQR) for continuous;",
-            "n (%) for categorical")
-  )
-```
-
--   Use `show_header_names()` to see the internal header names available for use in `modify_header()`
 
 ## Add-on functions in {gtsummary}
 
