@@ -1,0 +1,240 @@
+---
+title: "Q & A From Clinical Reporting with {gtsummary} Workshop"
+subtitle: "Workshop Date: 2022-08-23"
+editor: source
+---
+
+```{r}
+#| echo: false
+#| results: false
+#| message: false
+#| warning: false
+library(dplyr)
+library(gtsummary)
+
+theme_gtsummary_compact()
+```
+
+## Answered Questions
+
+1.  **Q:** How do I save PDFs of slides?
+
+>  The website will stay up and you can access the slides; if you want to print it go to the slides in full screen view, convert to pdf mode and print
+
+2.  **Q:** How can I see tables in viewer pane?
+
+>  Global Options \> RMarkdown \> show output in Viewer Pane
+
+3.  **Q:** Link for the code for Dan's quarto slides?
+
+>  <https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed/tree/main/slides>
+
+4.  **Q:** Syntax for `set_variable_labels()`?
+
+>  See function docs at: <https://larmarange.github.io/labelled/reference/var_label.html>
+
+5.  **Q:** How to confirm labels worked
+
+>  `str(df)` or `view(df)`
+
+6.  **Q:** What is `|>` ?
+
+>  It's the new base R pipe! See <https://ivelasq.rbind.io/blog/understanding-the-r-pipe/> for more details
+
+7.  **Q:** What statistics can you use in `tbl_summary(statistic=)` argument? How does the function know `"{min}, {max}"` is the range?
+
+>  There are a set of known names for default statistics that you can use in this function. These (plus glue syntax) allow you to display specific statistics. See more details here, under the `statistic argument` section: <https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html>
+
+4.  **Q:** how do you display average instead of median
+
+>  Adjust the statistic argument:
+
+```{r}
+trial %>%
+  select(age) %>%
+  tbl_summary(statistic = everything() ~ "{mean}")
+```
+
+5.  **Q:** with `add_n()` can you change the label to specify that it represents non-missing values?
+
+>  yes, you can change this with `col_label` argument:
+
+```{r}
+trial |>
+  select(age, grade, trt) %>%
+  tbl_summary(
+    by = trt,
+    missing = "no"
+  ) |> 
+  add_overall() |> 
+  add_n(col_label = "**N (Non-missing)**")
+```
+
+6.  **Q:** How can you remove the death variable inside the `tbl_summary()` function?
+
+>  Use a`dplyr::select()` prior to tbl_summary or use the `include = argument` in `tbl_summary()`. Three options below:
+
+```{r}
+sm_trial <- trial |>
+  select(age, grade, trt, death)
+
+sm_trial |>
+  select(-death) %>%
+  tbl_summary(
+    by = trt,
+    missing = "no"
+  ) |> 
+  add_overall() 
+```
+
+<br>
+
+```{r}
+sm_trial |>
+  tbl_summary(
+    by = trt,
+    include = -death,
+    missing = "no"
+  ) |> 
+  add_overall() 
+```
+
+<br>
+
+```{r}
+sm_trial |>
+  tbl_summary(
+    by = trt,
+    include = !death,
+    missing = "no"
+  ) |> 
+  add_overall() 
+```
+
+7. **Q:** Is it possible to add custom footnotes, say if you want to explain what a particular category includes etc.
+
+>  yes, use modify_footnote() for column headers for footnotes that already exist. Or use `modify_table_styling()` for new footnotes. <https://www.danieldsjoberg.com/gtsummary/reference/modify_table_styling.html>
+
+8. **Q:** Does gtsummary support role selection like {recipes}
+
+> Use the selectors all_continuous(), etc
+
+9.  **Q:** There is an error trying to use `add_difference()` with `add_p()`
+
+>  This is because you are trying to add two p's to same table. You could consider doing two separate tables then using `tbl_merge()` to merge them, but presenting these two p-values in one table could be confusing.
+
+10. **Q:** I would be great an "asterisk_p" to show significant p-values, like bold_p
+
+>  add_significance_stars, <https://www.danieldsjoberg.com/gtsummary/reference/add_significance_stars.html>
+
+11. **Q:** if there are more than two groups, is there any function for post hoc testing?
+
+>  Here are supported tests: <https://www.danieldsjoberg.com/gtsummary/reference/tests.html>.  Post hoc tests might require custom testing. There are some relevant questions on SO that may be useful.
+
+12. **Q:** Can gtsummary give Baysesian statistics result ?
+
+>  See <https://www.danieldsjoberg.com/gtsummary/reference/tests.html> for supported tests. If it is not supported, you can use custom functions for p-values (see `add_p()`) or `add_stat()` to use a custom statistic.
+
+13. **Q:** {rms} fits not supported?
+
+>  You can file an issue for support. You can also use custom tidier. See wald example in table gallery for tips on how to do this: <https://www.danieldsjoberg.com/gtsummary/articles/gallery.html#wald-ci>
+
+14. **Q:** how does it handle interaction terms?
+
+>  gorgeously:
+
+```{r}
+tbl <-
+	  lm(time ~ ph.ecog*sex, survival::lung) %>%
+	  tbl_regression(label = list(ph.ecog = "ECOG Score", sex = "Sex"))
+	
+tbl
+```
+
+15. **Q:** What does `exponentiate = TRUE` do again in `tbl_regression()`? I missed it.
+
+>  Exponentiation coefficients so you can easily report OR instead of log(OR) or HRs instead of raw coefficients. 
+
+16. **Q:** Is there a way to add an additional footnote saying T1 is the control? The default dash may be interpreted as a "missing value".
+
+>  `modify_table_styling()` https://www.danieldsjoberg.com/gtsummary/reference/modify_table_styling.html or `add_estimate_to_reference_rows = TRUE`
+
+```{r }
+glm(death ~ age + grade, data = trial, family = binomial) %>%
+  tbl_regression( exponentiate = TRUE, add_estimate_to_reference_rows = FALSE ) %>%
+  add_global_p() %>%
+  modify_table_styling(columns = c(estimate, ci),
+                        rows = reference_row == TRUE, 
+                        missing_symbol = "Ref." )
+```
+
+> You can also use themes and change `tbl_regression-str:ref_row_text` option: <https://www.danieldsjoberg.com/gtsummary/articles/themes.html> 
+
+17. **Q:** Can you `add_global_p()` without removing p() for each category?
+
+>  there is an arg in `add_global_p()` called `keep`; that will keep both p-values. It is `FALSE` by default
+
+```{r}
+glm(death ~ age + grade, data = trial, family = binomial) %>%
+  tbl_regression( exponentiate = TRUE,
+                  add_estimate_to_reference_rows = FALSE ) %>%
+  add_global_p(keep = TRUE) 
+```
+
+18. **Q:** tbl_regression(): are the p-values per Wald by default?
+
+>  You need to look at the details for your specific model and what the summary function returns. You can change default via the tidier for your model. My tidier function example available in the gallery: <https://www.danieldsjoberg.com/gtsummary/articles/gallery.html#wald-ci>
+
+19. **Q:** is there an option to compare multiple regression models within a single table? (E.g., when performing sensitivity analyses). I'm thinking of a situation where we are using different adjustment sets of covariates. I'm thinking of a situation where we are using different adjustment sets of covariates.
+
+>  Use `tbl_merge()`
+
+20. **Q:** Does it work with tidymodels
+
+>  Some issues with dummy variables but we are working on it for future release
+
+21. **Q:** Can you have super/sub scripts in variable names
+
+>  Use utf8 characters and markdown characters. {gt} sometimes has some issues with "common markdown" language so be aware of your output type and print engine, but most likely they will work.
+
+22. **Q:** is the marginal adjusted mean estimated using the median of the other covariates fitting the model?
+
+>  This is calculated outside the package. See `emmeans::emmeans()` for details on calculations.
+
+23. **Q:** does tbl_regression() support ridge/lasso regressions? I usually use glmnet for these
+
+>  Not currently supported but see <https://github.com/ddsjoberg/gtsummary/issues/1280>
+
+24. **Q:** for sex, how do i get it to show the `Male` level instead of the `Female` reference group?
+
+>  inline_text() has a `level` argument to select this.
+
+25. **Q:** So if I change the CI to 90%, I need to update the pattern to 90% CI {ci} right?
+
+>  if you are using the default pattern ({conf.level}), you don't need to change anything, but if you hard code like 95%, then yes, use `pattern = "odds ratio {estimate}; {conf.level\*100}% CI {ci}"`
+
+26. **Q:** Can I add latex symbols in the inline text like chi square results
+
+>  Probably?
+
+27. **Q:** Can `add_glance_source_note()`, give just adjusted R\^2 ?
+
+> Yes!
+
+```{r}
+mod <- lm(age ~ marker + grade, trial) %>% tbl_regression()
+mod %>% 
+  add_glance_table(include = c(r.squared))
+```
+
+28. **Q:** How can I increase the font size of a gtsummary object in a xaringan slide?
+
+>  You can set a theme for this, or check out print engine options. See <https://www.danieldsjoberg.com/gtsummary/articles/rmarkdown.html>
+
+29. **Q:** how do I decrease the height of the gtsummary table so it exports properly?
+
+>  Depends on print engine and desired output format. See <https://www.danieldsjoberg.com/gtsummary/articles/rmarkdown.html>
+
+30. **Q:** What would the code be to export as XLS?
+
+>  `as_hux_xlsx()`. <See: https://www.danieldsjoberg.com/gtsummary/reference/as_hux_table.html>
