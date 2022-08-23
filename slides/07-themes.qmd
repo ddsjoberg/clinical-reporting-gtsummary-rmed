@@ -58,7 +58,37 @@ m1 |>
   )
 ```
 
-Language options: German, English, Spanish, French, Gujarati, Hindi, Icelandic, Japanese, Korean, Marathi, Dutch, Norwegian, Portuguese, Swedish), Chinese Simplified, Chinese Traditional
+**Language options:**
+
+:::{.columns style="font-size:0.65em"}
+::: {.column width="30%"}
+
+- German 
+- English
+- Spanish 
+- French 
+- Gujarati
+- Hindi
+
+::: 
+
+::: {.column width="30%"}
+- Icelandic
+- Japanese
+- Korean
+- Marathi
+- Dutch
+
+:::
+
+::: {.column width="30%"}
+- Norwegian
+- Portuguese
+- Swedish
+- Chinese Simplified
+- Chinese Traditional
+:::
+:::
 
 ## {gtsummary} theme_gtsummary_compact()
 
