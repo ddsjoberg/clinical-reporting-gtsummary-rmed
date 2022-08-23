@@ -84,6 +84,13 @@
     "text": "Checklist\n\n Install recent R release\nCurrent version 4.2.1\n Install RStudio\nI am on version 2022.07.1+554 \n Install packages\ninstall.packages(c(\"gtsummary\", \"tidyverse\", \"labelled\", \"usethis\", \"causaldata\", \"skimr\"))\n Ensure you can knit Rmarkdown files"
   },
   {
+    "objectID": "slides/index.html#questions",
+    "href": "slides/index.html#questions",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Questions",
+    "text": "Questions\n\n\n\nPlease add any questions to the public Zoom chat.\nShannon and Karissa will monitor the chat\nWe’ll also have time for questions at the break and at the end"
+  },
+  {
     "objectID": "slides/index.html#reproducibility-crisis",
     "href": "slides/index.html#reproducibility-crisis",
     "title": "Clinical Reporting with {gtsummary}",
@@ -312,7 +319,7 @@
     "href": "slides/index.html#break",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Break",
-    "text": "Break\n\n\n\n10:00"
+    "text": "Break\n\n\n\n\n10:00\n\n\n\nSister Act 2: Back in the Habit"
   },
   {
     "objectID": "slides/index.html#gtsummary-reporting-with-inline_text",
