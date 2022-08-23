@@ -1,7 +1,5 @@
 # Introduction
 
-## Acknowledgements
-
 ```{r}
 #| echo: false
 #| cache: false
@@ -23,6 +21,8 @@ registerS3method("knit_print", "gt_tbl", knit_print.gt_tbl)
 # fill for font awesome icons
 fa_fill <- "#606060"
 ```
+
+## Acknowledgements
 
 ::: {.columns .v-center-container}
 ::: {.column width="60%"}
