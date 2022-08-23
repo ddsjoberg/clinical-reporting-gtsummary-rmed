@@ -39,6 +39,8 @@ website:
      - href: index.qmd
        text: Home
      - href: material.qmd
+     - href: q-and-a.qmd
+       text: Workshop Q & A
      - href: license.qmd
 
 format:
