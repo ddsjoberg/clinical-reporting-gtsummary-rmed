@@ -193,28 +193,21 @@
     "href": "slides/index.html#update-tbl_summary-with-add_-1",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Update tbl_summary() with add_*()",
-    "text": "Update tbl_summary() with add_*()\n\n\nsm_trial |>\n  tbl_summary(\n    by = trt,\n    missing = \"no\"\n  ) |> \n  add_overall() |> \n  add_n() |> \n  add_stat_label(\n    label = all_categorical() ~ \"No. (%)\"\n  ) \n\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOverall, N = 200\n\n\nDrug A, N = 98\n\n\nDrug B, N = 102\n\n\n\n\n\n\nAge, Median (IQR)\n\n\n189\n\n\n47 (38, 57)\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nGrade, No. (%)\n\n\n200\n\n\n\n\n\n\n\n\n\n\nI\n\n\n\n\n68 (34%)\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n\n\n68 (34%)\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n\n\n64 (32%)\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response, No. (%)\n\n\n193\n\n\n61 (32%)\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\n\n\n\n\nadd_overall(): adds a column of overall statistics\nadd_n(): adds a column with the sample size\nadd_stat_label(): adds a description of the reported statistic"
-  },
-  {
-    "objectID": "slides/index.html#exercise-2",
-    "href": "slides/index.html#exercise-2",
-    "title": "Clinical Reporting with {gtsummary}",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nCreate a summary table split by whether or not the participant quit smoking or not.\nInclude all variables in the table except the study outcome: death.\nConsider using gtsummary functions that add_*(), modify_*() or style your summary table.\n\ntbl_summary() tutorial for reference: https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html\n\n\n\n\n08:00"
+    "text": "Update tbl_summary() with add_*()\n\n\nsm_trial |>\n  tbl_summary(\n    by = trt,\n    missing = \"no\"\n  ) |> \n  add_overall()\n\n\n\n\n\n\nCharacteristic\n\n\nOverall, N = 2001\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\n\n\n\n\nAge\n\n\n47 (38, 57)\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nGrade\n\n\n\n\n\n\n\n\n\n\nI\n\n\n68 (34%)\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n68 (34%)\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n64 (32%)\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response\n\n\n61 (32%)\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\n\n\n1 Median (IQR); n (%)\n\n\n\n\n\n\n\n\nadd_overall(): adds a column of overall statistics"
   },
   {
     "objectID": "slides/index.html#update-tbl_summary-with-add_-2",
     "href": "slides/index.html#update-tbl_summary-with-add_-2",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Update tbl_summary() with add_*()",
-    "text": "Update tbl_summary() with add_*()\n\ntrial |>\n  select(trt, marker, response) |>\n  tbl_summary(\n    by = trt,\n    statistic = list(marker ~ \"{mean} ({sd})\",\n                     response ~ \"{p}%\"),\n    missing = \"no\"\n  ) |> \n  add_difference()\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\nDifference2\n\n\n95% CI2,3\n\n\np-value2\n\n\n\n\n\n\nMarker Level (ng/mL)\n\n\n1.02 (0.89)\n\n\n0.82 (0.83)\n\n\n0.20\n\n\n-0.05, 0.44\n\n\n0.12\n\n\n\n\nTumor Response\n\n\n29%\n\n\n34%\n\n\n-4.2%\n\n\n-18%, 9.9%\n\n\n0.6\n\n\n\n\n\n\n1 Mean (SD); %\n\n\n\n\n2 Welch Two Sample t-test; Two sample test for equality of proportions\n\n\n\n\n3 CI = Confidence Interval\n\n\n\n\n\n\n\nadd_difference(): mean and rate differences between two groups. Can also be adjusted differences"
+    "text": "Update tbl_summary() with add_*()\n\n\nsm_trial |>\n  tbl_summary(\n    by = trt,\n    missing = \"no\"\n  ) |> \n  add_overall() |> \n  add_n()\n\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOverall, N = 2001\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\n\n\n\n\nAge\n\n\n189\n\n\n47 (38, 57)\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nGrade\n\n\n200\n\n\n\n\n\n\n\n\n\n\nI\n\n\n\n\n68 (34%)\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n\n\n68 (34%)\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n\n\n64 (32%)\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response\n\n\n193\n\n\n61 (32%)\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\n\n\n1 Median (IQR); n (%)\n\n\n\n\n\n\n\n\nadd_overall(): adds a column of overall statistics\nadd_n(): adds a column with the sample size"
   },
   {
     "objectID": "slides/index.html#update-tbl_summary-with-add_-3",
     "href": "slides/index.html#update-tbl_summary-with-add_-3",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Update tbl_summary() with add_*()",
-    "text": "Update tbl_summary() with add_*()\n\n\n\nsm_trial |>\n  tbl_summary(\n    by = trt,\n    missing = \"no\"\n  ) |> \n  add_stat(...)\n\n\n\nCustomize statistics presented with add_stat()\nAdded statistics can be placed on the label or the level rows\nAdded statistics may be a single column or multiple"
+    "text": "Update tbl_summary() with add_*()\n\n\nsm_trial |>\n  tbl_summary(\n    by = trt,\n    missing = \"no\"\n  ) |> \n  add_overall() |> \n  add_n() |> \n  add_stat_label(\n    label = all_categorical() ~ \"No. (%)\"\n  ) \n\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOverall, N = 200\n\n\nDrug A, N = 98\n\n\nDrug B, N = 102\n\n\n\n\n\n\nAge, Median (IQR)\n\n\n189\n\n\n47 (38, 57)\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nGrade, No. (%)\n\n\n200\n\n\n\n\n\n\n\n\n\n\nI\n\n\n\n\n68 (34%)\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n\n\n68 (34%)\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n\n\n64 (32%)\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response, No. (%)\n\n\n193\n\n\n61 (32%)\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\n\n\n\n\nadd_overall(): adds a column of overall statistics\nadd_n(): adds a column with the sample size\nadd_stat_label(): adds a description of the reported statistic"
   },
   {
     "objectID": "slides/index.html#update-with-bold_italicize_",
@@ -228,7 +221,35 @@
     "href": "slides/index.html#update-tbl_summary-with-modify_",
     "title": "Clinical Reporting with {gtsummary}",
     "section": "Update tbl_summary() with modify_*()",
-    "text": "Update tbl_summary() with modify_*()\n\n\nsm_trial |> \n  tbl_summary(by = trt, \n              missing = \"no\") |>\n  modify_header(\n      stat_1 ~ \"**Group A**\",\n      stat_2 ~ \"**Group B**\"\n  ) |> \n  modify_spanning_header(\n    all_stat_cols() ~ \"**Drug**\") |> \n  modify_footnote(\n    all_stat_cols() ~ \n      paste(\"median (IQR) for continuous;\",\n            \"n (%) for categorical\")\n  )\n\n\n\n\n\n\nCharacteristic\n\n\nDrug\n\n\n\n\nGroup A1\n\n\nGroup B1\n\n\n\n\n\n\nAge\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nGrade\n\n\n\n\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\n\n\n1 median (IQR) for continuous; n (%) for categorical\n\n\n\n\n\n\n\n\nUse show_header_names() to see the internal header names available for use in modify_header()"
+    "text": "Update tbl_summary() with modify_*()\n\n\ntbl <-\n  sm_trial |> \n  tbl_summary(by = trt, \n              missing = \"no\") |>\n  modify_header(\n      stat_1 ~ \"**Group A**\",\n      stat_2 ~ \"**Group B**\"\n  ) |> \n  modify_spanning_header(\n    all_stat_cols() ~ \"**Drug**\") |> \n  modify_footnote(\n    all_stat_cols() ~ \n      paste(\"median (IQR) for continuous;\",\n            \"n (%) for categorical\")\n  )\ntbl\n\n\n\n\n\n\nCharacteristic\n\n\nDrug\n\n\n\n\nGroup A1\n\n\nGroup B1\n\n\n\n\n\n\nAge\n\n\n46 (37, 59)\n\n\n48 (39, 56)\n\n\n\n\nGrade\n\n\n\n\n\n\n\n\nI\n\n\n35 (36%)\n\n\n33 (32%)\n\n\n\n\nII\n\n\n32 (33%)\n\n\n36 (35%)\n\n\n\n\nIII\n\n\n31 (32%)\n\n\n33 (32%)\n\n\n\n\nTumor Response\n\n\n28 (29%)\n\n\n33 (34%)\n\n\n\n\n\n\n1 median (IQR) for continuous; n (%) for categorical\n\n\n\n\n\n\n\n\nUse show_header_names() to see the internal header names available for use in modify_header()"
+  },
+  {
+    "objectID": "slides/index.html#column-names",
+    "href": "slides/index.html#column-names",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Column names",
+    "text": "Column names\n\n\nshow_header_names(tbl)\n\n\n\n\nColumn Name\nColumn Header\n\n\n\n\nlabel\nCharacteristic\n\n\nstat_1\nGroup A\n\n\nstat_2\nGroup B\n\n\n\n\n\n\n\nall_stat_cols() selects columns \"stat_1\" and \"stat_2\""
+  },
+  {
+    "objectID": "slides/index.html#exercise-2",
+    "href": "slides/index.html#exercise-2",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nCreate a summary table split by whether or not the participant quit smoking or not.\nInclude all variables in the table except the study outcome: death.\nConsider using gtsummary functions that add_*(), modify_*() or style your summary table.\n\ntbl_summary() tutorial for reference: https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html\n\n\n\n\n08:00"
+  },
+  {
+    "objectID": "slides/index.html#update-tbl_summary-with-add_-4",
+    "href": "slides/index.html#update-tbl_summary-with-add_-4",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Update tbl_summary() with add_*()",
+    "text": "Update tbl_summary() with add_*()\n\ntrial |>\n  select(trt, marker, response) |>\n  tbl_summary(\n    by = trt,\n    statistic = list(marker ~ \"{mean} ({sd})\",\n                     response ~ \"{p}%\"),\n    missing = \"no\"\n  ) |> \n  add_difference()\n\n\n\n\n\nCharacteristic\n\n\nDrug A, N = 981\n\n\nDrug B, N = 1021\n\n\nDifference2\n\n\n95% CI2,3\n\n\np-value2\n\n\n\n\n\n\nMarker Level (ng/mL)\n\n\n1.02 (0.89)\n\n\n0.82 (0.83)\n\n\n0.20\n\n\n-0.05, 0.44\n\n\n0.12\n\n\n\n\nTumor Response\n\n\n29%\n\n\n34%\n\n\n-4.2%\n\n\n-18%, 9.9%\n\n\n0.6\n\n\n\n\n\n\n1 Mean (SD); %\n\n\n\n\n2 Welch Two Sample t-test; Two sample test for equality of proportions\n\n\n\n\n3 CI = Confidence Interval\n\n\n\n\n\n\n\nadd_difference(): mean and rate differences between two groups. Can also be adjusted differences"
+  },
+  {
+    "objectID": "slides/index.html#update-tbl_summary-with-add_-5",
+    "href": "slides/index.html#update-tbl_summary-with-add_-5",
+    "title": "Clinical Reporting with {gtsummary}",
+    "section": "Update tbl_summary() with add_*()",
+    "text": "Update tbl_summary() with add_*()\n\n\n\nsm_trial |>\n  tbl_summary(\n    by = trt,\n    missing = \"no\"\n  ) |> \n  add_stat(...)\n\n\n\nCustomize statistics presented with add_stat()\nAdded statistics can be placed on the label or the level rows\nAdded statistics may be a single column or multiple"
   },
   {
     "objectID": "slides/index.html#add-on-functions-in-gtsummary-1",
