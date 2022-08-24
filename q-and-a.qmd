@@ -57,7 +57,7 @@ trial %>%
 
 5.  **Q:** With `add_n()` can you change the label to specify that it represents non-missing values?
 
->  yes, you can change this with `col_label` argument:
+>  Yes, you can change this with `col_label` argument:
 
 ```{r}
 trial |>
@@ -113,19 +113,19 @@ sm_trial |>
 
 7. **Q:** Is it possible to add custom footnotes, say if you want to explain what a particular category includes etc.?
 
->  yes, use modify_footnote() for column headers for footnotes that already exist. Or use `modify_table_styling()` for new footnotes. <https://www.danieldsjoberg.com/gtsummary/reference/modify_table_styling.html>
+>  Yes, use `modify_footnote()` for column headers for footnotes that already exist. Or use `modify_table_styling()` for new footnotes. <https://www.danieldsjoberg.com/gtsummary/reference/modify_table_styling.html>
 
 8. **Q:** Does gtsummary support role selection like {recipes}?
 
-> Use the selectors all_continuous(), all_categorical().
+> Use the selectors `all_continuous()`, `all_categorical()`, etc.
 
 9.  **Q:** There is an error trying to use `add_difference()` with `add_p()`
 
 >  This is because you are trying to add two p's to same table. You could consider doing two separate tables then using `tbl_merge()` to merge them, but presenting these two p-values in one table could be confusing.
 
-10. **Q:** I would be great an "asterisk_p" to show significant p-values, like bold_p
+10. **Q:** It would be great to have an "asterisk_p" to show significant p-values, like `bold_p()`
 
->  add_significance_stars, <https://www.danieldsjoberg.com/gtsummary/reference/add_significance_stars.html>
+>  `add_significance_stars()` already exists! <https://www.danieldsjoberg.com/gtsummary/reference/add_significance_stars.html>
 
 11. **Q:** If there are more than two groups, is there any function for post-hoc testing?
 
@@ -157,7 +157,7 @@ tbl
 
 16. **Q:** Is there a way to add an additional footnote saying T1 is the control? The default dash may be interpreted as a "missing value".
 
->  `modify_table_styling()` https://www.danieldsjoberg.com/gtsummary/reference/modify_table_styling.html or `add_estimate_to_reference_rows = TRUE`
+>  `modify_table_styling()` <https://www.danieldsjoberg.com/gtsummary/reference/modify_table_styling.html> or use argument `add_estimate_to_reference_rows = TRUE`
 
 ```{r }
 glm(death ~ age + grade, data = trial, family = binomial) %>%
@@ -191,7 +191,7 @@ glm(death ~ age + grade, data = trial, family = binomial) %>%
 
 20. **Q:** Does it work with {tidymodels}?
 
->  Some issues with dummy variables but we are working on it for future release.
+>  There are currently some issues with dummy variables, but we are working on it for future release.
 
 21. **Q:** Can you have super/sub scripts in variable names
 
@@ -203,7 +203,7 @@ glm(death ~ age + grade, data = trial, family = binomial) %>%
 
 23. **Q:** Does `tbl_regression()` support ridge/lasso regressions? I usually use {glmnet} for these
 
->  Not currently supported but see <https://github.com/ddsjoberg/gtsummary/issues/1280>
+>  Not currently supported but see <https://github.com/ddsjoberg/gtsummary/issues/1280> for more details.
 
 24. **Q:** For sex, how do i get it to show the `Male` level instead of the `Female` reference group?
 
@@ -211,7 +211,7 @@ glm(death ~ age + grade, data = trial, family = binomial) %>%
 
 25. **Q:** If I change the CI to 90%, I need to update the pattern to 90% CI {ci} right?
 
->  If you are using the default pattern ({conf.level}), you don't need to change anything, but if you hard code like 95%, then yes, use `pattern = "odds ratio {estimate}; {conf.level\*100}% CI {ci}"`
+>  If you are using the default pattern (`{conf.level}`), you don't need to change anything, but if you hard code like 95%, then yes, use `pattern = "odds ratio {estimate}; {conf.level*100}% CI {ci}"`
 
 26. **Q:** Can I add LaTeX symbols in the inline text like chi square results?
 
@@ -237,4 +237,4 @@ mod %>%
 
 30. **Q:** What would the code be to export as XLS?
 
->  `as_hux_xlsx()`. <See: https://www.danieldsjoberg.com/gtsummary/reference/as_hux_table.html>
+>  `as_hux_xlsx()`. See: <https://www.danieldsjoberg.com/gtsummary/reference/as_hux_table.html>
