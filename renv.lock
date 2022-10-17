@@ -322,7 +322,7 @@
     },
     "emmeans": {
       "Package": "emmeans",
-      "Version": "1.8.0",
+      "Version": "1.8.1-1",
       "Source": "Repository",
       "Requirements": []
     },
@@ -1030,7 +1030,7 @@
     },
     "zip": {
       "Package": "zip",
-      "Version": "2.2.0",
+      "Version": "2.2.1",
       "Source": "Repository",
       "Requirements": []
     }
