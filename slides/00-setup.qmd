@@ -100,7 +100,7 @@ Karissa Whiting
 `r fontawesome::fa("check", fill = fa_fill)` Install packages
 
 ``` r
-install.packages(c("gtsummary", "tidyverse", "labelled", "usethis", "causaldata", "skimr"))
+install.packages(c("gtsummary", "tidyverse", "labelled", "usethis", "causaldata", "fs", "skimr", "car", "emmeans"))
 ```
 
 `r fontawesome::fa("check", fill = fa_fill)` Ensure you can knit Rmarkdown files

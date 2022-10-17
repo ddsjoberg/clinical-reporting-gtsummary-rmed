@@ -55,7 +55,8 @@ Before attending the workshop please have the following installed and configured
 
     ```r
     instll_pkgs <- 
-      c("gtsummary", "tidyverse", "labelled", "usethis", "causaldata", "fs", "skimr", "car")
+      c("gtsummary", "tidyverse", "labelled", "usethis", 
+        "causaldata", "fs", "skimr", "car", "emmeans")
     install.packages(instll_pkgs)
     ```
 -   Ensure you can knit R markdown documents
