@@ -15,7 +15,7 @@ website:
   repo-url: https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed
   repo-actions: [edit, issue]
 
-  opengraph: true
+  open-graph: true
   twitter-card:
     creator: "@statistishdan"
     image: "/images/two-hex-logo.png"
