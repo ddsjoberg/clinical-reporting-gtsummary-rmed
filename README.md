@@ -12,7 +12,7 @@ by Daniel D. Sjoberg
 
 ------------------------------------------------------------------------
 
-This repository contains materials for the "Clinical Reporting with {gtsummary}" workshop at R/Medicine 2022. See [https://www.danieldsjoberg.com/R-Med-gtsummary-workshop/](https://www.danieldsjoberg.com/R-Med-gtsummary-workshop/) for rendered workshop materials.
+This repository contains materials for the "Clinical Reporting with {gtsummary}" workshop at R/Medicine 2022. See [https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/](https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/) for rendered workshop materials.
 
 ------------------------------------------------------------------------
 
